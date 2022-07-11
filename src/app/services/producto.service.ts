@@ -10,12 +10,13 @@ const cabecera = {headers: new HttpHeaders({'Content-TYpe': 'application/json'})
 })
 export class ProductoService {
 
-  productoURL = 'localhost:8080/api/productos/';
+  productoURL = 'http://localhost:8080/api/productos/';
 
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Producto[]> {
-    return this.httpClient.get<Producto[]>(this.productoURL + 'lista', cabecera);
+    return  this.httpClient.get<Producto[]>(this.productoURL + 'lista', cabecera);
+
   }
 
   public detalle(id: number): Observable<Producto> {

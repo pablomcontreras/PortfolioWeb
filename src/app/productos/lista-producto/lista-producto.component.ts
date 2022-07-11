@@ -18,12 +18,19 @@ export class ListaProductoComponent implements OnInit {
   }
 
   cargarProductos(): void {
-    this.productoService.lista().subscribe(data => {
-      this.productos = data;
-    },
-      (err: any) => {
-        console.log(err);
-      }
-    );
+    this.productoService.lista().subscribe(
+      
+      {next: data => { this.productos = data},
+      error: err => { console.log(err) }}
+      );
+};
+
+onDelete(id: any): void {
+  if (confirm('¿Estás seguro?, esta acción no se puede deshacer')) {
+    this.productoService.borrar(id).subscribe(data => {
+      this.cargarProductos();
+    });
   }
+};
+  
 }
