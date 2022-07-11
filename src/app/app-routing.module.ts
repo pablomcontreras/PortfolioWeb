@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, CanActivate } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 
 import { HomeComponent } from './home/home/home.component';
@@ -29,7 +29,7 @@ const routes: Routes = [
 
   //user y admin
   {path: 'admin', component: AdminComponent, canActivate: [guard], data: {expectedRol: ['admin']}},
-  {path: 'user', component: UserComponent, canActivate: [guard], data: {expectedRol: ['user']}},
+  {path: 'usuario', component: UserComponent, canActivate: [guard], data: {expectedRol: ['user']}},
 
   // rutas a login y registro
   {path: 'login', component: LoginComponent},
