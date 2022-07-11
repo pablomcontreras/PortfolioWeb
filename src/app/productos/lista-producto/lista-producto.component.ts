@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ProductoService } from 'src/app/services/producto.service';
 import { Producto } from 'src/app/models/producto';
 
@@ -8,6 +8,9 @@ import { Producto } from 'src/app/models/producto';
   styleUrls: ['./lista-producto.component.css']
 })
 export class ListaProductoComponent implements OnInit {
+
+  @Input() user!: string;
+
 
   productos: Producto[] = [];
 

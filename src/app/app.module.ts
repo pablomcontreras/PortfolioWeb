@@ -16,6 +16,11 @@ import { HomeComponent } from './home/home/home.component';
 import { DetalleProductoComponent } from './productos/detalle-producto/detalle-producto.component';
 import { NuevoProductoComponent } from './productos/nuevo-producto/nuevo-producto.component';
 import { EditarProductoComponent } from './productos/editar-producto/editar-producto.component';
+import { LoginComponent } from './auth/login/login.component';
+import { interceptorProvider } from './services/producto-interceptor.service';
+import { UserComponent } from './users/user/user.component';
+import { AdminComponent } from './users/admin/admin.component';
+import { RegistroComponent } from './users/registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,11 @@ import { EditarProductoComponent } from './productos/editar-producto/editar-prod
     HomeComponent,
     DetalleProductoComponent,
     NuevoProductoComponent,
-    EditarProductoComponent
+    EditarProductoComponent,
+    LoginComponent,
+    UserComponent,
+    AdminComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +42,7 @@ import { EditarProductoComponent } from './productos/editar-producto/editar-prod
     AppRoutingModule
     
   ],
-  providers: [],
+  providers: [interceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
