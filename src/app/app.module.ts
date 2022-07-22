@@ -21,6 +21,8 @@ import { interceptorProvider } from './services/producto-interceptor.service';
 import { UserComponent } from './users/user/user.component';
 import { AdminComponent } from './users/admin/admin.component';
 import { RegistroComponent } from './users/registro/registro.component';
+import { PortfolioComponent } from './portfolio/portfolio/portfolio.component';
+import { EditorComponent } from './portfolio/editor/editor.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { RegistroComponent } from './users/registro/registro.component';
     LoginComponent,
     UserComponent,
     AdminComponent,
-    RegistroComponent
+    RegistroComponent,
+    PortfolioComponent,
+    EditorComponent
   ],
   imports: [
     BrowserModule,

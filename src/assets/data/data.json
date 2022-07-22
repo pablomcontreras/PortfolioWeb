@@ -1,0 +1,148 @@
+{
+    "encabezado":{
+       "nombre":"Maximiliano Contreras",
+       "cargo":"Jr. Fullstack Web Developer",
+       "profpic": "./assets/img/profile.jpg"
+    },
+    "about":{
+        "titular":"Hola! Bienvenid@ a mi portfolio web!",
+        "contenido":"Me llamo Maxi, y ¡soy abogado! . Hace 10 años que trabajo asesorando a startups tecnológicas... hasta que decidí patear el tablero y dedicarme a la pasión de toda mi vida: el desarrollo!. Toda mi vida me he capacitado y he experimentado con diferentes tecnologías, desde mis primeros pasos con Visual Basic en el año 2000, pasando luego a PHP, MySQL, ASP, Arduino, etc. Recientemente he estado formándome en tecnologías orientadas a la web como HTML, CSS y JavaScript, entre otras. Mi objetivo es reorientar mi carrera profesional hacia el desarrollo de proyectos modernos, dinámicos y trabajando con tecnologías vanguardistas. ¡no me rindo nunca y voy a por ello!"
+
+    },
+    "experiencia":[
+        {
+            "empresa":"h3. Lorem ipsum dolor sit amet.",
+            "empresaPic":"https://www.layoutit.com/img/sports-q-c-140-140-3.jpg",
+            "descripcion":"Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus.",
+            "id":1
+        },
+        {
+            "empresa":"h3. Lorem ipsum dolor sit amet.",
+            "empresaPic":"https://www.layoutit.com/img/sports-q-c-140-140-3.jpg",
+            "descripcion":"Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus.",
+            "id":2
+        },
+        {
+            "empresa":"h3. Lorem ipsum dolor sit amet.",
+            "empresaPic":"https://www.layoutit.com/img/sports-q-c-140-140-3.jpg",
+            "descripcion":"Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus.",
+            "id":3
+        },
+        {
+            "empresa":"h3. Lorem ipsum dolor sit amet.",
+            "empresaPic":"https://www.layoutit.com/img/sports-q-c-140-140-3.jpg",
+            "descripcion":"Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus.",
+            "id":4
+        }
+    ],
+    "educacion":[
+        {
+            "titulo":"Proyecto y Diseño Web",
+            "institucion":"Universidad Nacional de Rosario",
+            "descripcion":"",
+            "institutopic":"./assets/img/logo-unr.jpeg",
+            "id":1
+        },
+        {
+            "titulo":"#Sé Programar",
+            "institucion":"Ministerio de Desarrollo Productivo - CESSI Arg",
+            "descripcion":"Certificacion otorgada por el Ministerio de Desarrollo Productivo de la Nación conjuntamente con la Camara de la Industria Argentina del Software.",
+            "institutopic":"./assets/img/logocessi.png",
+            "id":2
+        },
+        {
+            "titulo":"Learn HTML Certificate",
+            "institucion":"Codecademy",
+            "descripcion":"Html course. Certification issued by Codecademy NY.",
+            "institutopic":"./assets/img/codecademylogo.jpg",
+            "id":3
+        }
+    ],
+    "habilidades":[
+        {
+            "nombre":"Habilidad 1",
+            "color":"progress blue",
+            "porcentaje":"90%",
+            "id":1
+
+        },
+        {
+            "nombre":"Habilidad 2",
+            "color":"progress blue",
+            "porcentaje":"90%",
+            "id":2
+
+        },
+        {
+            "nombre":"Habilidad 3",
+            "color":"progress blue",
+            "porcentaje":"50%",
+            "id":3
+
+        },
+        {
+            "nombre":"Habilidad 4",
+            "color":"progress yellow",
+            "porcentaje":"14%",
+            "id":4
+
+        },
+        {
+            "nombre":"Habilidad 5",
+            "color":"progress yellow",
+            "porcentaje":"35.4%",
+            "id":5
+
+        },
+        {
+            "nombre":"Habilidad 6",
+            "color":"progress yellow",
+            "porcentaje":"83%",
+            "id":6
+        }
+    ],
+    "proyectos":[
+        {
+            "imagen":"url a la imagen",
+            "titulo":"Proyecto 1",
+            "descripcion":"descripcion del proyecto",
+            "id":1
+        },
+        {
+            "imagen":"url a la imagen",
+            "titulo":"Proyecto 2",
+            "descripcion":"descripcion del proyecto",
+            "id":2
+        },
+        {
+            "imagen":"url a la imagen",
+            "titulo":"Proyecto 3",
+            "descripcion":"descripcion del proyecto",
+            "id":3
+        },
+        {
+            "imagen":"url a la imagen",
+            "titulo":"Proyecto 4",
+            "descripcion":"descripcion del proyecto",
+            "id":4
+        },
+        {
+            "imagen":"url a la imagen",
+            "titulo":"Proyecto 5",
+            "descripcion":"descripcion del proyecto",
+            "id":5
+        },
+        {
+            "imagen":"url a la imagen",
+            "titulo":"Proyecto 6",
+            "descripcion":"descripcion del proyecto",
+            "id":6
+        }
+    
+    ],
+    "footer":{
+        "imagen":"./assets/img/profile.jpg",
+        "titulo":"¿Te interesa contar conmigo para tu proyecto?",
+        "subtitulo":"¿Estás buscando un desarrollador full-stack para tu aplicación web? Si la respuesta es si, enviame un mensaje a contrerasmaximiliano@live.com.ar o podés usar el formulario de contacto."
+    }
+ }
