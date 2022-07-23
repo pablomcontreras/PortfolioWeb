@@ -1,10 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-
-import { DetalleProductoComponent } from './productos/detalle-producto/detalle-producto.component';
-import { NuevoProductoComponent } from './productos/nuevo-producto/nuevo-producto.component';
-import { EditarProductoComponent } from './productos/editar-producto/editar-producto.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AdminComponent } from './users/admin/admin.component';
 import { UserComponent } from './users/user/user.component';
@@ -24,12 +20,12 @@ const routes: Routes = [
   {path: 'editor', component: EditorComponent,
   canActivate: [guard], data: { expectedRol: ['admin']}},
 
-  {path: 'detalle/:id', component: DetalleProductoComponent,
-  canActivate: [guard], data: { expectedRol: ['admin', 'user']}},
-  {path: 'nuevo', component: NuevoProductoComponent,
-  canActivate: [guard], data: { expectedRol: ['admin']}},
-  {path: 'editar/:id', component: EditarProductoComponent,
-  canActivate: [guard], data: { expectedRol: ['admin']}},
+  // {path: 'detalle/:id', component: DetalleProductoComponent,
+  // canActivate: [guard], data: { expectedRol: ['admin', 'user']}},
+  // {path: 'nuevo', component: NuevoProductoComponent,
+  // canActivate: [guard], data: { expectedRol: ['admin']}},
+  // {path: 'editar/:id', component: EditarProductoComponent,
+  // canActivate: [guard], data: { expectedRol: ['admin']}},
 
   //user y admin
   {path: 'admin', component: AdminComponent, canActivate: [guard], data: {expectedRol: ['admin']}},

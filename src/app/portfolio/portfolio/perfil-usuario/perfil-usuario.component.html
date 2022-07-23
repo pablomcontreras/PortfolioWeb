@@ -1,0 +1,41 @@
+<div class="container-fluid">
+    <div class="row" id="inicio">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-12" id="imgcover"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-3" id="areaperfil">
+            <img
+              alt="Foto de perfil"
+              src="{{ miPerfilUsuario?.imgUrl }}"
+              class="img-fluid"
+              id="profpic"
+            />
+  
+            <div *ngIf="authority === 'admin'" class="float-right">
+              <i class="mx-2 fa-solid fa-pen-to-square"></i>
+            </div>
+  
+            <h2>{{ miPerfilUsuario?.nombre }}</h2>
+  
+            <h6>{{ miPerfilUsuario?.cargo }}</h6>
+            <div *ngIf="authority === 'admin'" class="float-right">
+              <i class="mx-2 fa-solid fa-pen-to-square"></i>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="page-header py-3">
+              <h1>Hola! Bienvenid@ a mi portfolio web!</h1>
+            </div>
+            <div *ngIf="authority === 'admin'" class="float-right">
+              <i class="mx-2 fa-solid fa-pen-to-square"></i>
+            </div>
+            <p class="text-muted">
+              {{ miPerfilUsuario?.intro }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

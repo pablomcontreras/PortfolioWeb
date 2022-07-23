@@ -1,0 +1,38 @@
+
+<div class="row container-fluid" id="educacion">
+    <div class="col-md-12">
+      <hr />
+      <h3 *ngIf="!authority">Mi Educación</h3>
+  
+      <div *ngIf="authority === 'admin'">
+        <div class="container-fluid py-2 row">
+          <span class="col-md-2"><h3>Mi Educación</h3></span>
+          <span class="col-md-2">
+            <a routerLink="../editor"><i class="fa-solid fa-plus"></i></a>
+          </span>
+        </div>
+      </div>
+  
+      <ul>
+        <li class="row tarjeta" *ngFor="let elemento of miEducacion">
+          <div class="col-md-3">
+            <img
+              class="logolateral"
+              [alt]="elemento.curso"
+              [src]="elemento.imgUrl"
+            />
+          </div>
+          <div class="col-md-9">
+            <h4>{{ elemento.curso }}</h4>
+            <div *ngIf="authority === 'admin'" class="float-right">
+              <i class="mx-2 fa-solid fa-pen-to-square"></i>
+              <i class="fa-solid fa-trash-can"></i>
+            </div>
+            <p>{{ elemento.institucion }}</p>
+            <p>{{ elemento.descripcion }}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
