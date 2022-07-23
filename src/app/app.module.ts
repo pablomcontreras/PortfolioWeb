@@ -23,6 +23,7 @@ import { AdminComponent } from './users/admin/admin.component';
 import { RegistroComponent } from './users/registro/registro.component';
 import { PortfolioComponent } from './portfolio/portfolio/portfolio.component';
 import { EditorComponent } from './portfolio/editor/editor.component';
+import { ContactoComponent } from './contacto/contacto.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { EditorComponent } from './portfolio/editor/editor.component';
     AdminComponent,
     RegistroComponent,
     PortfolioComponent,
-    EditorComponent
+    EditorComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,

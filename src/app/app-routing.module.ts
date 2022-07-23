@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 
-import { ListaProductoComponent } from './productos/lista-producto/lista-producto.component';
 import { DetalleProductoComponent } from './productos/detalle-producto/detalle-producto.component';
 import { NuevoProductoComponent } from './productos/nuevo-producto/nuevo-producto.component';
 import { EditarProductoComponent } from './productos/editar-producto/editar-producto.component';
@@ -14,10 +13,12 @@ import { PortfolioComponent } from './portfolio/portfolio/portfolio.component';
 import { EditorComponent } from './portfolio/editor/editor.component';
 
 import { GuardService as guard} from './guards/guard.service';
+import { ContactoComponent } from './contacto/contacto.component';
 
 const routes: Routes = [
   {path: '', component: PortfolioComponent},
   {path: 'portfolio', component: PortfolioComponent},
+  {path: 'contacto', component: ContactoComponent},
 
   // productos: utilizamos canActivate
   {path: 'editor', component: EditorComponent,
@@ -41,8 +42,16 @@ const routes: Routes = [
   {path: '**', redirectTo: 'portfolio', pathMatch: 'full'}
 ];
 
+
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})
+
+],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+ }
+
+
+

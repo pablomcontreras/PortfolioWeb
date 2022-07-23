@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TokenService } from 'src/app/services/token.service';
+
 
 //importo los modelos
 
@@ -25,23 +27,41 @@ import { HabilidadesService } from 'src/app/services/habilidades.service';
 })
 export class PortfolioComponent implements OnInit {
 
-  constructor(private datosPerfilUsuario : PerfilUsuarioService,
+  constructor(private tokenService : TokenService,
+              private datosPerfilUsuario : PerfilUsuarioService,
               private datosEducacion : EducacionService,
               private datosExperiencia : ExperienciaService,
               private datosHabilidades : HabilidadesService,
-              private datosProyectos : ProyectosService ) { };
+              private datosProyectos : ProyectosService,
+              private router : Router ) { };
 
-  private miPerfilUsuario : any;
-  private miEducacion : any;
-  private miExperiencia : any;
-  private miHabilidades : any;
-  private miProyectos : any;
+  public  miPerfilUsuario : any;
+  public miEducacion : any;
+  public miExperiencia : any;
+  public miHabilidades : any;
+  public miProyectos : any;
+  isLogin = false;
+  roles!: string[];
+  authority!: string;
 
 
 
 
   ngOnInit(): void {
-
+   
+    if (this.tokenService.getToken()) {
+      this.isLogin = true;
+      this.roles = [];
+      this.roles = this.tokenService.getAuthorities();
+      this.roles.every(rol => {
+        if (rol === 'ROLE_ADMIN') {
+          this.authority = 'admin';
+          return false;
+        }
+        this.authority = 'user';
+        return true;
+      });
+    };
 
   this.datosPerfilUsuario.lista().subscribe(data => {
     
@@ -82,6 +102,14 @@ export class PortfolioComponent implements OnInit {
 
 
     };
+
+
+  logOut(): void {
+    this.tokenService.logOut();
+    this.isLogin = false;
+    this.authority = '';
+    this.router.navigate(['home']);
+  }
 
 
   }

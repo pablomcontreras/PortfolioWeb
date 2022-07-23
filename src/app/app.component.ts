@@ -33,6 +33,6 @@ export class AppComponent implements OnInit {
     this.tokenService.logOut();
     this.isLogin = false;
     this.authority = '';
-    this.router.navigate(['home']);
-  }
+    this.router.navigate(['portfolio']);
+window.location.reload();  }
 }
