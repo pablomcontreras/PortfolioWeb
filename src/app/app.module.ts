@@ -17,14 +17,14 @@ import { interceptorProvider } from './services/producto-interceptor.service';
 import { UserComponent } from './users/user/user.component';
 import { AdminComponent } from './users/admin/admin.component';
 import { RegistroComponent } from './users/registro/registro.component';
-import { PortfolioComponent } from './portfolio/portfolio/portfolio.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ContactoComponent } from './contacto/contacto.component';
-import { PerfilUsuarioComponent } from './portfolio/portfolio/perfil-usuario/perfil-usuario.component';
-import { EducacionComponent } from './portfolio/portfolio/educacion/educacion.component';
-import { ExperienciaComponent } from './portfolio/portfolio/experiencia/experiencia.component';
-import { HabilidadesComponent } from './portfolio/portfolio/habilidades/habilidades.component';
-import { ProyectosComponent } from './portfolio/portfolio/proyectos/proyectos.component';
-import { FooterComponent } from './portfolio/portfolio/footer/footer.component';
+import { PerfilUsuarioComponent } from './portfolio/perfil-usuario/perfil-usuario.component';
+import { EducacionComponent } from './portfolio/educacion/educacion.component';
+import { ExperienciaComponent } from './portfolio/experiencia/experiencia.component';
+import { HabilidadesComponent } from './portfolio/habilidades/habilidades.component';
+import { ProyectosComponent } from './portfolio/proyectos/proyectos.component';
+import { FooterComponent } from './portfolio/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({

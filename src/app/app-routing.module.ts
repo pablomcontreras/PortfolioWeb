@@ -5,7 +5,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { AdminComponent } from './users/admin/admin.component';
 import { UserComponent } from './users/user/user.component';
 import { RegistroComponent } from './users/registro/registro.component';
-import { PortfolioComponent } from './portfolio/portfolio/portfolio.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 import { GuardService as guard} from './guards/guard.service';
 import { ContactoComponent } from './contacto/contacto.component';
 
