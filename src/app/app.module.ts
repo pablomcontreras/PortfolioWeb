@@ -18,7 +18,6 @@ import { UserComponent } from './users/user/user.component';
 import { AdminComponent } from './users/admin/admin.component';
 import { RegistroComponent } from './users/registro/registro.component';
 import { PortfolioComponent } from './portfolio/portfolio/portfolio.component';
-import { EditorComponent } from './portfolio/editor/editor.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { PerfilUsuarioComponent } from './portfolio/portfolio/perfil-usuario/perfil-usuario.component';
 import { EducacionComponent } from './portfolio/portfolio/educacion/educacion.component';
@@ -26,6 +25,7 @@ import { ExperienciaComponent } from './portfolio/portfolio/experiencia/experien
 import { HabilidadesComponent } from './portfolio/portfolio/habilidades/habilidades.component';
 import { ProyectosComponent } from './portfolio/portfolio/proyectos/proyectos.component';
 import { FooterComponent } from './portfolio/portfolio/footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -36,20 +36,21 @@ import { FooterComponent } from './portfolio/portfolio/footer/footer.component';
     AdminComponent,
     RegistroComponent,
     PortfolioComponent,
-    EditorComponent,
     ContactoComponent,
     PerfilUsuarioComponent,
     EducacionComponent,
     ExperienciaComponent,
     HabilidadesComponent,
     ProyectosComponent,
-    FooterComponent
+    FooterComponent,
+    
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
     
   ],
   providers: [interceptorProvider],

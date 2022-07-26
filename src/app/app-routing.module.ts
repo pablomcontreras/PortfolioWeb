@@ -6,8 +6,6 @@ import { AdminComponent } from './users/admin/admin.component';
 import { UserComponent } from './users/user/user.component';
 import { RegistroComponent } from './users/registro/registro.component';
 import { PortfolioComponent } from './portfolio/portfolio/portfolio.component';
-import { EditorComponent } from './portfolio/editor/editor.component';
-
 import { GuardService as guard} from './guards/guard.service';
 import { ContactoComponent } from './contacto/contacto.component';
 
@@ -17,8 +15,6 @@ const routes: Routes = [
   {path: 'contacto', component: ContactoComponent},
 
   // productos: utilizamos canActivate
-  {path: 'editor', component: EditorComponent,
-  canActivate: [guard], data: { expectedRol: ['admin']}},
 
   // {path: 'detalle/:id', component: DetalleProductoComponent,
   // canActivate: [guard], data: { expectedRol: ['admin', 'user']}},
@@ -36,7 +32,7 @@ const routes: Routes = [
   {path: 'registro', component: RegistroComponent},
 
   {path: '**', redirectTo: 'portfolio', pathMatch: 'full'}
-];
+]; 
 
 
 

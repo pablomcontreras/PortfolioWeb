@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ExperienciaService } from 'src/app/services/experiencia.service';
+import { ExperienciaService } from 'src/app/services/experiencia.service'
+
+
 
 @Component({
   selector: 'app-experiencia',
@@ -14,7 +16,6 @@ export class ExperienciaComponent implements OnInit {
   roles!: string[];
   @Input() authority!: string;
 
-
   ngOnInit(): void {
 
     this.datosExperiencia.lista().subscribe((data) => {
@@ -22,4 +23,12 @@ export class ExperienciaComponent implements OnInit {
       console.log('this.miExperiencia tiene:', this.miExperiencia);
     });
   }
+
+  borrar(id: number): void {
+    if (confirm('¿Estás seguro?')) {
+      this.datosExperiencia.borrar(id).subscribe();
+window.location.href = "/#experiencia";
+    }}
+
+
 }

@@ -3,7 +3,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Experiencia } from '../models/experiencia';
 
-const cabecera = {headers: new HttpHeaders({'Content-TYpe': 'application/json'})};
+
+const cabecera = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
+
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +16,10 @@ export class ExperienciaService {
 
   baseURL = 'http://localhost:8080/';
 
-  constructor(private httpClient: HttpClient) { }
+
+  constructor(private httpClient: HttpClient ) { }
+
+
 
   public lista(): Observable<Experiencia[]> {
     return  this.httpClient.get<Experiencia[]>(this.baseURL + 'api/experiencia/', cabecera);
@@ -24,14 +31,19 @@ export class ExperienciaService {
   }
 
   public crear(experiencia: Experiencia): Observable<any> {
-    return this.httpClient.post<any>(this.baseURL + '/editor/agregar/experiencia', experiencia, cabecera);
+    return this.httpClient.post<any>(this.baseURL + 'editor/experiencia', experiencia, cabecera);
   }
 
   public editar(experiencia: Experiencia, id: number): Observable<any> {
-    return this.httpClient.put<any>(this.baseURL + `/editor/editar/experiencia/${id}`, experiencia, cabecera);
+    return this.httpClient.put<any>(this.baseURL + `editor/experiencia/${id}`, experiencia, cabecera);
+   
   }
 
   public borrar(id: number): Observable<any> {
-    return this.httpClient.delete<any>(this.baseURL + `/editor/borrar/experiencia/${id}`, cabecera);
+   // console.log("se llamo a borrar en el experiencia service con los siguientes parametros ", this.baseURL + `editor/experiencia/${id}`, cabecera);
+
+    return this.httpClient.delete<any>(this.baseURL + `editor/experiencia/${id}`, cabecera);
+    
+    
   }
 }
