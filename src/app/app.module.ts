@@ -26,6 +26,15 @@ import { HabilidadesComponent } from './portfolio/habilidades/habilidades.compon
 import { ProyectosComponent } from './portfolio/proyectos/proyectos.component';
 import { FooterComponent } from './portfolio/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EditarPerfilUsuarioComponent } from './portfolio/perfil-usuario/editar-perfil-usuario/editar-perfil-usuario.component';
+import { AgregarEducacionComponent } from './portfolio/educacion/agregar-educacion/agregar-educacion.component';
+import { EditarEducacionComponent } from './portfolio/educacion/editar-educacion/editar-educacion.component';
+import { AgregarExperienciaComponent } from './portfolio/experiencia/agregar-experiencia/agregar-experiencia.component';
+import { EditarExperienciaComponent } from './portfolio/experiencia/editar-experiencia/editar-experiencia.component';
+import { AgregarHabilidadesComponent } from './portfolio/habilidades/agregar-habilidades/agregar-habilidades.component';
+import { EditarHabilidadesComponent } from './portfolio/habilidades/editar-habilidades/editar-habilidades.component';
+import { AgregarProyectoComponent } from './portfolio/proyectos/agregar-proyecto/agregar-proyecto.component';
+import { EditarProyectoComponent } from './portfolio/proyectos/editar-proyecto/editar-proyecto.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +52,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HabilidadesComponent,
     ProyectosComponent,
     FooterComponent,
+    EditarPerfilUsuarioComponent,
+    AgregarEducacionComponent,
+    EditarEducacionComponent,
+    AgregarExperienciaComponent,
+    EditarExperienciaComponent,
+    AgregarHabilidadesComponent,
+    EditarHabilidadesComponent,
+    AgregarProyectoComponent,
+    EditarProyectoComponent,
     
   ],
   imports: [
