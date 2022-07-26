@@ -1,9 +1,7 @@
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-
 
 import { AppComponent } from './app.component';
 
@@ -11,7 +9,6 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { HomeComponent } from './home/home/home.component';
 import { LoginComponent } from './auth/login/login.component';
 import { interceptorProvider } from './services/producto-interceptor.service';
 import { UserComponent } from './users/user/user.component';
@@ -39,7 +36,6 @@ import { EditarProyectoComponent } from './portfolio/proyectos/editar-proyecto/e
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     LoginComponent,
     UserComponent,
     AdminComponent,
@@ -61,17 +57,15 @@ import { EditarProyectoComponent } from './portfolio/proyectos/editar-proyecto/e
     EditarHabilidadesComponent,
     AgregarProyectoComponent,
     EditarProyectoComponent,
-    
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    BrowserAnimationsModule
-    
+    BrowserAnimationsModule,
   ],
   providers: [interceptorProvider],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
