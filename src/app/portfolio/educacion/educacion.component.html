@@ -1,14 +1,15 @@
 
-<div class="row container-fluid" id="educacion">
+<div class="row container-fluid mat-typography" id="educacion">
     <div class="col-md-12">
       <hr />
-      <h3 *ngIf="!authority">Mi Educación</h3>
+      <h2 class="mat-h2" *ngIf="!authority">Mi Educación</h2>
   
       <div *ngIf="authority === 'admin'">
         <div class="container-fluid py-2 row">
           <span class="col-md-2"><h3>Mi Educación</h3></span>
+
           <span class="col-md-2">
-            <a routerLink=""><i class="fa-solid fa-plus"></i></a>
+            <a (click)="openAddFormModal()"><i class="fa-solid fa-plus"></i></a>
           </span>
         </div>
       </div>
@@ -23,10 +24,10 @@
             />
           </div>
           <div class="col-md-9">
-            <h4>{{ elemento.curso }}</h4>
+            <h3 class="mat-h2">{{ elemento.curso }}</h3>
             <div *ngIf="authority === 'admin'" class="float-right">
-              <i class="mx-2 fa-solid fa-pen-to-square"></i>
-              <i class="fa-solid fa-trash-can"></i>
+              <a (click)="openEditFormModal(elemento.id)" ><i class="mx-2 fa-solid fa-pen-to-square"></i></a>
+              <a  (click)="borrar(elemento.id)" ><i class="fa-solid fa-trash-can"></i></a>
             </div>
             <p>{{ elemento.institucion }}</p>
             <p>{{ elemento.descripcion }}</p>

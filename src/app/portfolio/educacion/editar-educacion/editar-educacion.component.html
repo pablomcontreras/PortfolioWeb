@@ -1,1 +1,65 @@
-<p>editar-educacion works!</p>
+<div class="modal-header ">
+    <h2  class="mt-h2 modal-title">Editar Educación</h2>
+    <button type="button" class="btn-close" color="" aria-label="Cerrar"
+     (click)="activeModal.dismiss('Cross click')">
+    </button>
+  </div>
+  
+  <form [formGroup]="myForm2" (ngSubmit)="submitEditForm()">
+    <div class="modal-boy">
+      <div class="container">
+  
+  
+        <div class="form-group">
+          <label for="curso">Curso</label>
+          <input type="text" 
+            class="form-control"
+            formControlName="curso" 
+            value="prueba valor defecto"/>
+        </div>
+        
+        <div class="form-group">
+          <label for="institucion">Institucion</label>
+          <input type="text" 
+            class="form-control"
+            formControlName="institucion" />
+        </div>
+  
+        <div class="form-group">
+          <label for="imgUrl">URL de la imagen</label>
+          <input type="text" 
+            class="form-control"
+            formControlName="imgUrl" />
+        </div>
+  
+        <div class="form-group">
+          <label for="fechaDesde">Fecha desde</label>
+          <input type="text" 
+            class="form-control"
+            formControlName="fechaDesde" />
+        </div>
+  
+        <div class="form-group">
+          <label for="fechaHasta">Fecha hasta</label>
+          <input type="text" 
+            class="form-control"
+            formControlName="fechaHasta" />
+        </div>
+  
+  
+  
+        <div class="form-group">
+          <label for="descripcion">descripcion</label>
+          <input type="text" 
+            class="form-control"
+            formControlName="descripcion" />
+        </div>
+  
+  
+    <div class="modal-footer">
+      <button class="btn btn-success"
+        [disabled]="!myForm2.valid">
+        Agregar
+      </button>
+    </div>
+  

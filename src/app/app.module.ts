@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 // módulos para el cliente http y los formularios
 
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './auth/login/login.component';
 import { interceptorProvider } from './services/producto-interceptor.service';
 import { UserComponent } from './users/user/user.component';
@@ -32,6 +32,9 @@ import { AgregarHabilidadesComponent } from './portfolio/habilidades/agregar-hab
 import { EditarHabilidadesComponent } from './portfolio/habilidades/editar-habilidades/editar-habilidades.component';
 import { AgregarProyectoComponent } from './portfolio/proyectos/agregar-proyecto/agregar-proyecto.component';
 import { EditarProyectoComponent } from './portfolio/proyectos/editar-proyecto/editar-proyecto.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 
 @NgModule({
   declarations: [
@@ -57,6 +60,7 @@ import { EditarProyectoComponent } from './portfolio/proyectos/editar-proyecto/e
     EditarHabilidadesComponent,
     AgregarProyectoComponent,
     EditarProyectoComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -64,8 +68,14 @@ import { EditarProyectoComponent } from './portfolio/proyectos/editar-proyecto/e
     FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    NgbModule,
+    BrowserModule,
+    ReactiveFormsModule
   ],
   providers: [interceptorProvider],
   bootstrap: [AppComponent],
+  entryComponents: [
+    EditarEducacionComponent
+  ]
 })
 export class AppModule {}

@@ -11,7 +11,8 @@ export class AppComponent implements OnInit {
   isLogin = false;
   roles!: string[];
   authority!: string;
-  constructor(private tokenService: TokenService, private router: Router) { }
+  constructor(private tokenService: TokenService, private router: Router,   
+    ) { }
 
   ngOnInit() {
     if (this.tokenService.getToken()) {
@@ -29,6 +30,7 @@ export class AppComponent implements OnInit {
     }
   }
 
+
   logOut(): void {
     this.tokenService.logOut();
     this.isLogin = false;
@@ -36,3 +38,4 @@ export class AppComponent implements OnInit {
     this.router.navigate(['portfolio']);
 window.location.reload();  }
 }
+
