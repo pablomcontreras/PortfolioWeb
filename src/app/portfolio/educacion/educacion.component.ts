@@ -18,10 +18,9 @@ export class EducacionComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.datosEducacion.lista().subscribe((data) => {
-      this.miEducacion = data;
-    });
-  }
+
+    this.cargarLista();
+}
 
   openAddFormModal() {
     const modalRef = this.modalService.open(AgregarEducacionComponent);
@@ -29,7 +28,6 @@ export class EducacionComponent implements OnInit {
     modalRef.result.then((result) => {
       console.log(result);
     }).catch((error) => {
-      console.log(error);
     });
   }
 
@@ -40,7 +38,6 @@ export class EducacionComponent implements OnInit {
     modalRef.result.then((result) => {
       console.log(result);
     }).catch((error) => {
-      console.log(error);
     });
   }
 
@@ -48,8 +45,15 @@ export class EducacionComponent implements OnInit {
   borrar(id: number): void {
     if (confirm('¿Estás seguro?')) {
       this.datosEducacion.borrar(id).subscribe();
-window.location.reload();
+this.cargarLista();
 
     }}
+
+    cargarLista(){
+      this.datosEducacion.lista().subscribe((data) => {
+        this.miEducacion = data;
+      });
+    }
+    
 
 }

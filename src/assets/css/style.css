@@ -1,11 +1,5 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-.modal-backdrop
-{
-    opacity:0.5 !important;
-    background-color: rgba(0,0,0,0.7) !important;
-
-}
 html{
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
@@ -66,9 +60,7 @@ body {
   margin-top: 2em;
   margin-bottom: 2em;
 }
-.modal-backdrop {
-  display: none;    
-}
+
 #footer{
   background-color: #343a40;
   padding-top: 2rem;
@@ -82,7 +74,6 @@ body {
   width: 140px; 
   height: 140px;
   object-fit: cover
-/* CSS de barras de progreso circular */
 }
 
 

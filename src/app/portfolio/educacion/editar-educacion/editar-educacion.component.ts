@@ -7,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { EducacionService } from 'src/app/services/educacion.service';
+import { EducacionComponent } from '../educacion.component';
 
 
 @Component({
@@ -33,7 +34,7 @@ export class EditarEducacionComponent implements OnInit {
   constructor(
     public activeModal: NgbActiveModal,
     private formBuilder: FormBuilder,
-    private miEducacion: EducacionService
+    private miEducacion: EducacionService,
   ) {
     this.createForm();
   }
@@ -50,8 +51,7 @@ export class EditarEducacionComponent implements OnInit {
   submitEditForm() {
     this.activeModal.close(this.myForm2.value);
     this.miEducacion.editar(this.myForm2.value, this.id).subscribe();
-    window.location.reload();
-  }
+window.location.reload()  }
 
   closeModal() {
     this.activeModal.close();
