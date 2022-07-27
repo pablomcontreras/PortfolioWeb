@@ -5,7 +5,7 @@
   </button>
 </div>
 
-<form [formGroup]="myForm" (ngSubmit)="submitForm()">
+<form [formGroup]="crearEducacionForm" (ngSubmit)="submitForm()">
   <div class="modal-boy">
     <div class="container">
 
@@ -57,7 +57,7 @@
 
   <div class="modal-footer">
     <button class="btn btn-success"
-      [disabled]="!myForm.valid">
+      [disabled]="!crearEducacionForm.valid">
       Agregar
     </button>
   </div>

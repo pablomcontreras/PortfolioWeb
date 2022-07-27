@@ -1,39 +1,57 @@
-
-<div class="row container-fluid mat-typography" id="educacion">
-    <div class="col-md-12">
-      <hr />
-      <h2 class="mat-h2" *ngIf="!authority">Mi Educación</h2>
+<div class=" container-fluid mat-typography" id="educacion">
+  <div class="">
+    <hr />
   
+      <div class="col-md-3" *ngIf="!authority">
+        <h1 class="mat-h1">Mi Educación</h1>
+     </div>
+
       <div *ngIf="authority === 'admin'">
-        <div class="container-fluid py-2 row">
-          <span class="col-md-2"><h3>Mi Educación</h3></span>
-
-          <span class="col-md-2">
-            <a (click)="openAddFormModal()"><i class="fa-solid fa-plus"></i></a>
-          </span>
+       <div class="row">
+        <div class="col-md-3 float-start">
+          <h1 class="mat-h2 ">Mi Educación</h1>
         </div>
+
+        <div class="col-md-9 align-items-center">
+          <a class="btn btn-info float-end" (click)="openAddFormModal()"><i class="fa-solid fa-plus" style="color:white ;"></i></a>
+        </div>
+  
       </div>
-  
-      <ul>
-        <li class="row tarjeta" *ngFor="let elemento of miEducacion">
-          <div class="col-md-3">
-            <img
-              class="logolateral"
-              [alt]="elemento.curso"
-              [src]="elemento.imgUrl"
-            />
-          </div>
-          <div class="col-md-9">
-            <h3 class="mat-h2">{{ elemento.curso }}</h3>
-            <div *ngIf="authority === 'admin'" class="float-right">
-              <a (click)="openEditFormModal(elemento.id)" ><i class="mx-2 fa-solid fa-pen-to-square"></i></a>
-              <a  (click)="borrar(elemento.id)" ><i class="fa-solid fa-trash-can"></i></a>
+
+      </div>
+   
+     
+    <ul>
+      <li class="row tarjeta py-3 my-4" *ngFor="let elemento of miEducacion">
+        <div class="col-md-2">
+          <img
+            class="logolateral"
+            [alt]="elemento.curso"
+            [src]="elemento.imgUrl"
+          />
+        </div>
+        <div class="col-md-10">
+          <div class="row">
+            <div class="col-md-6">
+              <h3 class="mat-h2">{{ elemento.curso }}</h3>
             </div>
-            <p>{{ elemento.institucion }}</p>
-            <p>{{ elemento.descripcion }}</p>
+            <div class="col-md-6">
+              <div *ngIf="authority === 'admin'" class="float-right">
+                <a (click)="openEditFormModal(elemento.id)">
+                  <i class=" btn btn-success mx-2 fa-solid fa-pen-to-square"></i>
+                </a>
+                <a (click)="borrar(elemento.id)">
+                  <i class="btn btn-danger fa-solid fa-trash-can"></i>
+                </a>
+              </div>
+            </div>
           </div>
-        </li>
-      </ul>
-    </div>
-  </div>
+
+          <p>{{ elemento.institucion }}</p>
+          <p>{{ elemento.descripcion }}</p>
+        </div>
+      </li>
+    </ul>
   
+  </div>
+</div>

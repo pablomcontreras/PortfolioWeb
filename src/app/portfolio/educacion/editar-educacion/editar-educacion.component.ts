@@ -7,7 +7,6 @@ import {
   Validators,
 } from '@angular/forms';
 import { EducacionService } from 'src/app/services/educacion.service';
-import { EducacionComponent } from '../educacion.component';
 
 
 @Component({
@@ -17,11 +16,11 @@ import { EducacionComponent } from '../educacion.component';
 })
 export class EditarEducacionComponent implements OnInit {
   @Input() id!: number;
-  myForm2!: FormGroup;
+  editarEducacionForm!: FormGroup;
   datosActual!: any;
 
   private createForm() {
-    this.myForm2 = this.formBuilder.group({
+    this.editarEducacionForm = this.formBuilder.group({
       curso: '',
       institucion: '',
       imgUrl: '',
@@ -49,8 +48,8 @@ export class EditarEducacionComponent implements OnInit {
   }
 
   submitEditForm() {
-    this.activeModal.close(this.myForm2.value);
-    this.miEducacion.editar(this.myForm2.value, this.id).subscribe();
+    this.activeModal.close(this.editarEducacionForm.value);
+    this.miEducacion.editar(this.editarEducacionForm.value, this.id).subscribe();
 window.location.reload()  }
 
   closeModal() {
@@ -58,7 +57,7 @@ window.location.reload()  }
   }
 
   actualizarForm() {
-    this.myForm2.setValue({
+    this.editarEducacionForm.setValue({
       curso: this.datosActual.curso,
       institucion: this.datosActual.institucion,
       imgUrl: this.datosActual.imgUrl,

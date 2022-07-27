@@ -5,7 +5,7 @@
     </button>
   </div>
   
-  <form [formGroup]="myForm2" (ngSubmit)="submitEditForm()">
+  <form [formGroup]="editarEducacionForm" (ngSubmit)="submitEditForm()">
     <div class="modal-boy">
       <div class="container">
   
@@ -57,9 +57,9 @@
   
   
     <div class="modal-footer">
-      <button class="btn btn-success"
-        [disabled]="!myForm2.valid">
-        Agregar
+      <button class="btn btn-secondary"
+        [disabled]="!editarEducacionForm.valid">
+        Guardar Cambios
       </button>
     </div>
   
