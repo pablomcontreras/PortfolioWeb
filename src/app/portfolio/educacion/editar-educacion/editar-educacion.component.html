@@ -1,5 +1,7 @@
-<div class="modal-header ">
-    <h2  class="mt-h2 modal-title">Editar Educación</h2>
+
+
+<div class="modal-header" style="background-color:#198754;">
+    <h2  class="mt-2 modal-title">Editar Educación</h2>
     <button type="button" class="btn-close" color="" aria-label="Cerrar"
      (click)="activeModal.dismiss('Cross click')">
     </button>
@@ -10,12 +12,12 @@
       <div class="container">
   
   
-        <div class="form-group">
+        <div class="form-group mt-2">
           <label for="curso">Curso</label>
           <input type="text" 
             class="form-control"
             formControlName="curso" 
-            value="prueba valor defecto"/>
+            />
         </div>
         
         <div class="form-group">
@@ -29,9 +31,19 @@
           <label for="imgUrl">URL de la imagen</label>
           <input type="text" 
             class="form-control"
-            formControlName="imgUrl" />
+            formControlName="imgUrl"
+             name="imgUrl"
+            />
         </div>
-  
+        <div class="form-group">
+        <label >Vista Previa:</label><br />
+        <div class="text-center">
+        <img id="image-preview" 
+        src="{{imgPreview}}"
+        class="logolateral img-fluid " alt="imgPreview">
+      </div>
+      </div>
+        
         <div class="form-group">
           <label for="fechaDesde">Fecha desde</label>
           <input type="text" 

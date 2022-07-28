@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { data } from 'autoprefixer';
 import { EducacionService } from 'src/app/services/educacion.service';
 import { AgregarEducacionComponent } from './agregar-educacion/agregar-educacion.component';
 import { EditarEducacionComponent } from './editar-educacion/editar-educacion.component';
@@ -10,7 +11,7 @@ import { EditarEducacionComponent } from './editar-educacion/editar-educacion.co
   styleUrls: ['./educacion.component.css'],
 })
 export class EducacionComponent implements OnInit {
-  constructor(private datosEducacion: EducacionService, private modalService: NgbModal) {}
+  constructor(private datosEducacion: EducacionService, private modalService: NgbModal) { this.cargarLista();}
 
   public miEducacion: any;
 
@@ -19,7 +20,7 @@ export class EducacionComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.cargarLista();
+   
 }
 
   openAddFormModal() {
@@ -27,6 +28,7 @@ export class EducacionComponent implements OnInit {
     
     modalRef.result.then((result) => {
       console.log(result);
+      this.cargarLista();
     }).catch((error) => {
     });
   }
@@ -34,9 +36,11 @@ export class EducacionComponent implements OnInit {
   openEditFormModal(id: number) {
     const modalRef = this.modalService.open(EditarEducacionComponent);
     modalRef.componentInstance.id = id; 
+
     
     modalRef.result.then((result) => {
       console.log(result);
+      this.cargarLista();
     }).catch((error) => {
     });
   }
@@ -44,8 +48,10 @@ export class EducacionComponent implements OnInit {
 
   borrar(id: number): void {
     if (confirm('¿Estás seguro?')) {
-      this.datosEducacion.borrar(id).subscribe();
-this.cargarLista();
+      this.datosEducacion.borrar(id).subscribe(data => {
+        this.cargarLista();
+      });
+      
 
     }}
 

@@ -1,7 +1,8 @@
-import { Component, OnInit , Input} from '@angular/core';
+import { Component, OnInit , Input, Output} from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { EducacionService } from 'src/app/services/educacion.service';
+import { EducacionComponent } from '../educacion.component';
 
 
 @Component({
@@ -15,7 +16,9 @@ export class AgregarEducacionComponent implements OnInit {
   crearEducacionForm!: FormGroup;
 
 
-  constructor( public activeModal: NgbActiveModal,    private formBuilder: FormBuilder, private miEducacion: EducacionService
+  constructor( public activeModal: NgbActiveModal,  
+              private formBuilder: FormBuilder, 
+              private miEducacion: EducacionService,
     )
      {     this.createForm();
     }
@@ -33,8 +36,8 @@ export class AgregarEducacionComponent implements OnInit {
      submitForm() {
       this.activeModal.close(this.crearEducacionForm.value);
       this.miEducacion.crear(this.crearEducacionForm.value).subscribe();
-      console.log("el modal mando: " , this.crearEducacionForm.value);
-      window.location.replace("./#educacion");
+      
+      
 
     }
   ngOnInit(): void {
