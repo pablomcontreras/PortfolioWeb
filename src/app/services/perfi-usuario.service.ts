@@ -27,7 +27,7 @@ export class PerfilUsuarioService {
   }
 
   public editar(perfilUsuario: PerfilUsuario, id: number): Observable<any> {
-    return this.httpClient.put<any>(this.baseURL + `/editor/editar/perfilusuario/${id}`, perfilUsuario, cabecera);
+    return this.httpClient.put<any>(this.baseURL + `editor/perfilusuario/${id}`, perfilUsuario, cabecera);
   }
 
   public borrar(id: number): Observable<any> {

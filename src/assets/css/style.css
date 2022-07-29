@@ -58,6 +58,11 @@ body {
     margin-bottom: -100px;
 
 }
+#edit-profpic{
+max-width: 200px;
+border-radius: 50%;
+}
+
 
 #areaperfil{
     display: block;
