@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import {
@@ -9,6 +9,7 @@ import {
 } from '@angular/forms';
 import { EducacionService } from 'src/app/services/educacion.service';
 import { EducacionComponent } from '../educacion.component';
+import { outputAst } from '@angular/compiler';
 
 
 @Component({
@@ -19,6 +20,7 @@ import { EducacionComponent } from '../educacion.component';
 export class EditarEducacionComponent implements OnInit {
   @Input() id!: number;
   @Input() cargarLista! : any;
+  @Input() fromParent! : any;
   editarEducacionForm!: FormGroup;
   datosActual!: any;
   imgPreview!:any;
@@ -44,11 +46,14 @@ export class EditarEducacionComponent implements OnInit {
 
   ngOnInit(): void {
 
+//  Levanto los datos del form clickeado:
 
     this.miEducacion.detalle(this.id).subscribe((data) => {
       this.datosActual = data;
+
       //una vez que se obtuvieron los datos del elemento seleccionado, los cargo en el formulario:
-      this.actualizarForm();
+
+this.actualizarForm();
     });
 
     this.editarEducacionForm.valueChanges.subscribe(selectedValue  => {
@@ -60,9 +65,9 @@ export class EditarEducacionComponent implements OnInit {
   submitEditForm() {
 
     this.activeModal.close(this.editarEducacionForm.value);
-    this.miEducacion.editar(this.editarEducacionForm.value, this.id).subscribe(data => {
-//aca hay que recargar la lista
-  });
+//     this.miEducacion.editar(this.editarEducacionForm.value, this.id).subscribe(data => {
+// //aca hay que recargar la lista
+//   });
  }
 
   closeModal() {
@@ -83,8 +88,7 @@ export class EditarEducacionComponent implements OnInit {
 
 actualizarPreview(){
   this.editarEducacionForm.valueChanges.subscribe(selectedValue  => {
-    console.log('form value changed')
-    console.log(selectedValue)
+
   })
 }
 

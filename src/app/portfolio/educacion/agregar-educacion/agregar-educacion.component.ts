@@ -1,8 +1,6 @@
 import { Component, OnInit , Input, Output} from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { EducacionService } from 'src/app/services/educacion.service';
-import { EducacionComponent } from '../educacion.component';
 
 
 @Component({
@@ -14,11 +12,11 @@ export class AgregarEducacionComponent implements OnInit {
   
   @Input() id!: number;
   crearEducacionForm!: FormGroup;
+  imgPreview!:any;
 
 
   constructor( public activeModal: NgbActiveModal,  
               private formBuilder: FormBuilder, 
-              private miEducacion: EducacionService,
     )
      {     this.createForm();
     }
@@ -35,12 +33,13 @@ export class AgregarEducacionComponent implements OnInit {
     }
      submitForm() {
       this.activeModal.close(this.crearEducacionForm.value);
-      this.miEducacion.crear(this.crearEducacionForm.value).subscribe();
-      
-      
-
+    
     }
   ngOnInit(): void {
+
+    this.crearEducacionForm.valueChanges.subscribe(selectedValue  => {
+      this.imgPreview = selectedValue.imgUrl;
+    })
   }
   closeModal() {
     this.activeModal.close('Modal Closed');

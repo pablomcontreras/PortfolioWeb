@@ -1,4 +1,4 @@
-<div class="modal-header ">
+<div class="modal-header" style="background-color:#0dcaf0">
   <h2  class="mt-h2 modal-title">Agregar Educación</h2>
   <button type="button" class="btn-close" color="" aria-label="Cerrar"
    (click)="activeModal.dismiss('Cross click')">
@@ -29,6 +29,15 @@
         <input type="text" 
           class="form-control"
           formControlName="imgUrl" />
+      </div>
+
+      <div class="form-group">
+        <label >Vista Previa:</label><br />
+        <div class="text-center">
+        <img id="image-preview" 
+        src="{{imgPreview}}"
+        class="logolateral img-fluid " >
+      </div>
       </div>
 
       <div class="form-group">
