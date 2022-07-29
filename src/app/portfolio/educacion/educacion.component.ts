@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { data } from 'autoprefixer';
 import { EducacionService } from 'src/app/services/educacion.service';
 import { AgregarEducacionComponent } from './agregar-educacion/agregar-educacion.component';
 import { EditarEducacionComponent } from './editar-educacion/editar-educacion.component';

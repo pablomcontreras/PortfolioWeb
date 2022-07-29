@@ -2,14 +2,14 @@
   <div class="">
     <hr />
   
-      <div class="col-md-3" *ngIf="!authority">
-        <h1 class="mat-h1">Mi Educación</h1>
+      <div class="row" *ngIf="!authority">
+        <h2 class="mat-h2 float-start">Mi Educación</h2>
      </div>
 
       <div *ngIf="authority === 'admin'">
        <div class="row">
-        <div class="col-md-3 float-start">
-          <h1 class="mat-h2 ">Mi Educación</h1>
+        <div class="col-md-3 ">
+          <h1 class="mat-h1 float-start">Mi Educación</h1>
         </div>
 
         <div class="col-md-9 align-items-center" style="padding-right: 2em ;">
@@ -31,11 +31,26 @@
           />
         </div>
         <div class="col-md-10">
-          <div class="row">
+          <div class="row" id="tituloTarjeta">
             <div class="col-md-6">
-              <h3 class="mat-h2">{{ elemento.curso }}</h3>
+              <h3 class="mat-h2 fw-bold">{{ elemento.curso }}</h3>
             </div>
-            <div class="col-md-6">
+
+   
+
+            <div *ngIf="!authority" class="col-md-6 float-right">
+            <p class="float-right" id="fechas">{{elemento.fechaDesde}} - {{elemento.fechaHasta}}</p>
+          </div>
+           
+
+            <div class="col-md-3">
+              <div *ngIf="authority === 'admin'" class="float-right">
+            <p id="fechas">{{elemento.fechaDesde}} - {{elemento.fechaHasta}}</p>
+              </div>
+            </div>
+
+
+            <div class="col-md-3">
               <div *ngIf="authority === 'admin'" class="float-right">
                 <a (click)="openEditFormModal(elemento.id)">
                   <i class=" btn btn-success mx-2 fa-solid fa-pen-to-square"></i>
@@ -47,7 +62,7 @@
             </div>
           </div>
 
-          <p>{{ elemento.institucion }}</p>
+          <h3 class="mat-h3 ">{{ elemento.institucion }}</h3>
           <p>{{ elemento.descripcion }}</p>
         </div>
       </li>

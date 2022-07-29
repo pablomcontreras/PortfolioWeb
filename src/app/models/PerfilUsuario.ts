@@ -5,6 +5,7 @@ export class PerfilUsuario {
     cargo!:string;
     intro!:string;
     imgUrl!:string;
+    portadaUrl!:string;
 
 
 }

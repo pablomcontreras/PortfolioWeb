@@ -2,7 +2,7 @@
     <div class="row" id="inicio">
       <div class="col-md-12">
         <div class="row">
-          <div class="col-md-12" id="imgcover"></div>
+          <div class="col-md-12" id="imgcover" ></div>
         </div>
         <div class="row">
           <div class="col-md-3" id="areaperfil">
@@ -13,9 +13,6 @@
               id="profpic"
             />
   
-            <div *ngIf="authority === 'admin'" class="float-right">
-              <i class="mx-2 fa-solid fa-pen-to-square"></i>
-            </div>
   
             <h1  class="mat-h1">{{ miPerfilUsuario?.nombre }}</h1>
   
@@ -28,9 +25,7 @@
             <div class="page-header py-1">
               <h1>Hola! Bienvenid@ a mi portfolio web!</h1>
             </div>
-            <div *ngIf="authority === 'admin'" class="float-right">
-              <i class="mx-2 fa-solid fa-pen-to-square"></i>
-            </div>
+       
             <p class="text-muted text-justify" style="line-height: 1.5em;">
               {{ miPerfilUsuario?.intro }}
             </p>

@@ -17,6 +17,7 @@ export class PerfilUsuarioComponent implements OnInit {
     this.datosPerfilUsuario.lista().subscribe((data) => {
       this.miPerfilUsuario = data[0];
       console.log('this.miPerfilUsuario tiene:', this.miPerfilUsuario);
-    });
+     
+    })
   }
 }

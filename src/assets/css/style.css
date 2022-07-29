@@ -1,12 +1,36 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+
+@media only screen and (max-width: 576px) {
+  .col-md-2{
+    text-align: center;
+    
+    }
+  .logolateral{
+    padding-bottom: 1rem;;
+  }
+
+  p{
+    text-align: justify;
+  }
+
+  #tituloTarjeta{
+    text-align: center;
+  }
+
+  #fechas{
+    float:none !important;
+  }
+}
+
+
 html{
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
 }
 
 #imgcover{
-    background-image: url(/assets/img/cover.jpg);
+    background-image: url(/assets/img/cover.jpg); 
     background-size: cover;
     min-height: 350px;
     overflow: hidden;
@@ -44,6 +68,13 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+#fechas{
+
+  font-weight: lighter;
+  color: #6c757d;
+
+
 }
 .col-md-3{
   text-align: center;
