@@ -9,7 +9,7 @@ import {
 } from '@angular/forms';
 import { EducacionService } from 'src/app/services/educacion.service';
 import { EducacionComponent } from '../educacion.component';
-import { outputAst } from '@angular/compiler';
+
 
 
 @Component({

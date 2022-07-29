@@ -14,14 +14,16 @@ export class EducacionComponent implements OnInit {
     private datosEducacion: EducacionService,
     private modalService: NgbModal
   ) {
-    this.cargarLista();
+   
   }
 
   public miEducacion: any;
 
   @Input() authority!: string;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.cargarLista();
+  }
 
   openAddFormModal() {
     const modalRef = this.modalService.open(AgregarEducacionComponent);

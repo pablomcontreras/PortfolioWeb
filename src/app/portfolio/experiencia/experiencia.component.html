@@ -1,32 +1,72 @@
-<div class="row container-fluid" id="experiencia">
-    <div class="col-md-12">
-      <hr />
-      <h3 *ngIf="!authority">Mi experiencia</h3>
+<div class=" container-fluid mat-typography" id="educacion">
+  <div class="">
+    <hr />
   
+      <div class="row" *ngIf="!authority">
+        <h2 class="mat-h2 float-start">Mi Experiencia</h2>
+     </div>
+
       <div *ngIf="authority === 'admin'">
-        <div class="container-fluid py-2 row">
-          <span class="col-md-2"><h3>Mi Experiencia</h3></span>
-          <span class="col-md-2">
-            <button type="button" class="btn btn-dark" ><i class="fa-solid fa-plus"></i></button>
-              
-          </span>
+       <div class="row">
+        <div class="col-md-3 ">
+          <h1 class="mat-h1 float-start">Mi Experiencia</h1>
         </div>
-      </div>
-      <ul>
-        <li class="row tarjeta" *ngFor="let elemento of miExperiencia">
-          <div class="col-md-3">
-            <img class="logolateral" alt="Bootstrap Image Preview " [src]="elemento.imgUrl" />
-          </div>
-          <div class="col-md-9">
-            <h3>{{ elemento?.cargo }}</h3>
-            <div *ngIf="authority === 'admin'" class="float-right">
-              <i class="mx-2 fa-solid fa-pen-to-square"></i>
-              <a  (click)="borrar(elemento.id)" ><i class="fa-solid fa-trash-can"></i></a>
-            </div>
-            <p>{{ elemento?.descripcion }}</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
+
+        <div class="col-md-9 align-items-center" style="padding-right: 2em ;">
+          <a class="btn btn-info float-end" (click)="openAddFormModal()"><i class="fa-solid fa-plus" style="color:white ;"></i></a>
+        </div>
   
+      </div>
+
+      </div>
+
+     
+    <ul>
+      <li class="row tarjeta py-3 my-4" *ngFor="let elemento of miExperiencia">
+        <div class="col-md-2">
+          <img
+            class="logolateral"
+            [alt]="elemento.empresa"
+            [src]="elemento.imgUrl"
+          />
+        </div>
+        <div class="col-md-10">
+          <div class="row" id="tituloTarjeta">
+            <div class="col-md-6">
+              <h3 class="mat-h2 fw-bold">{{ elemento.cargo }}</h3>
+            </div>
+
+   
+
+            <div *ngIf="!authority" class="col-md-6 float-right">
+            <p class="float-right" id="fechas">{{elemento.fechaDesde}} - {{elemento.fechaHasta}}</p>
+          </div>
+           
+
+            <div class="col-md-3">
+              <div *ngIf="authority === 'admin'" class="float-right">
+            <p id="fechas">{{elemento.fechaDesde}} - {{elemento.fechaHasta}}</p>
+              </div>
+            </div>
+
+
+            <div class="col-md-3">
+              <div *ngIf="authority === 'admin'" class="float-right">
+                <a (click)="openEditFormModal(elemento.id)">
+                  <i class=" btn btn-success mx-2 fa-solid fa-pen-to-square"></i>
+                </a>
+                <a (click)="borrar(elemento.id)">
+                  <i class="btn btn-danger fa-solid fa-trash-can"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="mat-h3 ">{{ elemento.empresa }}</h3>
+          <p>{{ elemento.descripcion }}</p>
+        </div>
+      </li>
+    </ul>
+  
+  </div>
+</div>
