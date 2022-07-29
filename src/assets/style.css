@@ -1,5 +1,7 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+
+
 html{
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;

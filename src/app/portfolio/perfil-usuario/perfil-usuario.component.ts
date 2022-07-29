@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PerfilUsuarioService } from 'src/app/services/perfi-usuario.service';
-
+import { EditarPerfilUsuarioComponent } from './editar-perfil-usuario/editar-perfil-usuario.component';
 @Component({
   selector: 'app-perfil-usuario',
   templateUrl: './perfil-usuario.component.html',
@@ -11,13 +12,36 @@ export class PerfilUsuarioComponent implements OnInit {
 
   @Input() authority!: string;
 
-  constructor(private datosPerfilUsuario: PerfilUsuarioService) {}
+  constructor(private datosPerfilUsuario: PerfilUsuarioService,
+    private modalService: NgbModal) {}
 
   ngOnInit(): void {
+
+    this.cargarLista();
+
+    }
+  
+
+  openEditFormModal(id: number): any {
+
+    //Abro el componente modal de editar elemento, pasandole el ID.
+
+    const modalRef = this.modalService.open(EditarPerfilUsuarioComponent);
+    modalRef.componentInstance.id = id;
+
+    // una vez que se cierra el modal con los datos nuevos, se pasan aca para ejecutar la llamada a la API
+
+    modalRef.result.then((result) => {
+      this.datosPerfilUsuario.editar(result, id).subscribe((data) => {
+        this.cargarLista();
+      });
+    });
+  }
+
+  cargarLista() {
     this.datosPerfilUsuario.lista().subscribe((data) => {
       this.miPerfilUsuario = data[0];
-      console.log('this.miPerfilUsuario tiene:', this.miPerfilUsuario);
-     
-    })
+    });
   }
+
 }

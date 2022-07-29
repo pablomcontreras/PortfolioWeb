@@ -2,6 +2,11 @@
 
 
 @media only screen and (max-width: 576px) {
+
+  .mat-h1, .mat-headline, .mat-typography .mat-h1, .mat-typography .mat-headline, .mat-typography h1{
+    font: 400 22px/32px Roboto, "Helvetica Neue", sans-serif !important;
+  }
+
   .col-md-2{
     text-align: center;
     
