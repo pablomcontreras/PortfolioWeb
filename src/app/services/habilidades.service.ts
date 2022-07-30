@@ -24,14 +24,14 @@ export class HabilidadesService {
   }
 
   public crear(habilidades: Habilidades): Observable<any> {
-    return this.httpClient.post<any>(this.baseURL + '/editor/agregar/habilidades', habilidades, cabecera);
+    return this.httpClient.post<any>(this.baseURL + 'editor/habilidades', habilidades, cabecera);
   }
 
   public editar(habilidades: Habilidades, id: number): Observable<any> {
-    return this.httpClient.put<any>(this.baseURL + `/editor/editar/habilidades/${id}`, habilidades, cabecera);
+    return this.httpClient.put<any>(this.baseURL + `editor/habilidades/${id}`, habilidades, cabecera);
   }
 
   public borrar(id: number): Observable<any> {
-    return this.httpClient.delete<any>(this.baseURL + `/editor/borrar/habilidades/${id}`, cabecera);
+    return this.httpClient.delete<any>(this.baseURL + `editor/habilidades/${id}`, cabecera);
   }
 }

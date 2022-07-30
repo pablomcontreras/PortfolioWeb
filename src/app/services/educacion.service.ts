@@ -24,14 +24,14 @@ export class EducacionService {
   }
 
   public crear(educacion: Educacion): Observable<any> {
-    return this.httpClient.post<any>(this.baseURL + 'editor/agregar/educacion', educacion, cabecera);
+    return this.httpClient.post<any>(this.baseURL + 'editor/educacion', educacion, cabecera);
   }
 
   public editar(educacion: Educacion, id: number): Observable<any> {
-    return this.httpClient.put<any>(this.baseURL + `editor/editar/educacion/${id}`, educacion, cabecera);
+    return this.httpClient.put<any>(this.baseURL + `editor/educacion/${id}`, educacion, cabecera);
   }
 
   public borrar(id: number): Observable<any> {
-    return this.httpClient.delete<any>(this.baseURL + `editor/borrar/educacion/${id}`, cabecera);
+    return this.httpClient.delete<any>(this.baseURL + `editor/educacion/${id}`, cabecera);
   }
 }

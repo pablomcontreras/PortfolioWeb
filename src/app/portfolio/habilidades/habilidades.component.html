@@ -1,26 +1,39 @@
 <div class="row container-fluid" id="habilidades">
   <div class="col-md-12">
     <hr />
-    <h3 *ngIf="!authority">Mis habilidades</h3>
+    <div class="row" *ngIf="!authority">
+      <h2 class="mat-h2 float-start">Mis Habilidades</h2>
+   </div>
 
     <div *ngIf="authority === 'admin'">
-      <div class="container-fluid py-2 row">
-        <span class="col-md-2"><h3>Mis habilidades</h3></span>
-        <span class="col-md-2">
-          <a routerLink="editor"><i class="fa-solid fa-plus"></i></a>
-        </span>
+     <div class="row">
+      <div class="col-md-3 ">
+        <h1 class="mat-h1 float-start">Mis Habilidades</h1>
       </div>
+
+      <div class="col-md-9 align-items-center" style="padding-right: 2em ;">
+        <a class="btn btn-info float-end" (click)="openAddFormModal()"><i class="fa-solid fa-plus" style="color:white ;"></i></a>
+      </div>
+
+    </div>
+
     </div>
     <div class="row">
-      <div class="col-md-4" *ngFor="let elemento of miHabilidades">
+      <div class="col-md-3" *ngFor="let elemento of miHabilidades">
+
         <div *ngIf="authority === 'admin'" class="float-right">
-          <i class="mx-2 fa-solid fa-pen-to-square"></i>
-          <i class="fa-solid fa-trash-can"></i>
+          <a (click)="openEditFormModal(elemento.id)">
+            <i class=" btn btn-success mx-2 fa-solid fa-pen-to-square"></i>
+          </a>
+          <a (click)="borrar(elemento.id)">
+            <i class="btn btn-danger fa-solid fa-trash-can"></i>
+          </a>
         </div>
-        <h4>{{ elemento.titulo }}</h4>
+        
+        <h2 class="mat-h2">{{ elemento.titulo }}</h2>
         <div class="set-size charts-container d-flex justify-content-center">
-          <div class="pie-wrapper progress-45">
-            <span class="label">45<span class="smaller">%</span></span>
+          <div class="pie-wrapper progress-{{elemento.avance}}">
+            <span class="label">{{elemento.avance}}<span class="smaller">%</span></span>
             <div class="pie">
               <div class="left-side half-circle"></div>
               <div class="right-side half-circle"></div>

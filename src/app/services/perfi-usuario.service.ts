@@ -23,7 +23,7 @@ export class PerfilUsuarioService {
   }
 
   public crear(perfilUsuario: PerfilUsuario): Observable<any> {
-    return this.httpClient.post<any>(this.baseURL + '/editor/agregar/perfilusuario', perfilUsuario, cabecera);
+    return this.httpClient.post<any>(this.baseURL + 'editor/perfilusuario', perfilUsuario, cabecera);
   }
 
   public editar(perfilUsuario: PerfilUsuario, id: number): Observable<any> {
@@ -31,6 +31,6 @@ export class PerfilUsuarioService {
   }
 
   public borrar(id: number): Observable<any> {
-    return this.httpClient.delete<any>(this.baseURL + `/editor/borrar/perfilUsuario/${id}`, cabecera);
+    return this.httpClient.delete<any>(this.baseURL + `editor/perfilUsuario/${id}`, cabecera);
   }
 }

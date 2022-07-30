@@ -14,8 +14,6 @@ export class ExperienciaComponent implements OnInit {
     private modalService: NgbModal ) {}
 
   public miExperiencia: any;
-  isLogin = false;
-  roles!: string[];
   @Input() authority!: string;
 
   ngOnInit(): void {
