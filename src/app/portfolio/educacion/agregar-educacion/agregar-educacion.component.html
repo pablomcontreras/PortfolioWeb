@@ -1,77 +1,61 @@
-<div class="modal-header" style="background-color:#0dcaf0">
-  <h2  class="mt-2 mt-h2 modal-title">Agregar Educación</h2>
-  <button type="button" class="btn-close" color="" aria-label="Cerrar"
-   (click)="activeModal.dismiss('Cross click')">
-  </button>
+<div class="modal-header" style="background-color: #0dcaf0">
+  <h2 class="mt-2 mt-h2 modal-title">Agregar Educación</h2>
+  <button
+    type="button"
+    class="btn-close"
+    color=""
+    aria-label="Cerrar"
+    (click)="activeModal.dismiss('Cross click')"
+  ></button>
 </div>
-
-<div class="modal-boy">
-<form [formGroup]="crearEducacionForm" (ngSubmit)="submitForm()">
+<div class="modal-body">
+  <form [formGroup]="crearEducacionForm" (ngSubmit)="submitForm()">
     <div class="container">
-
-
       <div class="mt-2 form-group">
         <label for="curso">Curso</label>
-        <input type="text" 
-          class="form-control"
-          formControlName="curso" />
+        <input type="text" class="form-control" formControlName="curso" />
       </div>
-      
+
       <div class="form-group">
         <label for="institucion">Institucion</label>
-        <input type="text" 
-          class="form-control"
-          formControlName="institucion" />
+        <input type="text" class="form-control" formControlName="institucion" />
       </div>
 
       <div class="form-group">
         <label for="imgUrl">URL de la imagen</label>
-        <input type="text" 
-          class="form-control"
-          formControlName="imgUrl" />
+        <input type="text" class="form-control" formControlName="imgUrl" />
       </div>
 
       <div class="form-group">
-        <label >Vista Previa:</label><br />
+        <label>Vista Previa:</label><br />
         <div class="text-center">
-        <img id="image-preview" 
-        src="{{imgPreview}}"
-        class="logolateral img-fluid " >
-      </div>
+          <img
+            id="image-preview"
+            src="{{ imgPreview }}"
+            class="logolateral img-fluid"
+          />
+        </div>
       </div>
 
       <div class="form-group">
         <label for="fechaDesde">Fecha desde</label>
-        <input type="text" 
-          class="form-control"
-          formControlName="fechaDesde" />
+        <input type="text" class="form-control" formControlName="fechaDesde" />
       </div>
 
       <div class="form-group">
         <label for="fechaHasta">Fecha hasta</label>
-        <input type="text" 
-          class="form-control"
-          formControlName="fechaHasta" />
+        <input type="text" class="form-control" formControlName="fechaHasta" />
       </div>
-
-
 
       <div class="form-group">
         <label for="descripcion">Descripcion</label>
-        <input type="text" 
-          class="form-control"
-          formControlName="descripcion" />
+        <input type="text" class="form-control" formControlName="descripcion" />
       </div>
-
-
     </div>
-</form>
-  </div>
-
-
-  <div class="modal-footer">
-    <button class="btn btn-success"
-      [disabled]="!crearEducacionForm.valid">
-      Agregar
-    </button>
-  </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-success" [disabled]="!crearEducacionForm.valid">
+    Agregar
+  </button>
+</div>

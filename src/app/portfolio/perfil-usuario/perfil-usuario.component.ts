@@ -12,21 +12,22 @@ export class PerfilUsuarioComponent implements OnInit {
 
   @Input() authority!: string;
 
-  constructor(private datosPerfilUsuario: PerfilUsuarioService,
-    private modalService: NgbModal) {}
+  constructor(
+    private datosPerfilUsuario: PerfilUsuarioService,
+    private modalService: NgbModal
+  ) {}
 
   ngOnInit(): void {
-
     this.cargarLista();
-
-    }
-  
+  }
 
   openEditFormModal(id: number): any {
-
     //Abro el componente modal de editar elemento, pasandole el ID.
 
-    const modalRef = this.modalService.open(EditarPerfilUsuarioComponent, { size: 'lg', scrollable:true });
+    const modalRef = this.modalService.open(EditarPerfilUsuarioComponent, {
+      size: 'lg',
+      scrollable: true,
+    });
     modalRef.componentInstance.id = id;
 
     // una vez que se cierra el modal con los datos nuevos, se pasan aca para ejecutar la llamada a la API
@@ -43,5 +44,4 @@ export class PerfilUsuarioComponent implements OnInit {
       this.miPerfilUsuario = data[0];
     });
   }
-
 }

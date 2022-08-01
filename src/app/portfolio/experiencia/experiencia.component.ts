@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ExperienciaService } from 'src/app/services/experiencia.service'
+import { ExperienciaService } from 'src/app/services/experiencia.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AgregarExperienciaComponent } from './agregar-experiencia/agregar-experiencia.component';
 import { EditarExperienciaComponent } from './editar-experiencia/editar-experiencia.component';
@@ -10,20 +10,23 @@ import { EditarExperienciaComponent } from './editar-experiencia/editar-experien
   styleUrls: ['./experiencia.component.css'],
 })
 export class ExperienciaComponent implements OnInit {
-  constructor( private datosExperiencia: ExperienciaService,
-    private modalService: NgbModal ) {}
+  constructor(
+    private datosExperiencia: ExperienciaService,
+    private modalService: NgbModal
+  ) {}
 
   public miExperiencia: any;
   @Input() authority!: string;
 
   ngOnInit(): void {
-
     this.cargarLista();
-
   }
 
   openAddFormModal() {
-    const modalRef = this.modalService.open(AgregarExperienciaComponent, { size: 'lg', scrollable:true });
+    const modalRef = this.modalService.open(AgregarExperienciaComponent, {
+      size: 'lg',
+      scrollable: true,
+    });
 
     modalRef.result.then((result) => {
       this.datosExperiencia.crear(result).subscribe((data) => {
@@ -33,10 +36,12 @@ export class ExperienciaComponent implements OnInit {
   }
 
   openEditFormModal(id: number): any {
-
     //Abro el componente modal de editar elemento, pasandole el ID.
 
-    const modalRef = this.modalService.open(EditarExperienciaComponent, { size: 'lg', scrollable:true });
+    const modalRef = this.modalService.open(EditarExperienciaComponent, {
+      size: 'lg',
+      scrollable: true,
+    });
     modalRef.componentInstance.id = id;
 
     // una vez que se cierra el modal con los datos nuevos, se pasan aca para ejecutar la llamada a la API

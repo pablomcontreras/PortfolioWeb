@@ -8,20 +8,17 @@ import {
 } from '@angular/forms';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
 
-
-
 @Component({
   selector: 'app-editar-experiencia',
   templateUrl: './editar-experiencia.component.html',
-  styleUrls: ['./editar-experiencia.component.css']
+  styleUrls: ['./editar-experiencia.component.css'],
 })
 export class EditarExperienciaComponent implements OnInit {
-
   @Input() id!: number;
-  @Input() cargarLista! : any;
+  @Input() cargarLista!: any;
   editarExperienciaForm!: FormGroup;
   datosActual!: any;
-  imgPreview!:any;
+  imgPreview!: any;
 
   private createForm() {
     this.editarExperienciaForm = this.formBuilder.group({
@@ -33,11 +30,11 @@ export class EditarExperienciaComponent implements OnInit {
       descripcion: '',
     });
   }
-  
+
   constructor(
     public activeModal: NgbActiveModal,
     private formBuilder: FormBuilder,
-    private miExperiencia: ExperienciaService,
+    private miExperiencia: ExperienciaService
   ) {
     this.createForm();
   }
@@ -50,25 +47,23 @@ export class EditarExperienciaComponent implements OnInit {
 
       //una vez que se obtuvieron los datos del elemento seleccionado, los cargo en el formulario:
 
-this.actualizarForm();
+      this.actualizarForm();
     });
 
-    this.editarExperienciaForm.valueChanges.subscribe(selectedValue  => {
+    this.editarExperienciaForm.valueChanges.subscribe((selectedValue) => {
       this.imgPreview = selectedValue.imgUrl;
-    })
+    });
   }
 
   submitEditForm() {
-
     this.activeModal.close(this.editarExperienciaForm.value);
-//     this.miEducacion.editar(this.editarEducacionForm.value, this.id).subscribe(data => {
-// //aca hay que recargar la lista
-//   });
- }
+    //     this.miEducacion.editar(this.editarEducacionForm.value, this.id).subscribe(data => {
+    // //aca hay que recargar la lista
+    //   });
+  }
 
   closeModal() {
     this.activeModal.close();
-  
   }
 
   actualizarForm() {
@@ -82,12 +77,7 @@ this.actualizarForm();
     });
   }
 
-actualizarPreview(){
-  this.editarExperienciaForm.valueChanges.subscribe(selectedValue  => {
-
-  })
+  actualizarPreview() {
+    this.editarExperienciaForm.valueChanges.subscribe((selectedValue) => {});
+  }
 }
-
-}
-
-

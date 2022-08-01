@@ -13,9 +13,7 @@ export class EducacionComponent implements OnInit {
   constructor(
     private datosEducacion: EducacionService,
     private modalService: NgbModal
-  ) {
-   
-  }
+  ) {}
 
   public miEducacion: any;
 
@@ -26,7 +24,10 @@ export class EducacionComponent implements OnInit {
   }
 
   openAddFormModal() {
-    const modalRef = this.modalService.open(AgregarEducacionComponent);
+    const modalRef = this.modalService.open(AgregarEducacionComponent, {
+      size: 'lg',
+      scrollable: true,
+    });
 
     modalRef.result.then((result) => {
       this.datosEducacion.crear(result).subscribe((data) => {
@@ -36,10 +37,12 @@ export class EducacionComponent implements OnInit {
   }
 
   openEditFormModal(id: number): any {
-
     //Abro el componente modal de editar elemento, pasandole el ID.
 
-    const modalRef = this.modalService.open(EditarEducacionComponent,{ size: 'lg', scrollable:true });
+    const modalRef = this.modalService.open(EditarEducacionComponent, {
+      size: 'lg',
+      scrollable: true,
+    });
     modalRef.componentInstance.id = id;
 
     // una vez que se cierra el modal con los datos nuevos, se pasan aca para ejecutar la llamada a la API

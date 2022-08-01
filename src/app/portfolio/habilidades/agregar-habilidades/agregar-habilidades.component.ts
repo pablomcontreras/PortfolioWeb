@@ -47,28 +47,23 @@ export class AgregarHabilidadesComponent implements OnInit {
   }
 
   setearStep() {
- 
-    if (this.avanceTag == "85"){
-      this.avanceTag = "90";
+    if (this.avanceTag == '85') {
+      this.avanceTag = '90';
     }
 
-if( this.bandera == 1){
-  this.incremento = "15";
- if (parseInt(this.avanceTag) == 90){
-  this.bandera = 0;
- }
-} 
-if(this.bandera == 0){
-  this.incremento = "5";
-  if (parseInt(this.avanceTag) == 90){
-    this.bandera = 1;
-   }
- 
-}
-
-}
-
-  
+    if (this.bandera == 1) {
+      this.incremento = '15';
+      if (parseInt(this.avanceTag) == 90) {
+        this.bandera = 0;
+      }
+    }
+    if (this.bandera == 0) {
+      this.incremento = '5';
+      if (parseInt(this.avanceTag) == 90) {
+        this.bandera = 1;
+      }
+    }
+  }
 
   closeModal() {
     this.activeModal.close('Modal Closed');

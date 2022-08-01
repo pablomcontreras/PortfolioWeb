@@ -9,19 +9,17 @@ import {
 } from '@angular/forms';
 import { PerfilUsuarioService } from 'src/app/services/perfi-usuario.service';
 
-
 @Component({
   selector: 'app-editar-perfil-usuario',
   templateUrl: './editar-perfil-usuario.component.html',
-  styleUrls: ['./editar-perfil-usuario.component.css']
+  styleUrls: ['./editar-perfil-usuario.component.css'],
 })
 export class EditarPerfilUsuarioComponent implements OnInit {
-  
   @Input() id!: number;
-  @Input() cargarLista! : any;
+  @Input() cargarLista!: any;
   editarPerfilUsuarioForm!: FormGroup;
   datosActual!: any;
-  imgPreview!:any;
+  imgPreview!: any;
 
   private createForm() {
     this.editarPerfilUsuarioForm = this.formBuilder.group({
@@ -29,41 +27,42 @@ export class EditarPerfilUsuarioComponent implements OnInit {
       cargo: '',
       intro: '',
       imgUrl: '',
-      portadaUrl: ''
+      portadaUrl: '',
     });
   }
-  constructor(    public activeModal: NgbActiveModal,
+  constructor(
+    public activeModal: NgbActiveModal,
     private formBuilder: FormBuilder,
-    private miPerfilUsuario: PerfilUsuarioService) {     this.createForm(); }
-
-  ngOnInit(): void {
-        //  Levanto los datos del form clickeado:
-
-        this.miPerfilUsuario.detalle(this.id).subscribe((data) => {
-          this.datosActual = data;
-    
-          //una vez que se obtuvieron los datos del elemento seleccionado, los cargo en el formulario:
-    
-    this.actualizarForm();
-        });
-    
-        this.editarPerfilUsuarioForm.valueChanges.subscribe(selectedValue  => {
-          this.imgPreview = selectedValue.imgUrl;
-        })
+    private miPerfilUsuario: PerfilUsuarioService
+  ) {
+    this.createForm();
   }
 
+  ngOnInit(): void {
+    //  Levanto los datos del form clickeado:
+
+    this.miPerfilUsuario.detalle(this.id).subscribe((data) => {
+      this.datosActual = data;
+
+      //una vez que se obtuvieron los datos del elemento seleccionado, los cargo en el formulario:
+
+      this.actualizarForm();
+    });
+
+    this.editarPerfilUsuarioForm.valueChanges.subscribe((selectedValue) => {
+      this.imgPreview = selectedValue.imgUrl;
+    });
+  }
 
   submitEditForm() {
-
     this.activeModal.close(this.editarPerfilUsuarioForm.value);
-//     this.miEducacion.editar(this.editarEducacionForm.value, this.id).subscribe(data => {
-// //aca hay que recargar la lista
-//   });
- }
+    //     this.miEducacion.editar(this.editarEducacionForm.value, this.id).subscribe(data => {
+    // //aca hay que recargar la lista
+    //   });
+  }
 
   closeModal() {
     this.activeModal.close();
-  
   }
 
   actualizarForm() {
@@ -73,15 +72,10 @@ export class EditarPerfilUsuarioComponent implements OnInit {
       intro: this.datosActual.intro,
       imgUrl: this.datosActual.imgUrl,
       portadaUrl: this.datosActual.portadaUrl,
-
     });
   }
 
-actualizarPreview(){
-  this.editarPerfilUsuarioForm.valueChanges.subscribe(selectedValue  => {
-
-  })
-}
-
-
+  actualizarPreview() {
+    this.editarPerfilUsuarioForm.valueChanges.subscribe((selectedValue) => {});
+  }
 }

@@ -10,8 +10,6 @@ import {
 import { EducacionService } from 'src/app/services/educacion.service';
 import { EducacionComponent } from '../educacion.component';
 
-
-
 @Component({
   selector: 'app-editar-educacion',
   templateUrl: './editar-educacion.component.html',
@@ -19,11 +17,11 @@ import { EducacionComponent } from '../educacion.component';
 })
 export class EditarEducacionComponent implements OnInit {
   @Input() id!: number;
-  @Input() cargarLista! : any;
-  @Input() fromParent! : any;
+  @Input() cargarLista!: any;
+  @Input() fromParent!: any;
   editarEducacionForm!: FormGroup;
   datosActual!: any;
-  imgPreview!:any;
+  imgPreview!: any;
 
   private createForm() {
     this.editarEducacionForm = this.formBuilder.group({
@@ -39,40 +37,36 @@ export class EditarEducacionComponent implements OnInit {
   constructor(
     public activeModal: NgbActiveModal,
     private formBuilder: FormBuilder,
-    private miEducacion: EducacionService,
+    private miEducacion: EducacionService
   ) {
     this.createForm();
   }
 
   ngOnInit(): void {
-
-//  Levanto los datos del form clickeado:
+    //  Levanto los datos del form clickeado:
 
     this.miEducacion.detalle(this.id).subscribe((data) => {
       this.datosActual = data;
 
       //una vez que se obtuvieron los datos del elemento seleccionado, los cargo en el formulario:
 
-this.actualizarForm();
+      this.actualizarForm();
     });
 
-    this.editarEducacionForm.valueChanges.subscribe(selectedValue  => {
+    this.editarEducacionForm.valueChanges.subscribe((selectedValue) => {
       this.imgPreview = selectedValue.imgUrl;
-    })
-
+    });
   }
 
   submitEditForm() {
-
     this.activeModal.close(this.editarEducacionForm.value);
-//     this.miEducacion.editar(this.editarEducacionForm.value, this.id).subscribe(data => {
-// //aca hay que recargar la lista
-//   });
- }
+    //     this.miEducacion.editar(this.editarEducacionForm.value, this.id).subscribe(data => {
+    // //aca hay que recargar la lista
+    //   });
+  }
 
   closeModal() {
     this.activeModal.close();
-  
   }
 
   actualizarForm() {
@@ -86,11 +80,7 @@ this.actualizarForm();
     });
   }
 
-actualizarPreview(){
-  this.editarEducacionForm.valueChanges.subscribe(selectedValue  => {
-
-  })
+  actualizarPreview() {
+    this.editarEducacionForm.valueChanges.subscribe((selectedValue) => {});
+  }
 }
-
-}
-

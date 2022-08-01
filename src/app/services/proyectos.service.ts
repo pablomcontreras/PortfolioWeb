@@ -1,37 +1,54 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Proyectos } from '../models/proyectos'; 
+import { Proyectos } from '../models/proyectos';
 
-const cabecera = {headers: new HttpHeaders({'Content-TYpe': 'application/json'})};
+const cabecera = {
+  headers: new HttpHeaders({ 'Content-TYpe': 'application/json' }),
+};
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProyectosService {
-
   baseURL = 'http://localhost:8080/';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
   public lista(): Observable<Proyectos[]> {
-    return  this.httpClient.get<Proyectos[]>(this.baseURL + 'api/proyectos/', cabecera);
-
+    return this.httpClient.get<Proyectos[]>(
+      this.baseURL + 'api/proyectos/',
+      cabecera
+    );
   }
 
   public detalle(id: number): Observable<Proyectos> {
-    return this.httpClient.get<Proyectos>(this.baseURL + `api/proyectos/${id}`, cabecera);
+    return this.httpClient.get<Proyectos>(
+      this.baseURL + `api/proyectos/${id}`,
+      cabecera
+    );
   }
 
   public crear(proyectos: Proyectos): Observable<any> {
-    return this.httpClient.post<any>(this.baseURL + '/editor/agregar/proyectos', proyectos, cabecera);
+    return this.httpClient.post<any>(
+      this.baseURL + '/editor/agregar/proyectos',
+      proyectos,
+      cabecera
+    );
   }
 
   public editar(proyectos: Proyectos, id: number): Observable<any> {
-    return this.httpClient.put<any>(this.baseURL + `/editor/editar/proyectos/${id}`, proyectos, cabecera);
+    return this.httpClient.put<any>(
+      this.baseURL + `editor/proyectos/${id}`,
+      proyectos,
+      cabecera
+    );
   }
 
   public borrar(id: number): Observable<any> {
-    return this.httpClient.delete<any>(this.baseURL + `/editor/borrar/proyectos/${id}`, cabecera);
+    return this.httpClient.delete<any>(
+      this.baseURL + `editor/proyectos/${id}`,
+      cabecera
+    );
   }
 }

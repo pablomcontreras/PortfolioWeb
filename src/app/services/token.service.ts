@@ -5,13 +5,12 @@ const USERNAME_KEY = 'AuthUserName';
 const AUTHORITIES_KEY = 'AutAuthorities';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TokenService {
-
   roles: Array<string> = [];
 
-  constructor() { }
+  constructor() {}
 
   public setToken(token: string): void {
     window.sessionStorage.removeItem(TOKEN_KEY);
@@ -39,9 +38,11 @@ export class TokenService {
   public getAuthorities(): string[] {
     this.roles = [];
     if (sessionStorage.getItem(AUTHORITIES_KEY)) {
-      JSON.parse(sessionStorage.getItem(AUTHORITIES_KEY)!).forEach((authority: { authority: string; }) => {
-        this.roles.push(authority.authority);
-      });
+      JSON.parse(sessionStorage.getItem(AUTHORITIES_KEY)!).forEach(
+        (authority: { authority: string }) => {
+          this.roles.push(authority.authority);
+        }
+      );
     }
     return this.roles;
   }

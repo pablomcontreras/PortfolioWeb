@@ -1,45 +1,42 @@
 <div class="container-fluid mat-typography">
-    <div class="row" id="inicio">
-      <div class="col-md-12">
-        <div class="row">
-          <div class="col-md-12" id="imgcover" ></div>
-        </div>
-        <div class="row">
-          <div class="col-md-3" id="areaperfil">
-            <img
-              alt="Foto de perfil"
-              src="{{ miPerfilUsuario?.imgUrl }}"
-              class="img-fluid"
-              id="profpic"
-            />
-  
-  
-            <h1  class="mat-h1">{{ miPerfilUsuario?.nombre }}</h1>
-  
-            <h3 class="mat-h3">{{ miPerfilUsuario?.cargo }}</h3>
-         
-          </div>
-          <div class="col-md-9 py-3">
+  <div class="row" id="inicio">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-12" id="imgcover"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-3" id="areaperfil">
+          <img
+            alt="Foto de perfil"
+            src="{{ miPerfilUsuario?.imgUrl }}"
+            class="img-fluid"
+            id="profpic"
+          />
 
-<div class="row">
+          <h1 class="mat-h1">{{ miPerfilUsuario?.nombre }}</h1>
+
+          <h3 class="mat-h3">{{ miPerfilUsuario?.cargo }}</h3>
+        </div>
+        <div class="col-md-9 py-3">
+          <div class="row">
             <div class="col-md-8 py-1">
               <h1>Hola! Bienvenid@ a mi portfolio web!</h1>
             </div>
 
             <div *ngIf="authority === 'admin'" class="col-md-4 py-1 float-end">
               <a (click)="openEditFormModal(miPerfilUsuario.id)">
-                <i class=" float-end btn btn-success mx-2 fa-solid fa-pen-to-square"></i>
+                <i
+                  class="float-end btn btn-success mx-2 fa-solid fa-pen-to-square"
+                ></i>
               </a>
             </div>
-       
-
           </div>
 
-            <p class="text-muted text-justify" style="line-height: 1.5em;">
-              {{ miPerfilUsuario?.intro }}
-            </p>
-          </div>
+          <p class="text-muted text-justify" style="line-height: 1.5em">
+            {{ miPerfilUsuario?.intro }}
+          </p>
         </div>
       </div>
     </div>
   </div>
+</div>

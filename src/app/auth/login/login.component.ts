@@ -7,10 +7,9 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-
   form: any = {};
   usuario: LoginUsuario | undefined;
   isLogged = false;
@@ -18,7 +17,11 @@ export class LoginComponent implements OnInit {
   roles: string[] = [];
   errorMsg = '';
 
-  constructor(private authService: AuthService, private tokenService: TokenService, private router: Router) { }
+  constructor(
+    private authService: AuthService,
+    private tokenService: TokenService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     if (this.tokenService.getToken()) {
@@ -29,18 +32,22 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(): void {
-    this.usuario = new LoginUsuario(this.form.nombreUsuario, this.form.password);
+    this.usuario = new LoginUsuario(
+      this.form.nombreUsuario,
+      this.form.password
+    );
 
-    this.authService.login(this.usuario).subscribe(data => {
-      this.tokenService.setToken(data.token);
-      this.tokenService.setUserName(data.nombreUsuario);
-      this.tokenService.setAuthorities(data.authorities);
+    this.authService.login(this.usuario).subscribe(
+      (data) => {
+        this.tokenService.setToken(data.token);
+        this.tokenService.setUserName(data.nombreUsuario);
+        this.tokenService.setAuthorities(data.authorities);
 
-      this.isLogged = true;
-      this.isLoginFail = false;
-      this.roles = this.tokenService.getAuthorities();
-      window.location.replace("/portfolio");
-    },
+        this.isLogged = true;
+        this.isLoginFail = false;
+        this.roles = this.tokenService.getAuthorities();
+        window.location.replace('/portfolio');
+      },
       (err: any) => {
         this.isLogged = false;
         this.isLoginFail = true;
@@ -48,5 +55,4 @@ export class LoginComponent implements OnInit {
       }
     );
   }
-
 }

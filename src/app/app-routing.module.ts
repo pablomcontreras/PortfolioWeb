@@ -6,13 +6,13 @@ import { AdminComponent } from './users/admin/admin.component';
 import { UserComponent } from './users/user/user.component';
 import { RegistroComponent } from './users/registro/registro.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
-import { GuardService as guard} from './guards/guard.service';
+import { GuardService as guard } from './guards/guard.service';
 import { ContactoComponent } from './contacto/contacto.component';
 
 const routes: Routes = [
-  {path: '', component: PortfolioComponent},
-  {path: 'portfolio', component: PortfolioComponent},
-  {path: 'contacto', component: ContactoComponent},
+  { path: '', component: PortfolioComponent },
+  { path: 'portfolio', component: PortfolioComponent },
+  { path: 'contacto', component: ContactoComponent },
 
   // productos: utilizamos canActivate
 
@@ -24,26 +24,31 @@ const routes: Routes = [
   // canActivate: [guard], data: { expectedRol: ['admin']}},
 
   //user y admin
-  {path: 'admin', component: AdminComponent, canActivate: [guard], data: {expectedRol: ['admin']}},
-  {path: 'usuario', component: UserComponent, canActivate: [guard], data: {expectedRol: ['user']}},
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [guard],
+    data: { expectedRol: ['admin'] },
+  },
+  {
+    path: 'usuario',
+    component: UserComponent,
+    canActivate: [guard],
+    data: { expectedRol: ['user'] },
+  },
 
   // rutas a login y registro
-  {path: 'login', component: LoginComponent},
-  {path: 'registro', component: RegistroComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'registro', component: RegistroComponent },
 
-  {path: '**', redirectTo: 'portfolio', pathMatch: 'full'}
-]; 
-
-
+  { path: '**', redirectTo: 'portfolio', pathMatch: 'full' },
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes),RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})
-
-],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule {
- }
-
-
-
+export class AppRoutingModule {}

@@ -5,27 +5,31 @@ import { NuevoUsuario } from 'src/app/models/nuevo-usuario';
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css']
+  styleUrls: ['./registro.component.css'],
 })
 export class RegistroComponent implements OnInit {
-
   form: any = {};
   private usuario: any = {};
   isRegister = false;
   isRegisterFail = false;
   errorMsg = '';
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onRegister() {
-    this.usuario = new NuevoUsuario(this.form.nombre, this.form.nombreUsuario, this.form.email, this.form.password);
-    this.authService.registro(this.usuario).subscribe(data => {
-      this.isRegister = true;
-      this.isRegisterFail = false;
-    },
+    this.usuario = new NuevoUsuario(
+      this.form.nombre,
+      this.form.nombreUsuario,
+      this.form.email,
+      this.form.password
+    );
+    this.authService.registro(this.usuario).subscribe(
+      (data) => {
+        this.isRegister = true;
+        this.isRegisterFail = false;
+      },
       (error: any) => {
         console.log(error.error.mensaje);
         this.errorMsg = error.error.mensaje;
@@ -34,6 +38,4 @@ export class RegistroComponent implements OnInit {
       }
     );
   }
-
-
 }

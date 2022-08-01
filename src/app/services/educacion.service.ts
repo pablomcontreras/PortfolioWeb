@@ -3,35 +3,52 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Educacion } from '../models/educacion';
 
-const cabecera = {headers: new HttpHeaders({'Content-TYpe': 'application/json'})};
+const cabecera = {
+  headers: new HttpHeaders({ 'Content-TYpe': 'application/json' }),
+};
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EducacionService {
-
   baseURL = 'http://localhost:8080/';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
   public lista(): Observable<Educacion[]> {
-    return  this.httpClient.get<Educacion[]>(this.baseURL + 'api/educacion/', cabecera);
-
+    return this.httpClient.get<Educacion[]>(
+      this.baseURL + 'api/educacion/',
+      cabecera
+    );
   }
 
   public detalle(id: number): Observable<Educacion> {
-    return this.httpClient.get<Educacion>(this.baseURL + `api/educacion/${id}`, cabecera);
+    return this.httpClient.get<Educacion>(
+      this.baseURL + `api/educacion/${id}`,
+      cabecera
+    );
   }
 
   public crear(educacion: Educacion): Observable<any> {
-    return this.httpClient.post<any>(this.baseURL + 'editor/educacion', educacion, cabecera);
+    return this.httpClient.post<any>(
+      this.baseURL + 'editor/educacion',
+      educacion,
+      cabecera
+    );
   }
 
   public editar(educacion: Educacion, id: number): Observable<any> {
-    return this.httpClient.put<any>(this.baseURL + `editor/educacion/${id}`, educacion, cabecera);
+    return this.httpClient.put<any>(
+      this.baseURL + `editor/educacion/${id}`,
+      educacion,
+      cabecera
+    );
   }
 
   public borrar(id: number): Observable<any> {
-    return this.httpClient.delete<any>(this.baseURL + `editor/educacion/${id}`, cabecera);
+    return this.httpClient.delete<any>(
+      this.baseURL + `editor/educacion/${id}`,
+      cabecera
+    );
   }
 }

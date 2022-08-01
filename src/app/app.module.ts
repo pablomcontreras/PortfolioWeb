@@ -35,8 +35,6 @@ import { EditarProyectoComponent } from './portfolio/proyectos/editar-proyecto/e
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DetalleProyectoComponent } from './portfolio/proyectos/detalle-proyecto/detalle-proyecto.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +60,6 @@ import { DetalleProyectoComponent } from './portfolio/proyectos/detalle-proyecto
     AgregarProyectoComponent,
     EditarProyectoComponent,
     DetalleProyectoComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -72,12 +69,10 @@ import { DetalleProyectoComponent } from './portfolio/proyectos/detalle-proyecto
     BrowserAnimationsModule,
     NgbModule,
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [interceptorProvider],
   bootstrap: [AppComponent],
-  entryComponents: [
-    EditarEducacionComponent
-  ]
+  entryComponents: [EditarEducacionComponent],
 })
 export class AppModule {}

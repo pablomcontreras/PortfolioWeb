@@ -10,13 +10,14 @@ import { AgregarHabilidadesComponent } from './agregar-habilidades/agregar-habil
   styleUrls: ['./habilidades.component.css'],
 })
 export class HabilidadesComponent implements OnInit {
-  constructor(private datosHabilidades: HabilidadesService, 
+  constructor(
+    private datosHabilidades: HabilidadesService,
     private modalService: NgbModal
-    ) {}
+  ) {}
 
   public miHabilidades: any;
   @Input() authority!: string;
-  public estiloAvance! : string;
+  public estiloAvance!: string;
 
   ngOnInit(): void {
     this.cargarLista();
@@ -34,7 +35,6 @@ export class HabilidadesComponent implements OnInit {
   }
 
   openEditFormModal(id: number): any {
-
     //Abro el componente modal de editar elemento, pasandole el ID.
 
     const modalRef = this.modalService.open(EditarHabilidadesComponent);
@@ -63,31 +63,29 @@ export class HabilidadesComponent implements OnInit {
       this.miHabilidades = data;
     });
   }
-  cargarEstilo(){
-    console.log("this.avanceTag tiene:",)
-  
-    switch(this.estiloAvance){
+  cargarEstilo() {
+    console.log('this.avanceTag tiene:');
 
-      case "30": 
-      console.log("tomo 30");
-      this.estiloAvance = "progress-30";
-      break;
-      case "45": 
-      this.estiloAvance = "progress-45";
-      break;
-      case "60": 
-      this.estiloAvance = "progress-60";
-      break;
-      case "75":
-      this.estiloAvance = "progress-75";
-      break;
-      case "90": 
-      this.estiloAvance = "progress-30";
-      break;
-      default: 
-      this.estiloAvance = "progress-95";
-      break;
-      }
+    switch (this.estiloAvance) {
+      case '30':
+        console.log('tomo 30');
+        this.estiloAvance = 'progress-30';
+        break;
+      case '45':
+        this.estiloAvance = 'progress-45';
+        break;
+      case '60':
+        this.estiloAvance = 'progress-60';
+        break;
+      case '75':
+        this.estiloAvance = 'progress-75';
+        break;
+      case '90':
+        this.estiloAvance = 'progress-30';
+        break;
+      default:
+        this.estiloAvance = 'progress-95';
+        break;
     }
-
+  }
 }
