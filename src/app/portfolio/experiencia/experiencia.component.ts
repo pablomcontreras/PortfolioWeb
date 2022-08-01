@@ -23,7 +23,7 @@ export class ExperienciaComponent implements OnInit {
   }
 
   openAddFormModal() {
-    const modalRef = this.modalService.open(AgregarExperienciaComponent);
+    const modalRef = this.modalService.open(AgregarExperienciaComponent, { size: 'lg', scrollable:true });
 
     modalRef.result.then((result) => {
       this.datosExperiencia.crear(result).subscribe((data) => {
@@ -36,7 +36,7 @@ export class ExperienciaComponent implements OnInit {
 
     //Abro el componente modal de editar elemento, pasandole el ID.
 
-    const modalRef = this.modalService.open(EditarExperienciaComponent);
+    const modalRef = this.modalService.open(EditarExperienciaComponent, { size: 'lg', scrollable:true });
     modalRef.componentInstance.id = id;
 
     // una vez que se cierra el modal con los datos nuevos, se pasan aca para ejecutar la llamada a la API

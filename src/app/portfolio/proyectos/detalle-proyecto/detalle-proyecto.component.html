@@ -5,14 +5,18 @@
      (click)="activeModal.dismiss('Cross click')">
     </button>
   </div>
+  <div class="modal-body">
 
-
-<img src="{{datosActual.imgUrl}}" alt="">
+<img class="logoproyectos" src="{{datosActual.imgUrl}}" alt="">
 
 <h2 class="mat-h2"> Descripción del proyecto</h2>
 <p>{{datosActual.descripcion}}</p>
 <h2 class="mat-h2"> Tecnologías utilizadas</h2>
 <p>{{datosActual.tecnologias}}</p>
+  </div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-light" (click)="activeModal.close('Close click')">Cerrar</button>
+</div>
 
 
 

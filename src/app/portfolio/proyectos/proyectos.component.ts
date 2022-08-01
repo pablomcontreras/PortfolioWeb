@@ -24,7 +24,7 @@ export class ProyectosComponent implements OnInit {
   }
   openDetalleModal(id: number): any {
 
-    const modalRef = this.modalService.open(DetalleProyectoComponent, { size: 'lg' ,  scrollable: true});
+    const modalRef = this.modalService.open(DetalleProyectoComponent, { size: 'lg', scrollable:true });
     modalRef.componentInstance.id = id;
 
   }

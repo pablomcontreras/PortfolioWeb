@@ -20,7 +20,9 @@ export class DetalleProyectoComponent implements OnInit {
 
   ngOnInit(): void {
     this.miProyecto.detalle(this.id).subscribe((data) => {
-      this.datosActual = data; });
+      this.datosActual = data; })
 
 }
+
+
 }
