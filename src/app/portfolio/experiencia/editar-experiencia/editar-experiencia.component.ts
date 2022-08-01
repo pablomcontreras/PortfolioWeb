@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import {
   FormGroup,
@@ -8,7 +7,6 @@ import {
   Validators,
 } from '@angular/forms';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
-import { ExperienciaComponent } from '../experiencia.component';
 
 
 
@@ -21,7 +19,6 @@ export class EditarExperienciaComponent implements OnInit {
 
   @Input() id!: number;
   @Input() cargarLista! : any;
-  @Input() fromParent! : any;
   editarExperienciaForm!: FormGroup;
   datosActual!: any;
   imgPreview!:any;
