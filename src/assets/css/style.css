@@ -1,72 +1,76 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-
 @media only screen and (max-width: 576px) {
-
-  .mat-h1, .mat-headline, .mat-typography .mat-h1, .mat-typography .mat-headline, .mat-typography h1{
+  .mat-h1,
+  .mat-headline,
+  .mat-typography .mat-h1,
+  .mat-typography .mat-headline,
+  .mat-typography h1 {
     font: 400 22px/32px Roboto, "Helvetica Neue", sans-serif !important;
   }
 
-  .col-md-2{
+  .col-md-2 {
     text-align: center;
-    
-    }
-  .logolateral{
-    padding-bottom: 1rem;;
+  }
+  .logolateral {
+    padding-bottom: 1rem;
   }
 
-  p{
+  p {
     text-align: justify;
   }
 
-  #tituloTarjeta{
+  #tituloTarjeta {
     text-align: center;
   }
 
-  #fechas{
-    float:none !important;
+  #fechas {
+    float: none !important;
   }
 }
 
-
-html{
+html {
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
 }
 
-#imgcover{
-    background-image: url(/assets/img/cover.jpg); 
-    background-size: cover;
-    min-height: 350px;
-    overflow: hidden;
-     
+.logoproyectos {
+
+    max-width: 100%;
+object-fit: cover;
+
 }
-#separador{
+
+#imgcover {
+  background-image: url(/assets/img/cover.jpg);
+  background-size: cover;
+  min-height: 350px;
+  overflow: hidden;
+}
+#separador {
   background-size: cover;
   margin: 0px;
 }
 body {
-    padding-top: 56px;
-    background-color: #f7f8fa
+  padding-top: 56px;
+  background-color: #f7f8fa;
 }
 
-#profpic{
-    max-width: 200px;
-    border-radius: 50%;
-    position: relative;
-    top: -100px; /* ajustar los valores para mover la imagen */
-    margin-bottom: -100px;
-
+#profpic {
+  max-width: 200px;
+  border-radius: 50%;
+  position: relative;
+  top: -100px; /* ajustar los valores para mover la imagen */
+  margin-bottom: -100px;
 }
-#edit-profpic{
-max-width: 200px;
-border-radius: 50%;
+#edit-profpic {
+  max-width: 200px;
+  border-radius: 50%;
 }
 
-
-#areaperfil{
-    display: block;
-    text-align: center;
+#areaperfil {
+  display: block;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
@@ -74,49 +78,44 @@ border-radius: 50%;
   width: 80px;
   height: 80px;
 }
-#habilidades{
+#habilidades {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-#fechas{
-
+#fechas {
   font-weight: lighter;
   color: #6c757d;
-
-
 }
-.col-md-3{
+.col-md-3 {
   text-align: center;
 }
-.col-md-4{
+.col-md-4 {
   display: inline-grid;
   text-align: center;
 }
-.col-md-12>h3{
+.col-md-12 > h3 {
   margin-top: 1em;
   margin-bottom: 1em;
 }
-.tarjeta{
+.tarjeta {
   margin-top: 2em;
   margin-bottom: 2em;
-
 }
 
-#footer{
+#footer {
   background-color: #343a40;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
 
 .clight {
-  color:#6c757d;
+  color: #6c757d;
 }
-.logolateral{
-  width: 140px; 
+.logolateral {
+  width: 140px;
   height: 140px;
   object-fit: cover;
-  
 }
 
 .tarjeta {
@@ -127,9 +126,6 @@ border-radius: 50%;
   margin: 0.95em 0 1.2em;
   max-width: 100%;
 }
-
-
-
 
 /* PALETA DE COLORES: De mas oscuro a mas claro
 A: #2C557A 

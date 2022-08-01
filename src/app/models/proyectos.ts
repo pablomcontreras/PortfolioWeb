@@ -5,6 +5,8 @@ export class Proyectos {
     imgUrl!:string;
     decripcion!:string;
     tecnologias!:string;
+    proyectoUrl!:string;
+    sourceCodeUrl!:string;
 
 
 }

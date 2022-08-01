@@ -33,6 +33,7 @@ import { EditarHabilidadesComponent } from './portfolio/habilidades/editar-habil
 import { AgregarProyectoComponent } from './portfolio/proyectos/agregar-proyecto/agregar-proyecto.component';
 import { EditarProyectoComponent } from './portfolio/proyectos/editar-proyecto/editar-proyecto.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DetalleProyectoComponent } from './portfolio/proyectos/detalle-proyecto/detalle-proyecto.component';
 
 
 
@@ -60,6 +61,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     EditarHabilidadesComponent,
     AgregarProyectoComponent,
     EditarProyectoComponent,
+    DetalleProyectoComponent,
     
   ],
   imports: [

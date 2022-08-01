@@ -1,0 +1,18 @@
+
+<div class="modal-header" >
+    <h2  class="mt-2 modal-title">Detalles del Proyecto: {{datosActual.titulo}}</h2>
+    <button type="button" class="btn-close" color="" aria-label="Cerrar"
+     (click)="activeModal.dismiss('Cross click')">
+    </button>
+  </div>
+
+
+<img src="{{datosActual.imgUrl}}" alt="">
+
+<h2 class="mat-h2"> Descripción del proyecto</h2>
+<p>{{datosActual.descripcion}}</p>
+<h2 class="mat-h2"> Tecnologías utilizadas</h2>
+<p>{{datosActual.tecnologias}}</p>
+
+
+
