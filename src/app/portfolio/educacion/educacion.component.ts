@@ -26,7 +26,7 @@ export class EducacionComponent implements OnInit {
   }
 
   openAddFormModal() {
-    const modalRef = this.modalService.open(AgregarEducacionComponent, { size: 'lg', scrollable:true });
+    const modalRef = this.modalService.open(AgregarEducacionComponent);
 
     modalRef.result.then((result) => {
       this.datosEducacion.crear(result).subscribe((data) => {
