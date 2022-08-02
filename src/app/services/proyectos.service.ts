@@ -31,7 +31,7 @@ export class ProyectosService {
 
   public crear(proyectos: Proyectos): Observable<any> {
     return this.httpClient.post<any>(
-      this.baseURL + '/editor/agregar/proyectos',
+      this.baseURL + 'editor/proyectos',
       proyectos,
       cabecera
     );

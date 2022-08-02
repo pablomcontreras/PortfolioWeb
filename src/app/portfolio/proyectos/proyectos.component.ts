@@ -16,9 +16,9 @@ export class ProyectosComponent implements OnInit {
     private modalService: NgbModal
   ) {}
 
-  public miProyectos: any;
-
   @Input() authority!: string;
+  public miProyectos: any;
+  private registroActual!: string;
 
   ngOnInit(): void {
     this.datosProyectos.lista().subscribe((data) => {
@@ -47,15 +47,16 @@ export class ProyectosComponent implements OnInit {
   }
 
   visitarUrl(id: number) {
-    var index = id - 1;
-    var actualProyecto = this.miProyectos[index].proyectoUrl;
+    this.datosProyectos.detalle(id).subscribe((result) => {
+      this.registroActual = result.imgUrl;
+    });
 
-    if (!actualProyecto) {
+    if (!this.registroActual || this.registroActual === '') {
       return alert(
         'Este proyecto no está en línea! podés consultar el código fuente ingresando a la opción Mas Detalles'
       );
     } else {
-      return window.open(actualProyecto);
+      return window.open(this.registroActual);
     }
   }
 

@@ -24,7 +24,10 @@ export class DetalleProyectoComponent implements OnInit {
   }
 
   visitarSourceUrl(id: number) {
-    if (this.datosActual.sourceCodeUrl === null) {
+    if (
+      this.datosActual.sourceCodeUrl === null ||
+      this.datosActual.sourceCodeUrl === ''
+    ) {
       return alert(
         'El codigo fuente de este proyecto es privado. Si estás interesado en consultarlo, por favor contactame.'
       );
@@ -34,7 +37,10 @@ export class DetalleProyectoComponent implements OnInit {
   }
 
   visitarUrl(id: number) {
-    if (this.datosActual.proyectoUrl === null) {
+    if (
+      this.datosActual.proyectoUrl === null ||
+      this.datosActual.proyectoUrl === ''
+    ) {
       return alert(
         'Este proyecto no se encuentra publicado, pero podés consultar el código fuente en esta sección'
       );
