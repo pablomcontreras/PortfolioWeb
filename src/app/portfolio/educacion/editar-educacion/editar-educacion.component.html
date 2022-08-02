@@ -13,17 +13,17 @@
   <div class="container">
     <form [formGroup]="editarEducacionForm" (ngSubmit)="submitEditForm()" id="editarEducacionForm">
       <div class="form-group mt-2">
-        <label for="curso">Curso</label>
+        <label for="curso">Curso:</label>
         <input type="text" class="form-control" formControlName="curso" />
       </div>
 
       <div class="form-group">
-        <label for="institucion">Institucion</label>
+        <label for="institucion">Institución:</label>
         <input type="text" class="form-control" formControlName="institucion" />
       </div>
 
       <div class="form-group">
-        <label for="imgUrl">URL de la imagen</label>
+        <label for="imgUrl">URL de la imagen:</label>
         <input
           type="text"
           class="form-control"
@@ -45,23 +45,19 @@
       </div>
 
       <div class="form-group">
-        <label for="fechaDesde">Fecha desde</label>
+        <label for="fechaDesde">Fecha desde:</label>
         <input type="text" class="form-control" formControlName="fechaDesde" />
       </div>
 
       <div class="form-group">
-        <label for="fechaHasta">Fecha hasta</label>
+        <label for="fechaHasta">Fecha hasta:</label>
         <input type="text" class="form-control" formControlName="fechaHasta" />
       </div>
 
       <div class="form-group">
-        <label for="descripcion">descripcion</label>
-        <input type="text" class="form-control" formControlName="descripcion" />
+        <label for="descripcion">Descripción:</label>
+        <textarea type="text" class="form-control" formControlName="descripcion" rows="6"></textarea>
       </div>
-
-      <button class="btn btn-secondary" [disabled]="!editarEducacionForm.valid">
-        Guardar Cambios
-      </button>
     
     </form>
   </div>

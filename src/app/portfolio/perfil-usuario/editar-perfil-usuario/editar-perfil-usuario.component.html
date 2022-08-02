@@ -13,17 +13,17 @@
   <form [formGroup]="editarPerfilUsuarioForm" (ngSubmit)="submitEditForm()" id="editarPerfilUsuarioForm">
     <div class="container">
       <div class="form-group mt-2">
-        <label for="nombre">Nombre</label>
+        <label for="nombre">Nombre:</label>
         <input type="text" class="form-control" formControlName="nombre" />
       </div>
 
       <div class="form-group">
-        <label for="cargo">Cargo</label>
+        <label for="cargo">Cargo:</label>
         <input type="text" class="form-control" formControlName="cargo" />
       </div>
 
       <div class="form-group">
-        <label for="imgUrl">Foto de Perfil</label>
+        <label for="imgUrl">Foto de Perfil:</label>
         <input
           type="text"
           class="form-control"
@@ -45,7 +45,7 @@
       </div>
 
       <div class="form-group">
-        <label for="intro">Texto de bienvenida</label>
+        <label for="intro">Texto de bienvenida:</label>
         <textarea
           type="text"
           rows="6"
@@ -55,7 +55,7 @@
       </div>
 
       <div class="form-group">
-        <label for="portadaUrl">URL de Imagen de portada</label>
+        <label for="portadaUrl">URL de Imagen de portada:</label>
         <input type="text" class="form-control" formControlName="portadaUrl" />
       </div>
     </div>
@@ -63,7 +63,7 @@
 </div>
 
 <div class="modal-footer">
-  <button type="submit" form="editarPerfilUsuarioForm" class="btn btn-secondary" [disabled]="!editarPerfilUsuarioForm.valid">
+  <button type="submit" form="editarPerfilUsuarioForm" class="btn btn-success" [disabled]="!editarPerfilUsuarioForm.valid">
     Guardar Cambios
   </button>
 </div>

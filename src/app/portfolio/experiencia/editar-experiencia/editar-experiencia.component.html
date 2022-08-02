@@ -12,17 +12,17 @@
   <div class="container">
     <form [formGroup]="editarExperienciaForm" (ngSubmit)="submitEditForm()" id="editarExperienciaForm">
       <div class="form-group mt-2">
-        <label for="cargo">Cargo</label>
+        <label for="cargo">Cargo:</label>
         <input type="text" class="form-control" formControlName="cargo" />
       </div>
 
       <div class="form-group">
-        <label for="empresa">Empresa</label>
+        <label for="empresa">Empresa:</label>
         <input type="text" class="form-control" formControlName="empresa" />
       </div>
 
       <div class="form-group">
-        <label for="imgUrl">URL de la imagen</label>
+        <label for="imgUrl">URL de la imagen:</label>
         <input
           type="text"
           class="form-control"
@@ -44,24 +44,24 @@
       </div>
 
       <div class="form-group">
-        <label for="fechaDesde">Fecha desde</label>
+        <label for="fechaDesde">Fecha desde:</label>
         <input type="text" class="form-control" formControlName="fechaDesde" />
       </div>
 
       <div class="form-group">
-        <label for="fechaHasta">Fecha hasta</label>
+        <label for="fechaHasta">Fecha hasta:</label>
         <input type="text" class="form-control" formControlName="fechaHasta" />
       </div>
 
       <div class="form-group">
-        <label for="descripcion">descripcion</label>
+        <label for="descripcion">Descripción:</label>
         <input type="text" class="form-control" formControlName="descripcion" />
       </div>
     </form>
   </div>
 </div>
 <div class="modal-footer">
-  <button type="submit" form="editarExperienciaForm" class="btn btn-secondary" [disabled]="!editarExperienciaForm.valid">
+  <button type="submit" form="editarExperienciaForm" class="btn btn-success" [disabled]="!editarExperienciaForm.valid">
     Guardar Cambios
   </button>
 </div>

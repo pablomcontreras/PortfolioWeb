@@ -64,7 +64,6 @@ export class HabilidadesComponent implements OnInit {
     });
   }
   cargarEstilo() {
-    console.log('this.avanceTag tiene:');
 
     switch (this.estiloAvance) {
       case '30':
