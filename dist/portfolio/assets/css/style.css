@@ -1,0 +1,145 @@
+
+
+@media only screen and (max-width: 576px) {
+  .mat-h1,
+  .mat-headline,
+  .mat-typography .mat-h1,
+  .mat-typography .mat-headline,
+  .mat-typography h1 {
+    font: 400 22px/32px Roboto, "Helvetica Neue", sans-serif !important;
+  }
+
+  .col-md-2 {
+    text-align: center;
+  }
+  .logolateral {
+    padding-bottom: 1rem;
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  #tituloTarjeta {
+    text-align: center;
+  }
+
+  #fechas {
+    float: none !important;
+  }
+
+}
+
+
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+#social-botones{
+  color:white;
+  margin: 0rem, 2rem;
+
+}
+
+.logoproyectos {
+
+    max-width: 100%;
+object-fit: cover;
+
+}
+
+#imgcover {
+  background-image: url(/assets/img/cover.jpg);
+  background-size: cover;
+  min-height: 350px;
+  overflow: hidden;
+}
+#separador {
+  background-size: cover;
+  margin: 0px;
+}
+body {
+  padding-top: 56px;
+  background-color: #f7f8fa;
+}
+
+#profpic {
+  max-width: 200px;
+  border-radius: 50%;
+  position: relative;
+  top: -100px; /* ajustar los valores para mover la imagen */
+  margin-bottom: -100px;
+}
+#edit-profpic {
+  max-width: 200px;
+  border-radius: 50%;
+}
+
+#areaperfil {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.profile-small {
+  width: 80px;
+  height: 80px;
+}
+#habilidades {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#fechas {
+  font-weight: lighter;
+  color: #6c757d;
+}
+.col-md-3 {
+  text-align: center;
+}
+.col-md-4 {
+  display: inline-grid;
+  text-align: center;
+}
+.col-md-12 > h3 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.tarjeta {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+#footer {
+  background-color: #343a40;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.clight {
+  color: #6c757d;
+}
+.logolateral {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+}
+
+.tarjeta {
+  border: 1px solid #dbdbdb;
+  /* box-shadow: 1px 2px 4px 0 rgba(0,0,0,0.18);
+  border-radius: 3px; */
+  display: block;
+  margin: 0.95em 0 1.2em;
+  max-width: 100%;
+}
+
+/* PALETA DE COLORES: De mas oscuro a mas claro
+A: #2C557A 
+D: #51667A
+E: #4889C7
+C: #5AADFA
+B: #A5D1FA
+ */
