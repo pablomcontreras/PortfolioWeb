@@ -11,7 +11,7 @@ const cabecera = {
   providedIn: 'root',
 })
 export class EducacionService {
-  baseURL = 'http://localhost:8080/';
+  baseURL = 'https://evening-wildwood-15221.herokuapp.com/';
 
   constructor(private httpClient: HttpClient) {}
 
