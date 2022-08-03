@@ -70,6 +70,7 @@ import { DetalleProyectoComponent } from './portfolio/proyectos/detalle-proyecto
     NgbModule,
     BrowserModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [interceptorProvider],
   bootstrap: [AppComponent],
