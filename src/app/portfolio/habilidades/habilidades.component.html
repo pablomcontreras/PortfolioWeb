@@ -1,14 +1,13 @@
 <div class="row container-fluid" id="habilidades">
-  <div class="col-md-12">
     <hr />
     <div class="row" *ngIf="!authority">
-      <h2 class="mat-h2 float-start">Mis Habilidades</h2>
+      <h3 class="float-start" style="margin-left:-1.4rem;">Mis Habilidades</h3>
     </div>
 
     <div *ngIf="authority === 'admin'">
       <div class="row">
         <div class="col-md-3">
-          <h1 class="mat-h1 float-start">Mis Habilidades</h1>
+          <h3 class="float-start">Mis Habilidades</h3>
         </div>
 
         <div class="col-md-9 align-items-center" style="padding-right: 2em">
@@ -18,7 +17,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row my-4">
       <div class="col-md-3" *ngFor="let elemento of miHabilidades">
         <div *ngIf="authority === 'admin'" class="float-right">
           <a (click)="openEditFormModal(elemento.id)">
@@ -29,7 +28,7 @@
           </a>
         </div>
 
-        <h3 class="mat-h3">{{ elemento.titulo }}</h3>
+        <h5 class="mat-h3">{{ elemento.titulo }}</h5>
         <div class="set-size charts-container d-flex justify-content-center">
           <div class="pie-wrapper progress-{{ elemento.avance }}">
             <span class="label"
@@ -43,5 +42,4 @@
         </div>
       </div>
     </div>
-  </div>
 </div>
