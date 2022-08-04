@@ -1,13 +1,13 @@
 <div class="row container-fluid" id="habilidades">
     <hr />
     <div class="row" *ngIf="!authority">
-      <h3 class="float-start" style="margin-left:-1.4rem;">Mis Habilidades</h3>
+      <h2 class="mat-h2 float-start" style="margin-left:-1.4rem;">Mis Habilidades</h2>
     </div>
 
     <div *ngIf="authority === 'admin'">
       <div class="row">
         <div class="col-md-3">
-          <h3 class="float-start">Mis Habilidades</h3>
+          <h2 class="mat-h2 float-start">Mis Habilidades</h2>
         </div>
 
         <div class="col-md-9 align-items-center" style="padding-right: 2em">
@@ -28,7 +28,7 @@
           </a>
         </div>
 
-        <h5 class="mat-h3">{{ elemento.titulo }}</h5>
+        <h3 class="mat-h3">{{ elemento.titulo }}</h3>
         <div class="set-size charts-container d-flex justify-content-center">
           <div class="pie-wrapper progress-{{ elemento.avance }}">
             <span class="label"

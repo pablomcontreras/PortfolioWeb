@@ -43,7 +43,12 @@ html {
   margin: 0rem, 2rem;
 
 }
+.mensaje-modal{
+  color: white;
+  font-family: Lato,sans-serif;
+  vertical-align: -webkit-baseline-middle;
 
+}
 .logoproyectos {
 
     max-width: 100%;

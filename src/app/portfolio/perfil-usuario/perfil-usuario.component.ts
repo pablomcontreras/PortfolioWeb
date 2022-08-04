@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PerfilUsuarioService } from 'src/app/services/perfi-usuario.service';
 import { EditarPerfilUsuarioComponent } from './editar-perfil-usuario/editar-perfil-usuario.component';
+import Swal from 'sweetalert2';  
+
 @Component({
   selector: 'app-perfil-usuario',
   templateUrl: './perfil-usuario.component.html',
@@ -14,8 +16,8 @@ export class PerfilUsuarioComponent implements OnInit {
 
   constructor(
     private datosPerfilUsuario: PerfilUsuarioService,
-    private modalService: NgbModal
-  ) {}
+    private modalService: NgbModal,
+    ) {}
 
   ngOnInit(): void {
     this.cargarLista();
@@ -23,6 +25,7 @@ export class PerfilUsuarioComponent implements OnInit {
 
   openEditFormModal(id: number): any {
     //Abro el componente modal de editar elemento, pasandole el ID.
+    
 
     const modalRef = this.modalService.open(EditarPerfilUsuarioComponent, {
       size: 'lg',
@@ -34,6 +37,16 @@ export class PerfilUsuarioComponent implements OnInit {
 
     modalRef.result.then((result) => {
       this.datosPerfilUsuario.editar(result, id).subscribe((data) => {
+   
+        Swal.fire({
+          title: 'Exito!',
+          text: 'El perfil de usuario fue actualizado con exito',
+          icon: 'success',
+          confirmButtonText: 'Volver',
+          buttonsStyling: false,
+          customClass: {
+    	      confirmButton: 'btn btn-success'
+      }})
         this.cargarLista();
       });
     });

@@ -3,13 +3,13 @@
     <hr />
 
     <div class="row" *ngIf="!authority">
-      <h3 class="float-start">Mi Educación</h3>
+      <h2 class="mat-h2 float-start">Mi Educación</h2>
     </div>
 
     <div *ngIf="authority === 'admin'">
       <div class="row">
         <div class="col-md-3">
-          <h3 class="float-start">Mi Educación</h3>
+          <h2 class="mat-h2 float-start">Mi Educación</h2>
         </div>
 
         <div class="col-md-9 align-items-center" style="padding-right: 2em">
@@ -32,7 +32,7 @@
         <div class="col-md-10">
           <div class="row" id="tituloTarjeta">
             <div class="col-md-6">
-              <h4>{{ elemento.curso }}</h4>
+              <h2 class="mat-h2">{{ elemento.curso }}</h2>
             </div>
 
             <div *ngIf="!authority" class="col-md-6 float-right">
@@ -61,7 +61,7 @@
             </div>
           </div>
 
-          <h5>{{ elemento.institucion }}</h5>
+          <h3 class="mat-h3">{{ elemento.institucion }}</h3>
           <p>{{ elemento.descripcion }}</p>
         </div>
       </li>

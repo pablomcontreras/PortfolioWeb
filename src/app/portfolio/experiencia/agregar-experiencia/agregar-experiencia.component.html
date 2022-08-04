@@ -11,7 +11,7 @@
 
 <div class="modal-body">
   <div class="container">
-    <form [formGroup]="crearExperienciaForm" (ngSubmit)="submitForm()">
+    <form [formGroup]="crearExperienciaForm" (ngSubmit)="submitForm()" id="crearExperienciaForm">
       <div class="mt-2 form-group">
         <label for="curso">Cargo:</label>
         <input type="text" class="form-control" formControlName="cargo" />
@@ -57,7 +57,7 @@
 </div>
 
 <div class="modal-footer">
-  <button class="btn btn-success" [disabled]="!crearExperienciaForm.valid">
+  <button form="crearExperienciaForm" class="btn btn-success" [disabled]="!crearExperienciaForm.valid">
     Agregar
   </button>
 </div>
