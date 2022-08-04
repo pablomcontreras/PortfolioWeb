@@ -35,6 +35,8 @@ import { EditarProyectoComponent } from './portfolio/proyectos/editar-proyecto/e
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DetalleProyectoComponent } from './portfolio/proyectos/detalle-proyecto/detalle-proyecto.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
