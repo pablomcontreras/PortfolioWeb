@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { HabilidadesService } from 'src/app/services/habilidades.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ProyectosService } from 'src/app/services/proyectos.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-detalle-proyecto',
@@ -28,9 +29,15 @@ export class DetalleProyectoComponent implements OnInit {
       this.datosActual.sourceCodeUrl === null ||
       this.datosActual.sourceCodeUrl === ''
     ) {
-      return alert(
-        'El codigo fuente de este proyecto es privado. Si estás interesado en consultarlo, por favor contactame.'
-      );
+      return     Swal.fire({
+        title: 'Ups!',
+        text:  'El codigo fuente de este proyecto es privado. Si estás interesado en consultarlo, por favor contactame.',
+        icon: 'info',
+        confirmButtonText: 'Volver',
+        buttonsStyling: false,
+        customClass: {
+          confirmButton: 'btn btn-success'
+    }})
     } else {
       return window.open(this.datosActual.sourceCodeUrl);
     }
@@ -41,9 +48,15 @@ export class DetalleProyectoComponent implements OnInit {
       this.datosActual.proyectoUrl === null ||
       this.datosActual.proyectoUrl === ''
     ) {
-      return alert(
-        'Este proyecto no se encuentra publicado, pero podés consultar el código fuente en esta sección'
-      );
+      return Swal.fire({
+        title: 'Ups!',
+        text:  'Este proyecto no está en línea! podés consultar el código fuente en esta sección.',
+        icon: 'warning',
+        confirmButtonText: 'Volver',
+        buttonsStyling: false,
+        customClass: {
+          confirmButton: 'btn btn-success'
+    }})
     } else {
       return window.open(this.datosActual.proyectoUrl);
     }

@@ -3,6 +3,8 @@ import { HabilidadesService } from 'src/app/services/habilidades.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EditarHabilidadesComponent } from './editar-habilidades/editar-habilidades.component';
 import { AgregarHabilidadesComponent } from './agregar-habilidades/agregar-habilidades.component';
+import Swal from 'sweetalert2'
+
 
 @Component({
   selector: 'app-habilidades',
@@ -29,6 +31,15 @@ export class HabilidadesComponent implements OnInit {
 
     modalRef.result.then((result) => {
       this.datosHabilidades.crear(result).subscribe((data) => {
+        Swal.fire({
+          title: 'Exito!',
+          text: 'La habilidad fue agregada con éxito',
+          icon: 'success',
+          confirmButtonText: 'Volver',
+          buttonsStyling: false,
+          customClass: {
+    	      confirmButton: 'btn btn-success'
+      }})
         this.cargarLista();
       });
     });
@@ -44,6 +55,15 @@ export class HabilidadesComponent implements OnInit {
 
     modalRef.result.then((result) => {
       this.datosHabilidades.editar(result, id).subscribe((data) => {
+        Swal.fire({
+          title: 'Exito!',
+          text: 'La habilidad fue modificada con éxito',
+          icon: 'success',
+          confirmButtonText: 'Volver',
+          buttonsStyling: false,
+          customClass: {
+    	      confirmButton: 'btn btn-success'
+      }})
         this.cargarLista();
         this.cargarEstilo();
       });
@@ -51,11 +71,35 @@ export class HabilidadesComponent implements OnInit {
   }
 
   borrar(id: number): void {
-    if (confirm('¿Estás seguro?')) {
-      this.datosHabilidades.borrar(id).subscribe((data) => {
-        this.cargarLista();
-      });
-    }
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: "Esta acción no puede deshacerse",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Eliminar',
+      
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: 'Eliminado!',
+          text: 'El registro ha sido eliminado exitosamente.',
+          icon:'success',
+          buttonsStyling: false,
+          customClass: {
+    	      confirmButton: 'btn btn-success'
+      }
+
+        }
+        );
+        this.datosHabilidades.borrar(id).subscribe((data) => {
+          this.cargarLista();
+        })
+      }
+    })
+
   }
 
   cargarLista() {

@@ -45,7 +45,6 @@ export class EditarProyectoComponent implements OnInit {
     this.miProyecto.detalle(this.id).subscribe((data) => {
       this.datosActual = data;
 
-      console.log('Datos levantados: ', this.datosActual);
       //una vez que se obtuvieron los datos del elemento seleccionado, los cargo en el formulario:
 
       this.actualizarForm();

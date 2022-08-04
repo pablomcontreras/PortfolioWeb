@@ -18,7 +18,6 @@ export class AgregarHabilidadesComponent implements OnInit {
   avanceTag!: string;
   estiloAvance!: String;
   incremento!: any;
-  bandera?: number = 1;
 
   constructor(
     public activeModal: NgbActiveModal,
@@ -34,36 +33,16 @@ export class AgregarHabilidadesComponent implements OnInit {
     });
   }
   submitForm() {
-    console.log('valores que envia el form: ', this.crearHabilidadesForm.value);
     this.activeModal.close(this.crearHabilidadesForm.value);
   }
 
   ngOnInit(): void {
     this.crearHabilidadesForm.valueChanges.subscribe((selectedValue) => {
       this.avanceTag = selectedValue.avance;
-      this.setearStep();
-      console.log('Valor de incremento: ', this.incremento);
     });
   }
 
-  setearStep() {
-    if (this.avanceTag == '85') {
-      this.avanceTag = '90';
-    }
 
-    if (this.bandera == 1) {
-      this.incremento = '15';
-      if (parseInt(this.avanceTag) == 90) {
-        this.bandera = 0;
-      }
-    }
-    if (this.bandera == 0) {
-      this.incremento = '5';
-      if (parseInt(this.avanceTag) == 90) {
-        this.bandera = 1;
-      }
-    }
-  }
 
   closeModal() {
     this.activeModal.close('Modal Closed');

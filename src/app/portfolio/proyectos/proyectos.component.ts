@@ -4,6 +4,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DetalleProyectoComponent } from './detalle-proyecto/detalle-proyecto.component';
 import { EditarProyectoComponent } from './editar-proyecto/editar-proyecto.component';
 import { AgregarProyectoComponent } from './agregar-proyecto/agregar-proyecto.component';
+import Swal from 'sweetalert2'
+
 
 @Component({
   selector: 'app-proyectos',
@@ -40,6 +42,15 @@ export class ProyectosComponent implements OnInit {
     });
 
     modalRef.result.then((result) => {
+      Swal.fire({
+        title: 'Exito!',
+        text: 'El proyecto fue agregado con éxito',
+        icon: 'success',
+        confirmButtonText: 'Volver',
+        buttonsStyling: false,
+        customClass: {
+          confirmButton: 'btn btn-success'
+    }})
       this.datosProyectos.crear(result).subscribe((data) => {
         this.cargarLista();
       });
@@ -52,9 +63,16 @@ export class ProyectosComponent implements OnInit {
     });
 
     if (!this.registroActual || this.registroActual === '') {
-      return alert(
-        'Este proyecto no está en línea! podés consultar el código fuente ingresando a la opción Mas Detalles'
-      );
+      return       Swal.fire({
+        title: 'Ups!',
+        text:  'Este proyecto no está en línea! podés consultar el código fuente ingresando a la opción Mas Detalles',
+        icon: 'warning',
+        confirmButtonText: 'Volver',
+        buttonsStyling: false,
+        customClass: {
+          confirmButton: 'btn btn-success'
+    }})
+
     } else {
       return window.open(this.registroActual);
     }
@@ -72,6 +90,15 @@ export class ProyectosComponent implements OnInit {
     // una vez que se cierra el modal con los datos nuevos, se pasan aca para ejecutar la llamada a la API
 
     modalRef.result.then((result) => {
+      Swal.fire({
+        title: 'Exito!',
+        text: 'El proyecto fue actualizado con éxito',
+        icon: 'success',
+        confirmButtonText: 'Volver',
+        buttonsStyling: false,
+        customClass: {
+          confirmButton: 'btn btn-success'
+    }})
       this.datosProyectos.editar(result, id).subscribe((data) => {
         this.cargarLista();
       });
@@ -79,11 +106,35 @@ export class ProyectosComponent implements OnInit {
   }
 
   borrar(id: number): void {
-    if (confirm('¿Estás seguro?')) {
-      this.datosProyectos.borrar(id).subscribe((data) => {
-        this.cargarLista();
-      });
-    }
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: "Esta acción no puede deshacerse",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Eliminar',
+      
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: 'Eliminado!',
+          text: 'El registro ha sido eliminado exitosamente.',
+          icon:'success',
+          buttonsStyling: false,
+          customClass: {
+    	      confirmButton: 'btn btn-success'
+      }
+
+        }
+        );
+        this.datosProyectos.borrar(id).subscribe((data) => {
+          this.cargarLista();
+        })
+      }
+    })
+
   }
 
   cargarLista() {
