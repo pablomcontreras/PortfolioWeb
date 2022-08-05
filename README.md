@@ -23,6 +23,7 @@ La Tareas planificadas pendientes de implementación son:
 
 - Posibilidad de subir al server archivos de imagen almacenados localmente.
 - Link a certificaciones digitales, si las hubiere,  sobre los elementos de educación.
+- Paginación en cada componente para no hacer tan larga la navegacion vertical.
 - Implementación de un image cropper para elegir el encuadre adecuado de imagenes.
 - Validación de forms de carga y edición.
 - Cambio de orden de los registros mediante Drag & Drop.
