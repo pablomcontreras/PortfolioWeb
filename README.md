@@ -1,27 +1,33 @@
-# portfolio
+# Portfolio Web
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
+Este proyecto es una app desarrollada sobre Angular que, consumiendo los servicios de una API específca, reproduce, crea, modifica y/o elimina elementos propios de un CV tales como introduccion, experiencia, habilidades y un portfolio de proyectos.
 
 ## Este proyecto es el final para argentina programa
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Teconologías usadas:
 
-## Code scaffolding
+Algunas de las tecnologías utilizadas en este proyecto son:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular
+- Angular Bootstrap
+- Angular Material
+- SweetAlert2
+- FontAwesome
 
-## Build
+## Pendientes:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Si bien en esta instancia el proyecto se encuentra plenamente funcionando, existen una serie de funcionalidades y de correcciones de errores que me gustaria implementar, en la medida que vaya disponiendo de tiempo libre lo iré haciendo.
 
-## Running unit tests
+La Tareas planificadas pendientes de implementación son:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Posibilidad de subir al server archivos de imagen almacenados localmente.
+- Link a certificaciones digitales, si las hubiere,  sobre los elementos de educación.
+- Implementación de un image cropper para elegir el encuadre adecuado de imagenes.
+- Validación de forms de carga y edición.
+- Cambio de orden de los registros mediante Drag & Drop.
+- Posibilidad de Registro y de creacion de portfolios para multiples usuarios.
+- Correccion del responsive design en tablets.
+- Implementación de formulario de contacto. (entiendo que los planes gratuitos de servicios en la nube  utilizados no tienen disponible los servicios necesarios)
+- Estandarización del diseño.
+- Optimización de la carga de la app.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
