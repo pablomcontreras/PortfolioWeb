@@ -31,12 +31,16 @@
 
 }
 
-
-
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
 }
+
+div {
+  scroll-padding-top: 10rem;
+}
+
+
 
 #social-botones{
   color:white;

@@ -3,6 +3,8 @@ import { TokenService } from './services/token.service';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ContactoComponent } from './contacto/contacto.component';
+import { ViewportScroller } from '@angular/common';
+
 
 @Component({
   selector: 'app-root',
@@ -10,12 +12,20 @@ import { ContactoComponent } from './contacto/contacto.component';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
+  
+  
   isLogin = false;
   roles!: string[];
   authority!: string;
+
+
+
+
   constructor(private tokenService: TokenService, private router: Router,  
-       private modalService: NgbModal
+       private modalService: NgbModal, private scroller: ViewportScroller
     ) {}
+
+
 
   ngOnInit() {
     if (this.tokenService.getToken()) {
@@ -31,6 +41,14 @@ export class AppComponent implements OnInit {
         return true;
       });
     }
+
+   
+
+  }
+
+  navegarA(anchor:string) {
+    this.scroller.setOffset([0,80]);
+    this.scroller.scrollToAnchor(anchor)
   }
 
   logOut(): void {
@@ -51,4 +69,11 @@ export class AppComponent implements OnInit {
       });
     ;
   }
+  
+
+  
+
+
+
+
 }
