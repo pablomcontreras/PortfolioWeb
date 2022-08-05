@@ -61,7 +61,7 @@ object-fit: cover;
 }
 
 #imgcover {
-  background-image: url(/assets/img/cover.jpg);
+ 
   background-size: cover;
   min-height: 350px;
   overflow: hidden;

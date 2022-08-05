@@ -1,4 +1,4 @@
-<div class="modal-header">
+<div class="modal-header" *ngIf="cargado">
   <h2 class="mt-2 modal-title">
     Detalles del Proyecto: {{ datosActual.titulo }}
   </h2>
@@ -10,8 +10,8 @@
     (click)="activeModal.dismiss('Cross click')"
   ></button>
 </div>
-<div class="modal-body">
-  <img class="logoproyectos" src="{{ datosActual.imgUrl }}" alt="" />
+<div class="modal-body" *ngIf="cargado">
+  <img class="logoproyectos" [src]="datosActual.imgUrl" alt="" />
   <hr />
 
   <h2 class="mat-h2">Descripción del proyecto</h2>

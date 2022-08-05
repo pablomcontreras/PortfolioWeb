@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class PerfilUsuarioComponent implements OnInit {
   public miPerfilUsuario: any;
+  public cargado:boolean = false;
 
   @Input() authority!: string;
 
@@ -55,6 +56,7 @@ export class PerfilUsuarioComponent implements OnInit {
   cargarLista() {
     this.datosPerfilUsuario.lista().subscribe((data) => {
       this.miPerfilUsuario = data[0];
+      this.cargado=true;
     });
   }
 }

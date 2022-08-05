@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 export class DetalleProyectoComponent implements OnInit {
   @Input() id!: number;
   datosActual!: any;
+  cargado: boolean = false;
 
   constructor(
     public activeModal: NgbActiveModal,
@@ -21,6 +22,7 @@ export class DetalleProyectoComponent implements OnInit {
   ngOnInit(): void {
     this.miProyecto.detalle(this.id).subscribe((data) => {
       this.datosActual = data;
+      this.cargado = true;
     });
   }
 
