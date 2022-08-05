@@ -31,19 +31,28 @@
 
 }
 
-
-
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
 }
+
+div {
+  scroll-padding-top: 10rem;
+}
+
+
 
 #social-botones{
   color:white;
   margin: 0rem, 2rem;
 
 }
+.mensaje-modal{
+  color: white;
+  font-family: Lato,sans-serif;
+  vertical-align: -webkit-baseline-middle;
 
+}
 .logoproyectos {
 
     max-width: 100%;
@@ -52,7 +61,7 @@ object-fit: cover;
 }
 
 #imgcover {
-  background-image: url(/assets/img/cover.jpg);
+ 
   background-size: cover;
   min-height: 350px;
   overflow: hidden;
