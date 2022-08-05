@@ -79,6 +79,7 @@ let htmlContent = '<body>' +
     Swal.fire({
       title: 'Contacto',
       background:'#EAEAEA',
+      width: 600,
       html: htmlContent,
       showCloseButton: true,
       focusConfirm: true,
