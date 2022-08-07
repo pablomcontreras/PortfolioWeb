@@ -31,15 +31,16 @@ export class DetalleProyectoComponent implements OnInit {
       this.datosActual.sourceCodeUrl === null ||
       this.datosActual.sourceCodeUrl === ''
     ) {
-      return     Swal.fire({
+      return Swal.fire({
         title: 'Ups!',
-        text:  'El codigo fuente de este proyecto es privado. Si estás interesado en consultarlo, por favor contactame.',
+        text: 'El codigo fuente de este proyecto es privado. Si estás interesado en consultarlo, por favor contactame.',
         icon: 'info',
         confirmButtonText: 'Volver',
         buttonsStyling: false,
         customClass: {
-          confirmButton: 'btn btn-success'
-    }})
+          confirmButton: 'btn btn-success',
+        },
+      });
     } else {
       return window.open(this.datosActual.sourceCodeUrl);
     }
@@ -52,13 +53,14 @@ export class DetalleProyectoComponent implements OnInit {
     ) {
       return Swal.fire({
         title: 'Ups!',
-        text:  'Este proyecto no está en línea! podés consultar el código fuente en esta sección.',
+        text: 'Este proyecto no está en línea! podés consultar el código fuente en esta sección.',
         icon: 'warning',
         confirmButtonText: 'Volver',
         buttonsStyling: false,
         customClass: {
-          confirmButton: 'btn btn-success'
-    }})
+          confirmButton: 'btn btn-success',
+        },
+      });
     } else {
       return window.open(this.datosActual.proyectoUrl);
     }

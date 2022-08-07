@@ -4,8 +4,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DetalleProyectoComponent } from './detalle-proyecto/detalle-proyecto.component';
 import { EditarProyectoComponent } from './editar-proyecto/editar-proyecto.component';
 import { AgregarProyectoComponent } from './agregar-proyecto/agregar-proyecto.component';
-import Swal from 'sweetalert2'
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-proyectos',
@@ -20,11 +19,14 @@ export class ProyectosComponent implements OnInit {
 
   @Input() authority!: string;
   public miProyectos: any;
-  private registroActual!: string;
+  public indice!: number;
+  public cargado: boolean = false;
 
   ngOnInit(): void {
     this.datosProyectos.lista().subscribe((data) => {
       this.miProyectos = data;
+      this.cargado = true;
+      console.log('miProyectos trae', this.miProyectos);
     });
   }
   openDetalleModal(id: number): any {
@@ -49,8 +51,9 @@ export class ProyectosComponent implements OnInit {
         confirmButtonText: 'Volver',
         buttonsStyling: false,
         customClass: {
-          confirmButton: 'btn btn-success'
-    }})
+          confirmButton: 'btn btn-success',
+        },
+      });
       this.datosProyectos.crear(result).subscribe((data) => {
         this.cargarLista();
       });
@@ -58,23 +61,30 @@ export class ProyectosComponent implements OnInit {
   }
 
   visitarUrl(id: number) {
-    this.datosProyectos.detalle(id).subscribe((result) => {
-      this.registroActual = result.imgUrl;
-    });
+    //recorre el array miProyectos traido del servidor y busca el ID...
 
-    if (!this.registroActual || this.registroActual === '') {
-      return       Swal.fire({
+    for (let i = 0; i < this.miProyectos.length; i++) {
+      if (this.miProyectos[i].id == id) {
+        this.indice = i;
+      }
+    }
+
+    if (
+      this.miProyectos[this.indice].proyectoUrl === null ||
+      this.miProyectos[this.indice].proyectoUrl === ''
+    ) {
+      return Swal.fire({
         title: 'Ups!',
-        text:  'Este proyecto no está en línea! podés consultar el código fuente ingresando a la opción Mas Detalles',
+        text: 'Este proyecto no está en línea! podés consultar el código fuente en esta sección.',
         icon: 'warning',
         confirmButtonText: 'Volver',
         buttonsStyling: false,
         customClass: {
-          confirmButton: 'btn btn-success'
-    }})
-
+          confirmButton: 'btn btn-success',
+        },
+      });
     } else {
-      return window.open(this.registroActual);
+      return window.open(this.miProyectos[this.indice].proyectoUrl);
     }
   }
 
@@ -97,8 +107,9 @@ export class ProyectosComponent implements OnInit {
         confirmButtonText: 'Volver',
         buttonsStyling: false,
         customClass: {
-          confirmButton: 'btn btn-success'
-    }})
+          confirmButton: 'btn btn-success',
+        },
+      });
       this.datosProyectos.editar(result, id).subscribe((data) => {
         this.cargarLista();
       });
@@ -108,33 +119,29 @@ export class ProyectosComponent implements OnInit {
   borrar(id: number): void {
     Swal.fire({
       title: '¿Estás seguro?',
-      text: "Esta acción no puede deshacerse",
+      text: 'Esta acción no puede deshacerse',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       cancelButtonText: 'Cancelar',
       confirmButtonText: 'Eliminar',
-      
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire({
           title: 'Eliminado!',
           text: 'El registro ha sido eliminado exitosamente.',
-          icon:'success',
+          icon: 'success',
           buttonsStyling: false,
           customClass: {
-    	      confirmButton: 'btn btn-success'
-      }
-
-        }
-        );
+            confirmButton: 'btn btn-success',
+          },
+        });
         this.datosProyectos.borrar(id).subscribe((data) => {
           this.cargarLista();
-        })
+        });
       }
-    })
-
+    });
   }
 
   cargarLista() {

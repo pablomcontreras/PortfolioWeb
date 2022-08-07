@@ -1,12 +1,7 @@
 <div class="modal-header" style="background-color: #0dcaf0">
   <h2 class="mt-2 mt-h2 modal-title">Agregar Habilidad</h2>
-  <button
-    type="button"
-    class="btn-close"
-    color=""
-    aria-label="Cerrar"
-    (click)="activeModal.dismiss('Cross click')"
-  ></button>
+  <button type="button" class="btn-close" color="" aria-label="Cerrar"
+    (click)="activeModal.dismiss('Cross click')"></button>
 </div>
 
 <form [formGroup]="crearHabilidadesForm" (ngSubmit)="submitForm()">
@@ -19,13 +14,7 @@
 
       <div class="mt-2 form-group">
         <label for="avance">Avance:</label>
-        <input
-          class="ml-3"
-          type="radio"
-          value="30"
-          checked
-          formControlName="avance"
-        />
+        <input class="ml-3" type="radio" value="30" checked formControlName="avance" />
         <span class="ml-1">30%</span>
         <input class="ml-3" type="radio" value="45" formControlName="avance" />
         <span class="ml-1">45%</span>
@@ -40,10 +29,7 @@
       </div>
 
       <div class="modal-footer">
-        <button
-          class="btn btn-success"
-          [disabled]="!crearHabilidadesForm.valid"
-        >
+        <button class="btn btn-success" [disabled]="!crearHabilidadesForm.valid">
           Agregar
         </button>
       </div>

@@ -13,12 +13,8 @@
 
     <div *ngIf="authority === 'admin'">
       <div class="text-center" style="padding-right: 2em">
-        <a
-          class="m-3 btn btn-info"
-          style="color: white"
-          (click)="openAddFormModal()"
-          >Agregar Proyecto <i class="fa-solid fa-plus" style="color: white"></i
-        ></a>
+        <a class="m-3 btn btn-info" style="color: white" (click)="openAddFormModal()">Agregar Proyecto <i
+            class="fa-solid fa-plus" style="color: white"></i></a>
       </div>
     </div>
 
@@ -31,9 +27,7 @@
               <div class="card-body">
                 <div *ngIf="authority === 'admin'" class="float-right">
                   <a (click)="openEditFormModal(elemento.id)">
-                    <i
-                      class="btn btn-success mx-2 fa-solid fa-pen-to-square"
-                    ></i>
+                    <i class="btn btn-success mx-2 fa-solid fa-pen-to-square"></i>
                   </a>
                   <a (click)="borrar(elemento.id)">
                     <i class="btn btn-danger fa-solid fa-trash-can"></i>
@@ -42,18 +36,11 @@
                 <h3 class="mat-h3">{{ elemento.titulo }}</h3>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-outline-secondary"
-                      (click)="openDetalleModal(elemento.id)"
-                    >
+                    <button type="button" class="btn btn-sm btn-outline-secondary"
+                      (click)="openDetalleModal(elemento.id)">
                       Mas detalles
                     </button>
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-outline-secondary"
-                      (click)="visitarUrl(elemento.id)"
-                    >
+                    <button *ngIf="cargado" type="button" class="btn btn-sm btn-outline-secondary" (click)="visitarUrl(elemento.id)">
                       Visitar
                     </button>
                   </div>

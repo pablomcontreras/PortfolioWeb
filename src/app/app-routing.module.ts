@@ -14,16 +14,6 @@ const routes: Routes = [
   { path: 'portfolio', component: PortfolioComponent },
   { path: 'contacto', component: ContactoComponent },
 
-  // productos: utilizamos canActivate
-
-  // {path: 'detalle/:id', component: DetalleProductoComponent,
-  // canActivate: [guard], data: { expectedRol: ['admin', 'user']}},
-  // {path: 'nuevo', component: NuevoProductoComponent,
-  // canActivate: [guard], data: { expectedRol: ['admin']}},
-  // {path: 'editar/:id', component: EditarProductoComponent,
-  // canActivate: [guard], data: { expectedRol: ['admin']}},
-
-  //user y admin
   {
     path: 'admin',
     component: AdminComponent,

@@ -1,12 +1,7 @@
 <div class="modal-header" style="background-color: #0dcaf0">
   <h2 class="mt-2 mt-h2 modal-title">Editar Habilidad</h2>
-  <button
-    type="button"
-    class="btn-close"
-    color=""
-    aria-label="Cerrar"
-    (click)="activeModal.dismiss('Cross click')"
-  ></button>
+  <button type="button" class="btn-close" color="" aria-label="Cerrar"
+    (click)="activeModal.dismiss('Cross click')"></button>
 </div>
 
 <form [formGroup]="editarHabilidadesForm" (ngSubmit)="submitEditForm()">
@@ -34,10 +29,7 @@
       </div>
 
       <div class="modal-footer">
-        <button
-          class="btn btn-success"
-          [disabled]="!editarHabilidadesForm.valid"
-        >
+        <button class="btn btn-success" [disabled]="!editarHabilidadesForm.valid">
           Guardar
         </button>
       </div>

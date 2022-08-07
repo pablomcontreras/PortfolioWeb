@@ -8,14 +8,16 @@ import {
   Validators,
 } from '@angular/forms';
 import { EducacionService } from 'src/app/services/educacion.service';
-import { EducacionComponent } from '../educacion.component';
 
 @Component({
   selector: 'app-editar-educacion',
   templateUrl: './editar-educacion.component.html',
   styleUrls: ['./editar-educacion.component.css'],
 })
+
+
 export class EditarEducacionComponent implements OnInit {
+
   @Input() id!: number;
   @Input() cargarLista!: any;
   @Input() fromParent!: any;
@@ -60,9 +62,6 @@ export class EditarEducacionComponent implements OnInit {
 
   submitEditForm() {
     this.activeModal.close(this.editarEducacionForm.value);
-    //     this.miEducacion.editar(this.editarEducacionForm.value, this.id).subscribe(data => {
-    // //aca hay que recargar la lista
-    //   });
   }
 
   closeModal() {

@@ -13,9 +13,8 @@
         </div>
 
         <div class="col-md-9 align-items-center" style="padding-right: 2em">
-          <a class="btn btn-info float-end" (click)="openAddFormModal()"
-            ><i class="fa-solid fa-plus" style="color: white"></i
-          ></a>
+          <a class="btn btn-info float-end" (click)="openAddFormModal()"><i class="fa-solid fa-plus"
+              style="color: white"></i></a>
         </div>
       </div>
     </div>
@@ -23,11 +22,7 @@
     <ul>
       <li class="row tarjeta py-3 my-4" *ngFor="let elemento of miEducacion">
         <div class="col-md-2">
-          <img
-            class="logolateral"
-            [alt]="elemento.curso"
-            [src]="elemento.imgUrl"
-          />
+          <img class="logolateral" [alt]="elemento.curso" [src]="elemento.imgUrl" />
         </div>
         <div class="col-md-10">
           <div class="row" id="tituloTarjeta">

@@ -24,6 +24,12 @@ export class AgregarEducacionComponent implements OnInit {
     this.createForm();
   }
 
+  ngOnInit(): void {
+    this.crearEducacionForm.valueChanges.subscribe((selectedValue) => {
+      this.imgPreview = selectedValue.imgUrl;
+    });
+  }
+
   private createForm() {
     this.crearEducacionForm = this.formBuilder.group({
       curso: '',
@@ -34,14 +40,11 @@ export class AgregarEducacionComponent implements OnInit {
       descripcion: '',
     });
   }
+  
   submitForm() {
     this.activeModal.close(this.crearEducacionForm.value);
   }
-  ngOnInit(): void {
-    this.crearEducacionForm.valueChanges.subscribe((selectedValue) => {
-      this.imgPreview = selectedValue.imgUrl;
-    });
-  }
+
   closeModal() {
     this.activeModal.close('Modal Closed');
   }

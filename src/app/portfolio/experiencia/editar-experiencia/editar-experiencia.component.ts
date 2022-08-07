@@ -14,22 +14,12 @@ import { ExperienciaService } from 'src/app/services/experiencia.service';
   styleUrls: ['./editar-experiencia.component.css'],
 })
 export class EditarExperienciaComponent implements OnInit {
+
   @Input() id!: number;
-  @Input() cargarLista!: any;
   editarExperienciaForm!: FormGroup;
   datosActual!: any;
   imgPreview!: any;
 
-  private createForm() {
-    this.editarExperienciaForm = this.formBuilder.group({
-      cargo: '',
-      empresa: '',
-      imgUrl: '',
-      fechaDesde: '',
-      fechaHasta: '',
-      descripcion: '',
-    });
-  }
 
   constructor(
     public activeModal: NgbActiveModal,
@@ -50,16 +40,26 @@ export class EditarExperienciaComponent implements OnInit {
       this.actualizarForm();
     });
 
+    
     this.editarExperienciaForm.valueChanges.subscribe((selectedValue) => {
       this.imgPreview = selectedValue.imgUrl;
     });
   }
 
+  private createForm() {
+    this.editarExperienciaForm = this.formBuilder.group({
+      cargo: '',
+      empresa: '',
+      imgUrl: '',
+      fechaDesde: '',
+      fechaHasta: '',
+      descripcion: '',
+    });
+  }
+
   submitEditForm() {
     this.activeModal.close(this.editarExperienciaForm.value);
-    //     this.miEducacion.editar(this.editarEducacionForm.value, this.id).subscribe(data => {
-    // //aca hay que recargar la lista
-    //   });
+
   }
 
   closeModal() {

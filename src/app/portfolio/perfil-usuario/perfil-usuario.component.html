@@ -6,12 +6,7 @@
       </div>
       <div class="row">
         <div class="col-md-3" id="areaperfil">
-          <img
-            alt="Foto de perfil"
-            src="{{ miPerfilUsuario?.imgUrl }}"
-            class="img-fluid"
-            id="profpic"
-          />
+          <img alt="Foto de perfil" src="{{ miPerfilUsuario?.imgUrl }}" class="img-fluid" id="profpic" />
 
           <h2 class="mat-h2">{{ miPerfilUsuario?.nombre }}</h2>
 
@@ -25,9 +20,7 @@
 
             <div *ngIf="authority === 'admin'" class="col-md-4 py-1 float-end">
               <a (click)="openEditFormModal(miPerfilUsuario.id)">
-                <i
-                  class="float-end btn btn-success mx-2 fa-solid fa-pen-to-square"
-                ></i>
+                <i class="float-end btn btn-success mx-2 fa-solid fa-pen-to-square"></i>
               </a>
             </div>
           </div>

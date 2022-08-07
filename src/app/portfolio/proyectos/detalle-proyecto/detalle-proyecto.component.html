@@ -2,13 +2,8 @@
   <h2 class="mt-2 modal-title">
     Detalles del Proyecto: {{ datosActual.titulo }}
   </h2>
-  <button
-    type="button"
-    class="btn-close"
-    color=""
-    aria-label="Cerrar"
-    (click)="activeModal.dismiss('Cross click')"
-  ></button>
+  <button type="button" class="btn-close" color="" aria-label="Cerrar"
+    (click)="activeModal.dismiss('Cross click')"></button>
 </div>
 <div class="modal-body" *ngIf="cargado">
   <img class="logoproyectos" [src]="datosActual.imgUrl" alt="" />
@@ -21,7 +16,7 @@
 </div>
 <div class="modal-footer">
 
-  
+
   <a class="btn btn-dark" (click)="visitarSourceUrl(datosActual.id)">
     <i class="mx-1 fa-brands fa-github" style="color: white"> </i>
     <span style="color: white">Código Fuente</span>

@@ -12,6 +12,7 @@ import {
   templateUrl: './agregar-experiencia.component.html',
   styleUrls: ['./agregar-experiencia.component.css'],
 })
+
 export class AgregarExperienciaComponent implements OnInit {
   @Input() id!: number;
   crearExperienciaForm!: FormGroup;
@@ -24,6 +25,12 @@ export class AgregarExperienciaComponent implements OnInit {
     this.createForm();
   }
 
+  ngOnInit(): void {
+    this.crearExperienciaForm.valueChanges.subscribe((selectedValue) => {
+      this.imgPreview = selectedValue.imgUrl;
+    });
+  }
+
   private createForm() {
     this.crearExperienciaForm = this.formBuilder.group({
       cargo: '',
@@ -34,14 +41,11 @@ export class AgregarExperienciaComponent implements OnInit {
       descripcion: '',
     });
   }
+
   submitForm() {
     this.activeModal.close(this.crearExperienciaForm.value);
   }
-  ngOnInit(): void {
-    this.crearExperienciaForm.valueChanges.subscribe((selectedValue) => {
-      this.imgPreview = selectedValue.imgUrl;
-    });
-  }
+
   closeModal() {
     this.activeModal.close('Modal Closed');
   }

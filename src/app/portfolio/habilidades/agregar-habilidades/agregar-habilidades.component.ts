@@ -26,6 +26,12 @@ export class AgregarHabilidadesComponent implements OnInit {
     this.createForm();
   }
 
+  ngOnInit(): void {
+    this.crearHabilidadesForm.valueChanges.subscribe((selectedValue) => {
+      this.avanceTag = selectedValue.avance;
+    });
+  }
+
   private createForm() {
     this.crearHabilidadesForm = this.formBuilder.group({
       titulo: '',
@@ -35,14 +41,6 @@ export class AgregarHabilidadesComponent implements OnInit {
   submitForm() {
     this.activeModal.close(this.crearHabilidadesForm.value);
   }
-
-  ngOnInit(): void {
-    this.crearHabilidadesForm.valueChanges.subscribe((selectedValue) => {
-      this.avanceTag = selectedValue.avance;
-    });
-  }
-
-
 
   closeModal() {
     this.activeModal.close('Modal Closed');

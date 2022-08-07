@@ -10,7 +10,7 @@ import {
 @Component({
   selector: 'app-agregar-proyecto',
   templateUrl: './agregar-proyecto.component.html',
-  styleUrls: ['./agregar-proyecto.component.css']
+  styleUrls: ['./agregar-proyecto.component.css'],
 })
 export class AgregarProyectoComponent implements OnInit {
   @Input() id!: number;
@@ -37,17 +37,17 @@ export class AgregarProyectoComponent implements OnInit {
     this.createForm();
   }
 
-
-  submitForm() {
-    this.activeModal.close(this.crearProyectoForm.value);
-  }
   ngOnInit(): void {
     this.crearProyectoForm.valueChanges.subscribe((selectedValue) => {
       this.imgPreview = selectedValue.imgUrl;
     });
   }
+  
+  submitForm() {
+    this.activeModal.close(this.crearProyectoForm.value);
+  }
+
   closeModal() {
     this.activeModal.close('Modal Closed');
   }
-
 }

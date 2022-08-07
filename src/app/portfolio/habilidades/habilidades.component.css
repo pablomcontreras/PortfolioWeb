@@ -3,9 +3,6 @@ los valores soportados son: 30  45  60  75  90 y 95.
 
 ej: <div class="pie-wrapper progress-45"> Pasara al 45 el progreso. (el texto se cambia aparte) */
 
-
-
-
 @import url(https://fonts.googleapis.com/css?family=Lato:700);
 *,
 *:before,
@@ -39,7 +36,7 @@ body {
   margin: 15px;
   position: relative;
 }
-.pie-wrapper:nth-child(3n+1) {
+.pie-wrapper:nth-child(3n + 1) {
   clear: both;
 }
 .pie-wrapper .pie {
