@@ -107,7 +107,6 @@ export class HabilidadesComponent implements OnInit {
   cargarEstilo() {
     switch (this.estiloAvance) {
       case '30':
-        console.log('tomo 30');
         this.estiloAvance = 'progress-30';
         break;
       case '45':

@@ -26,7 +26,6 @@ export class ProyectosComponent implements OnInit {
     this.datosProyectos.lista().subscribe((data) => {
       this.miProyectos = data;
       this.cargado = true;
-      console.log('miProyectos trae', this.miProyectos);
     });
   }
   openDetalleModal(id: number): any {
