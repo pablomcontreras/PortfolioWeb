@@ -26,7 +26,6 @@ La Tareas planificadas pendientes de implementación son:
 - Paginación en cada componente para no hacer tan larga la navegacion vertical.
 - Implementación de un image cropper para elegir el encuadre adecuado de imagenes.
 - Validación de forms de carga y edición.
-- Cambio de orden de los registros mediante Drag & Drop.
 - Posibilidad de Registro y de creacion de portfolios para multiples usuarios.
 - Correccion del responsive design en tablets.
 - Implementación de formulario de contacto. (entiendo que los planes gratuitos de servicios en la nube  utilizados no tienen disponible los servicios necesarios)
