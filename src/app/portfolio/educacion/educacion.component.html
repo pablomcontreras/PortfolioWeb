@@ -40,8 +40,9 @@
    
       </div>
       <ul cdkDropList class="lista-droppeable" (cdkDropListDropped)="drop($event)">
-        <li class="row tarjeta caja-droppeable py-3 my-4" *ngFor="let elemento of miEducacion" cdkDragLockAxis="y">
-          <div class="lista-handler" cdkDragHandle>
+        <li class="row tarjeta caja-droppeable py-3 my-4" *ngFor="let elemento of miEducacion" cdkDragLockAxis="y"
+          cdkDrag>
+          <div class="lista-handler">
             <i class="fa-2 fa-solid fa-bars"></i>
           </div>
           <div class="col-md-2">
