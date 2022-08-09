@@ -34,7 +34,6 @@ import { AgregarProyectoComponent } from './portfolio/proyectos/agregar-proyecto
 import { EditarProyectoComponent } from './portfolio/proyectos/editar-proyecto/editar-proyecto.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DetalleProyectoComponent } from './portfolio/proyectos/detalle-proyecto/detalle-proyecto.component';
-import { SortPipe } from './sort.pipe';
 
 @NgModule({
   declarations: [
@@ -61,7 +60,6 @@ import { SortPipe } from './sort.pipe';
     AgregarProyectoComponent,
     EditarProyectoComponent,
     DetalleProyectoComponent,
-    SortPipe,
   ],
   imports: [
     BrowserModule,
@@ -76,7 +74,7 @@ import { SortPipe } from './sort.pipe';
     DragDropModule,
   
   ],
-  providers: [interceptorProvider, SortPipe],
+  providers: [interceptorProvider],
   bootstrap: [AppComponent],
   entryComponents: [EditarEducacionComponent],
 })
