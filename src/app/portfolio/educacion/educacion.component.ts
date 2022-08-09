@@ -3,7 +3,6 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EducacionService } from 'src/app/services/educacion.service';
 import { AgregarEducacionComponent } from './agregar-educacion/agregar-educacion.component';
 import { EditarEducacionComponent } from './editar-educacion/editar-educacion.component';
-import { SortPipe } from 'src/app/sort.pipe';
 import {
   CdkDragDrop,
   moveItemInArray,
@@ -84,16 +83,21 @@ export class EducacionComponent implements OnInit {
   }
 
   drop(event: CdkDragDrop<string[]>) {
+
     moveItemInArray(this.miEducacion, event.previousIndex, event.currentIndex);
-    console.log('actualizado array mi educacion: ', this.miEducacion);
+
+    //console.log('Mi educacion ahora tiene: ', this.miEducacion);
+
     for (let i = 0; i <= this.miEducacion.length - 1; i++) {
       this.miEducacion[i].orden = i;
-    }
+     }
+    
+  //console.log( 'Actualizando orden', this.miEducacion);
+
   }
 
   guardarOrden() {
     for (let i = 0; i <= this.miEducacion.length - 1; i++) {
-      console.log('Pasando datos para actualizar..', this.miEducacion[i]);
       this.datosEducacion
         .editar(this.miEducacion[i], this.miEducacion[i].id)
         .subscribe();
@@ -151,7 +155,6 @@ export class EducacionComponent implements OnInit {
         // a must be equal to b
         return 0;
       });
-   console.log("Mi educación ordenado: ", this.miEducacion)
     });
     return this.miEducacion;
   }

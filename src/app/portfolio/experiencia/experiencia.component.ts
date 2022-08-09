@@ -3,6 +3,11 @@ import { ExperienciaService } from 'src/app/services/experiencia.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AgregarExperienciaComponent } from './agregar-experiencia/agregar-experiencia.component';
 import { EditarExperienciaComponent } from './editar-experiencia/editar-experiencia.component';
+import {
+  CdkDragDrop,
+  moveItemInArray,
+  CdkDropList,
+} from '@angular/cdk/drag-drop';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -102,9 +107,54 @@ export class ExperienciaComponent implements OnInit {
     });
   }
 
+  drop(event: CdkDragDrop<string[]>) {
+
+    moveItemInArray(this.miExperiencia, event.previousIndex, event.currentIndex);
+
+    //console.log('Mi experiencia ahora tiene: ', this.miExperiencia);
+
+    for (let i = 0; i <= this.miExperiencia.length - 1; i++) {
+      this.miExperiencia[i].orden = i;
+     }
+    
+  //console.log( 'Actualizando orden', this.miExperiencia);
+
+  }
+
+  guardarOrden() {
+    for (let i = 0; i <= this.miExperiencia.length - 1; i++) {
+      this.datosExperiencia
+        .editar(this.miExperiencia[i], this.miExperiencia[i].id)
+        .subscribe();
+    }
+    Swal.fire({
+      title: 'Exito!',
+      text: 'El orden fue actualizado con éxito!',
+      icon: 'success',
+      confirmButtonText: 'Volver',
+      buttonsStyling: false,
+      customClass: {
+        confirmButton: 'btn btn-success',
+      },
+    });
+    this.cargarLista();
+  }
+
   cargarLista() {
     this.datosExperiencia.lista().subscribe((data) => {
       this.miExperiencia = data;
+
+      this.miExperiencia.sort(function (a:any, b: any) {
+        if (a.orden > b.orden) {
+          return 1;
+        }
+        if (a.orden < b.orden) {
+          return -1;
+        }
+        // a must be equal to b
+        return 0;
+      });
     });
+    return this.miExperiencia;
   }
 }

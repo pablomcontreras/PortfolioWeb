@@ -34,8 +34,10 @@
         <div class="col-md-9 align-items-center" style="padding-right: 2em">
           <a class="btn btn-info float-end" (click)="openAddFormModal()"><i class="fa-solid fa-plus"
               style="color: white"></i></a>
-          
+              <button class="float-end btn btn-success mx-4" (click)="guardarOrden()">Confirmar orden de elementos</button>
+
         </div>
+   
       </div>
       <ul cdkDropList class="lista-droppeable" (cdkDropListDropped)="drop($event)">
         <li class="row tarjeta caja-droppeable py-3 my-4" *ngFor="let elemento of miEducacion" cdkDragLockAxis="y"

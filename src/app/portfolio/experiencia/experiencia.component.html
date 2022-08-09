@@ -17,12 +17,18 @@
         <div class="col-md-9 align-items-center" style="padding-right: 2em">
           <a class="btn btn-info float-end" (click)="openAddFormModal()"><i class="fa-solid fa-plus"
               style="color: white"></i></a>
+              <button class="float-end btn btn-success mx-4" (click)="guardarOrden()">Confirmar orden de elementos</button>
+
         </div>
       </div>
     </div>
 
-    <ul>
-      <li class="row tarjeta py-3 my-4" *ngFor="let elemento of miExperiencia">
+    <ul cdkDropList class="lista-droppeable" (cdkDropListDropped)="drop($event)">
+      <li class=" tarjeta row  caja-droppeable py-3 my-4" *ngFor="let elemento of miExperiencia" cdkDragLockAxis="y"
+      cdkDrag >
+      <div class="lista-handler" cdkDragHandle>
+        <i class="fa-2 fa-solid fa-bars"></i>
+      </div>
         <div class="col-md-2">
           <img class="logolateral" [alt]="elemento.empresa" [src]="elemento.imgUrl" />
         </div>
