@@ -7,32 +7,32 @@
     <div class="row" *ngIf="!authority">
       <h2 class="mat-h2 float-start">Mi Experiencia</h2>
       <div>
-      <ul>
-        <li class=" tarjeta row py-3 my-4" *ngFor="let elemento of miExperiencia">
-          <div class="col-md-2">
-            <img class="logolateral" [alt]="elemento.empresa" [src]="elemento.imgUrl" />
-          </div>
-          <div class="col-md-10">
-            <div class="row" id="tituloTarjeta">
-              <div class="col-md-6">
-                <h2 class="mat-h2">{{ elemento.cargo }}</h2>
-              </div>
-
-              <div *ngIf="!authority" class="col-md-6 float-right">
-                <p class="float-right" id="fechas">
-                  {{ elemento.fechaDesde }} - {{ elemento.fechaHasta }}
-                </p>
-              </div>
+        <ul>
+          <li class=" tarjeta row py-3 my-4" *ngFor="let elemento of miExperiencia">
+            <div class="col-md-2">
+              <img class="logolateral" [alt]="elemento.empresa" [src]="elemento.imgUrl" />
             </div>
+            <div class="col-md-10">
+              <div class="row" id="tituloTarjeta">
+                <div class="col-md-6">
+                  <h2 class="mat-h2">{{ elemento.cargo }}</h2>
+                </div>
 
-            <h3 class="mat-h3">{{ elemento.empresa }}</h3>
-            <p>{{ elemento.descripcion }}</p>
-          </div>
-        </li>
-      </ul>
+                <div *ngIf="!authority" class="col-md-6 float-right">
+                  <p class="float-right" id="fechas">
+                    {{ elemento.fechaDesde }} - {{ elemento.fechaHasta }}
+                  </p>
+                </div>
+              </div>
 
+              <h3 class="mat-h3">{{ elemento.empresa }}</h3>
+              <p>{{ elemento.descripcion }}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
-    </div>
+
 
     <div *ngIf="authority === 'admin'">
       <div class="row">
@@ -62,18 +62,8 @@
                 <h2 class="mat-h2">{{ elemento.cargo }}</h2>
               </div>
 
-              <div *ngIf="!authority" class="col-md-6 float-right">
-                <p class="float-right" id="fechas">
-                  {{ elemento.fechaDesde }} - {{ elemento.fechaHasta }}
-                </p>
-              </div>
-
-              <div class="col-md-3">
-                <div *ngIf="authority === 'admin'" class="float-right">
-                  <p id="fechas">
-                    {{ elemento.fechaDesde }} - {{ elemento.fechaHasta }}
-                  </p>
-                </div>
+              <div class="col-md-3 float-right">
+                  <p id="fechas">{{ elemento.fechaDesde }} - {{ elemento.fechaHasta }}</p>
               </div>
 
               <div class="col-md-3">
@@ -87,14 +77,11 @@
                 </div>
               </div>
             </div>
-
             <h3 class="mat-h3">{{ elemento.empresa }}</h3>
             <p>{{ elemento.descripcion }}</p>
           </div>
         </li>
       </ul>
-
-
     </div>
 
   </div>

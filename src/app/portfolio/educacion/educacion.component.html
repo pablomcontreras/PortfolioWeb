@@ -1,10 +1,10 @@
 <div class="container-fluid " id="educacion">
   <div>
     <hr />
+    <h2 class="mat-h2">Mi Educación</h2>
 
-    <div class="row ml-4" *ngIf="!authority">
-      
-      <h2 class="mat-h2 float-start">Mi Educación</h2>
+    <div class="row" *ngIf="!authority">
+    <div>
       <ul>
         <li class="row tarjeta  py-3 my-4" *ngFor="let elemento of miEducacion">
           <div class="col-md-2">
@@ -22,13 +22,13 @@
           </div>
         </li>
       </ul>
+    </div>
 
     </div>
 
     <div *ngIf="authority === 'admin'">
       <div class="row">
         <div class="col-md-3">
-          <h2 class="mat-h2 float-start">Mi Educación</h2>
         </div>
 
         <div class="col-md-9 align-items-center" style="padding-right: 2em">
