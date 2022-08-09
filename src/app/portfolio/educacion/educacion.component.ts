@@ -3,25 +3,34 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EducacionService } from 'src/app/services/educacion.service';
 import { AgregarEducacionComponent } from './agregar-educacion/agregar-educacion.component';
 import { EditarEducacionComponent } from './editar-educacion/editar-educacion.component';
+import { SortPipe } from 'src/app/sort.pipe';
+import {
+  CdkDragDrop,
+  moveItemInArray,
+  CdkDropList,
+} from '@angular/cdk/drag-drop';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-educacion',
   templateUrl: './educacion.component.html',
   styleUrls: ['./educacion.component.css'],
+
 })
-
-
 export class EducacionComponent implements OnInit {
 
   public miEducacion: any;
   @Input() authority!: string;
 
+  constructor(
+    private datosEducacion: EducacionService,
+    private modalService: NgbModal,
+  ) {}
 
-constructor( private datosEducacion: EducacionService, private modalService: NgbModal) { }
+  ngOnInit(): void {
+    this.cargarLista();
 
-
-  ngOnInit(): void {this.cargarLista();}
+  }
 
   openAddFormModal() {
     const modalRef = this.modalService.open(AgregarEducacionComponent, {
@@ -74,6 +83,34 @@ constructor( private datosEducacion: EducacionService, private modalService: Ngb
     });
   }
 
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.miEducacion, event.previousIndex, event.currentIndex);
+    console.log('actualizado array mi educacion: ', this.miEducacion);
+    for (let i = 0; i <= this.miEducacion.length - 1; i++) {
+      this.miEducacion[i].orden = i;
+    }
+  }
+
+  guardarOrden() {
+    for (let i = 0; i <= this.miEducacion.length - 1; i++) {
+      console.log('Pasando datos para actualizar..', this.miEducacion[i]);
+      this.datosEducacion
+        .editar(this.miEducacion[i], this.miEducacion[i].id)
+        .subscribe();
+    }
+    Swal.fire({
+      title: 'Exito!',
+      text: 'El orden fue actualizado con éxito!',
+      icon: 'success',
+      confirmButtonText: 'Volver',
+      buttonsStyling: false,
+      customClass: {
+        confirmButton: 'btn btn-success',
+      },
+    });
+    this.cargarLista();
+  }
+
   borrar(id: number): void {
     Swal.fire({
       title: '¿Estás seguro?',
@@ -103,6 +140,19 @@ constructor( private datosEducacion: EducacionService, private modalService: Ngb
   cargarLista() {
     this.datosEducacion.lista().subscribe((data) => {
       this.miEducacion = data;
+
+      this.miEducacion.sort(function (a:any, b: any) {
+        if (a.orden > b.orden) {
+          return 1;
+        }
+        if (a.orden < b.orden) {
+          return -1;
+        }
+        // a must be equal to b
+        return 0;
+      });
+   console.log("Mi educación ordenado: ", this.miEducacion)
     });
+    return this.miEducacion;
   }
 }

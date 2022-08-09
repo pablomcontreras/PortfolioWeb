@@ -6,4 +6,5 @@ export class Educacion {
   fechaDesde!: string;
   fechaHasta!: string;
   descripcion!: string;
+  orden!: number;
 }

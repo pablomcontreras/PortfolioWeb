@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // módulos para el cliente http y los formularios
-
+import {DragDropModule} from '@angular/cdk/drag-drop'
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './auth/login/login.component';
@@ -34,6 +34,7 @@ import { AgregarProyectoComponent } from './portfolio/proyectos/agregar-proyecto
 import { EditarProyectoComponent } from './portfolio/proyectos/editar-proyecto/editar-proyecto.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DetalleProyectoComponent } from './portfolio/proyectos/detalle-proyecto/detalle-proyecto.component';
+import { SortPipe } from './sort.pipe';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { DetalleProyectoComponent } from './portfolio/proyectos/detalle-proyecto
     AgregarProyectoComponent,
     EditarProyectoComponent,
     DetalleProyectoComponent,
+    SortPipe,
   ],
   imports: [
     BrowserModule,
@@ -71,8 +73,10 @@ import { DetalleProyectoComponent } from './portfolio/proyectos/detalle-proyecto
     BrowserModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    DragDropModule,
+  
   ],
-  providers: [interceptorProvider],
+  providers: [interceptorProvider, SortPipe],
   bootstrap: [AppComponent],
   entryComponents: [EditarEducacionComponent],
 })
