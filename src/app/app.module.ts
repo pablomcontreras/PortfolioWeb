@@ -11,11 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './auth/login/login.component';
 import { interceptorProvider } from './services/producto-interceptor.service';
-import { UserComponent } from './users/user/user.component';
 import { AdminComponent } from './users/admin/admin.component';
-import { RegistroComponent } from './users/registro/registro.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
-import { ContactoComponent } from './contacto/contacto.component';
 import { PerfilUsuarioComponent } from './portfolio/perfil-usuario/perfil-usuario.component';
 import { EducacionComponent } from './portfolio/educacion/educacion.component';
 import { ExperienciaComponent } from './portfolio/experiencia/experiencia.component';
@@ -39,11 +36,8 @@ import { DetalleProyectoComponent } from './portfolio/proyectos/detalle-proyecto
   declarations: [
     AppComponent,
     LoginComponent,
-    UserComponent,
     AdminComponent,
-    RegistroComponent,
     PortfolioComponent,
-    ContactoComponent,
     PerfilUsuarioComponent,
     EducacionComponent,
     ExperienciaComponent,

@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LoginUsuario } from '../models/login-usuario';
 import { Observable } from 'rxjs';
 import { JwtModel } from '../models/jwt-model';
-import { NuevoUsuario } from '../models/nuevo-usuario';
 
 const cabecera = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -25,7 +24,5 @@ export class AuthService {
     );
   }
 
-  public registro(usuario: NuevoUsuario): Observable<any> {
-    return this.httpClient.post<any>(this.authURL + 'nuevo', usuario, cabecera);
-  }
+
 }
