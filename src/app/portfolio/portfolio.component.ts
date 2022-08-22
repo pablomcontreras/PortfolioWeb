@@ -34,8 +34,8 @@ export class PortfolioComponent implements OnInit {
     Swal.fire({
       title: 'Recuperando datos del servidor...',
       icon: 'info',
-      showConfirmButton: true,
-      confirmButtonText: 'Volver',
+      showCloseButton: true,
+
       html:
       '<p style="text-align: justify;">Hola! esta app recupera datos alojados en un servicio gratuito,'+
       ' por lo que la carga de la información puede llevar cierto tiempo (a veces MUCHO tiempo).<br/>'+
