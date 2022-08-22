@@ -34,6 +34,7 @@ export class AppComponent implements OnInit {
         return true;
       });
     }
+    
   }
 
   navegarA(anchor: string) {
