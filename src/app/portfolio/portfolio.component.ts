@@ -29,36 +29,36 @@ export class PortfolioComponent implements OnInit {
         return true;
       });
     }
-    let timerInterval: any;
+    // ---------- Modal de precarga ----------
+    // let timerInterval: any;
+    // Swal.fire({
+    //   title: 'Recuperando datos del servidor...',
+    //   icon: 'info',
+    //   showCloseButton: true,
 
-    Swal.fire({
-      title: 'Recuperando datos del servidor...',
-      icon: 'info',
-      showCloseButton: true,
-
-      html:
-      '<p style="text-align: justify;">Hola! esta app recupera datos alojados en un servicio gratuito,'+
-      ' por lo que la carga de la información puede llevar cierto tiempo (a veces MUCHO tiempo).<br/>'+
-      '<br/> Gracias por tu paciencia! pronto migraré la app a un servicio de rendimiento aceptable.'+
-        '<br/><br/>(Este mensaje se cerrará automaticamente en <strong></strong> segundos)<br/><br/></p>',
+    //   html:
+    //   '<p style="text-align: justify;">Hola! esta app recupera datos alojados en un servicio gratuito,'+
+    //   ' por lo que la carga de la información puede llevar cierto tiempo (a veces MUCHO tiempo).<br/>'+
+    //   '<br/> Gracias por tu paciencia! pronto migraré la app a un servicio de rendimiento aceptable.'+
+    //     '<br/><br/>(Este mensaje se cerrará automaticamente en <strong></strong> segundos)<br/><br/></p>',
   
-      timer: 10000,
-      timerProgressBar: true,
+    //   timer: 10000, ---> TIEMPO EN MS
+    //   timerProgressBar: true,
 
-      didOpen: () => {
-        const content:any = Swal.getHtmlContainer();
-        const $ = content.querySelector.bind(content);
-        Swal.showLoading();
-        timerInterval = setInterval(() => {
-          Swal.getHtmlContainer()!.querySelector('strong')!.textContent= (
-          Swal.getTimerLeft()! / 1000
-          ).toFixed(0);
-        }, 100);
-      },
-      willClose: () => {
-        clearInterval(timerInterval);
-      },
-    });
+    //   didOpen: () => {
+    //     const content:any = Swal.getHtmlContainer();
+    //     const $ = content.querySelector.bind(content);
+    //     Swal.showLoading();
+    //     timerInterval = setInterval(() => {
+    //       Swal.getHtmlContainer()!.querySelector('strong')!.textContent= (
+    //       Swal.getTimerLeft()! / 1000
+    //       ).toFixed(0);
+    //     }, 100);
+    //   },
+    //   willClose: () => {
+    //     clearInterval(timerInterval);
+    //   },
+    // });
   }
 
   logOut(): void {
