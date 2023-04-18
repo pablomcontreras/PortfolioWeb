@@ -12,7 +12,7 @@ const cabecera = {
   providedIn: 'root',
 })
 export class AuthService {
-  private authURL = 'https://evening-wildwood-15221.herokuapp.com/api/auth/';
+  private authURL = 'https://mi-portfolio-ap.rj.r.appspot.comapi/auth/';
 
   constructor(private httpClient: HttpClient) {}
 
@@ -23,6 +23,4 @@ export class AuthService {
       cabecera
     );
   }
-
-
 }
