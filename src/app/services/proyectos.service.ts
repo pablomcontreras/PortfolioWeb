@@ -11,7 +11,7 @@ const cabecera = {
   providedIn: 'root',
 })
 export class ProyectosService {
-  baseURL = 'https://mi-portfolio-ap.rj.r.appspot.com';
+  baseURL = 'https://mi-portfolio-ap.rj.r.appspot.com/';
 
   constructor(private httpClient: HttpClient) {}
 
