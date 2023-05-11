@@ -11,27 +11,28 @@ const cabecera = {
   providedIn: 'root',
 })
 export class HabilidadesService {
-  baseURL = 'https://mi-portfolio-ap.rj.r.appspot.com';
+  //baseURL = 'https://mi-portfolio-ap.rj.r.appspot.com';
+  baseURL = 'http://127.0.0.1:3000/api/';
 
   constructor(private httpClient: HttpClient) {}
 
   public lista(): Observable<Habilidades[]> {
     return this.httpClient.get<Habilidades[]>(
-      this.baseURL + 'api/habilidades/',
+      this.baseURL + 'habilidades/',
       cabecera
     );
   }
 
   public detalle(id: number): Observable<Habilidades> {
     return this.httpClient.get<Habilidades>(
-      this.baseURL + `api/habilidades/${id}`,
+      this.baseURL + `habilidades/${id}`,
       cabecera
     );
   }
 
   public crear(habilidades: Habilidades): Observable<any> {
     return this.httpClient.post<any>(
-      this.baseURL + 'editor/habilidades',
+      this.baseURL + 'habilidades',
       habilidades,
       cabecera
     );
@@ -39,7 +40,7 @@ export class HabilidadesService {
 
   public editar(habilidades: Habilidades, id: number): Observable<any> {
     return this.httpClient.put<any>(
-      this.baseURL + `editor/habilidades/${id}`,
+      this.baseURL + `habilidades/${id}`,
       habilidades,
       cabecera
     );
@@ -47,7 +48,7 @@ export class HabilidadesService {
 
   public borrar(id: number): Observable<any> {
     return this.httpClient.delete<any>(
-      this.baseURL + `editor/habilidades/${id}`,
+      this.baseURL + `habilidades/${id}`,
       cabecera
     );
   }

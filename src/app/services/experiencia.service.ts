@@ -11,27 +11,28 @@ const cabecera = {
   providedIn: 'root',
 })
 export class ExperienciaService {
-  baseURL = 'https://mi-portfolio-ap.rj.r.appspot.com';
+  //baseURL = 'https://mi-portfolio-ap.rj.r.appspot.com';
+  baseURL = 'http://127.0.0.1:3000/api/';
 
   constructor(private httpClient: HttpClient) {}
 
   public lista(): Observable<Experiencia[]> {
     return this.httpClient.get<Experiencia[]>(
-      this.baseURL + 'api/experiencia/',
+      this.baseURL + 'experiencia/',
       cabecera
     );
   }
 
   public detalle(id: number): Observable<Experiencia> {
     return this.httpClient.get<Experiencia>(
-      this.baseURL + `api/experiencia/${id}`,
+      this.baseURL + `experiencia/${id}`,
       cabecera
     );
   }
 
   public crear(experiencia: Experiencia): Observable<any> {
     return this.httpClient.post<any>(
-      this.baseURL + 'editor/experiencia',
+      this.baseURL + 'experiencia',
       experiencia,
       cabecera
     );
@@ -39,7 +40,7 @@ export class ExperienciaService {
 
   public editar(experiencia: Experiencia, id: number): Observable<any> {
     return this.httpClient.put<any>(
-      this.baseURL + `editor/experiencia/${id}`,
+      this.baseURL + `experiencia/${id}`,
       experiencia,
       cabecera
     );
@@ -49,7 +50,7 @@ export class ExperienciaService {
     // console.log("se llamo a borrar en el experiencia service con los siguientes parametros ", this.baseURL + `editor/experiencia/${id}`, cabecera);
 
     return this.httpClient.delete<any>(
-      this.baseURL + `editor/experiencia/${id}`,
+      this.baseURL + `experiencia/${id}`,
       cabecera
     );
   }

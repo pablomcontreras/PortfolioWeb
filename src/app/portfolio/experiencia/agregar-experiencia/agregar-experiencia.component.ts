@@ -12,7 +12,6 @@ import {
   templateUrl: './agregar-experiencia.component.html',
   styleUrls: ['./agregar-experiencia.component.css'],
 })
-
 export class AgregarExperienciaComponent implements OnInit {
   @Input() id!: number;
   crearExperienciaForm!: FormGroup;
@@ -27,7 +26,7 @@ export class AgregarExperienciaComponent implements OnInit {
 
   ngOnInit(): void {
     this.crearExperienciaForm.valueChanges.subscribe((selectedValue) => {
-      this.imgPreview = selectedValue.imgUrl;
+      this.imgPreview = selectedValue.img_url;
     });
   }
 
@@ -35,9 +34,9 @@ export class AgregarExperienciaComponent implements OnInit {
     this.crearExperienciaForm = this.formBuilder.group({
       cargo: '',
       empresa: '',
-      imgUrl: '',
-      fechaDesde: '',
-      fechaHasta: '',
+      img_url: '',
+      fecha_desde: '',
+      fecha_hasta: '',
       descripcion: '',
     });
   }

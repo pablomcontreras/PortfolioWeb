@@ -13,9 +13,7 @@ import { HabilidadesService } from 'src/app/services/habilidades.service';
   templateUrl: './editar-habilidades.component.html',
   styleUrls: ['./editar-habilidades.component.css'],
 })
-
 export class EditarHabilidadesComponent implements OnInit {
-
   @Input() id!: number;
   editarHabilidadesForm!: FormGroup;
   avanceTag!: string;
@@ -35,7 +33,7 @@ export class EditarHabilidadesComponent implements OnInit {
     //  Levanto los datos del form clickeado:
     this.miHabilidades.detalle(this.id).subscribe((data) => {
       this.datosActual = data;
-//una vez que se obtuvieron los datos del elemento seleccionado, los cargo en el formulario:
+      //una vez que se obtuvieron los datos del elemento seleccionado, los cargo en el formulario:
       this.actualizarForm();
     });
   }

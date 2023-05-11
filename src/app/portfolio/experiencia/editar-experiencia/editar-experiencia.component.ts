@@ -14,12 +14,10 @@ import { ExperienciaService } from 'src/app/services/experiencia.service';
   styleUrls: ['./editar-experiencia.component.css'],
 })
 export class EditarExperienciaComponent implements OnInit {
-
   @Input() id!: number;
   editarExperienciaForm!: FormGroup;
   datosActual!: any;
   imgPreview!: any;
-
 
   constructor(
     public activeModal: NgbActiveModal,
@@ -40,9 +38,8 @@ export class EditarExperienciaComponent implements OnInit {
       this.actualizarForm();
     });
 
-    
     this.editarExperienciaForm.valueChanges.subscribe((selectedValue) => {
-      this.imgPreview = selectedValue.imgUrl;
+      this.imgPreview = selectedValue.img_url;
     });
   }
 
@@ -50,16 +47,15 @@ export class EditarExperienciaComponent implements OnInit {
     this.editarExperienciaForm = this.formBuilder.group({
       cargo: '',
       empresa: '',
-      imgUrl: '',
-      fechaDesde: '',
-      fechaHasta: '',
+      img_url: '',
+      fecha_desde: '',
+      fecha_hasta: '',
       descripcion: '',
     });
   }
 
   submitEditForm() {
     this.activeModal.close(this.editarExperienciaForm.value);
-
   }
 
   closeModal() {
@@ -70,9 +66,9 @@ export class EditarExperienciaComponent implements OnInit {
     this.editarExperienciaForm.setValue({
       cargo: this.datosActual.cargo,
       empresa: this.datosActual.empresa,
-      imgUrl: this.datosActual.imgUrl,
-      fechaDesde: this.datosActual.fechaDesde,
-      fechaHasta: this.datosActual.fechaHasta,
+      img_url: this.datosActual.img_url,
+      fecha_desde: this.datosActual.fecha_desde,
+      fecha_hasta: this.datosActual.fecha_hasta,
       descripcion: this.datosActual.descripcion,
     });
   }

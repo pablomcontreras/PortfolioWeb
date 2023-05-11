@@ -58,7 +58,7 @@ export class ExperienciaComponent implements OnInit {
       size: 'lg',
       scrollable: true,
     });
-    modalRef.componentInstance.id = id;
+    modalRef.componentInstance._id = id;
 
     // una vez que se cierra el modal con los datos nuevos, se pasan aca para ejecutar la llamada a la API
 
@@ -108,23 +108,25 @@ export class ExperienciaComponent implements OnInit {
   }
 
   drop(event: CdkDragDrop<string[]>) {
-
-    moveItemInArray(this.miExperiencia, event.previousIndex, event.currentIndex);
+    moveItemInArray(
+      this.miExperiencia,
+      event.previousIndex,
+      event.currentIndex
+    );
 
     //console.log('Mi experiencia ahora tiene: ', this.miExperiencia);
 
     for (let i = 0; i <= this.miExperiencia.length - 1; i++) {
       this.miExperiencia[i].orden = i;
-     }
-    
-  //console.log( 'Actualizando orden', this.miExperiencia);
+    }
 
+    //console.log( 'Actualizando orden', this.miExperiencia);
   }
 
   guardarOrden() {
     for (let i = 0; i <= this.miExperiencia.length - 1; i++) {
       this.datosExperiencia
-        .editar(this.miExperiencia[i], this.miExperiencia[i].id)
+        .editar(this.miExperiencia[i], this.miExperiencia[i]._id)
         .subscribe();
     }
     Swal.fire({
@@ -144,7 +146,7 @@ export class ExperienciaComponent implements OnInit {
     this.datosExperiencia.lista().subscribe((data) => {
       this.miExperiencia = data;
 
-      this.miExperiencia.sort(function (a:any, b: any) {
+      this.miExperiencia.sort(function (a: any, b: any) {
         if (a.orden > b.orden) {
           return 1;
         }

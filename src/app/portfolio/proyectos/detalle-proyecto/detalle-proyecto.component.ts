@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { HabilidadesService } from 'src/app/services/habilidades.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ProyectosService } from 'src/app/services/proyectos.service';
 import Swal from 'sweetalert2';
@@ -10,7 +9,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./detalle-proyecto.component.css'],
 })
 export class DetalleProyectoComponent implements OnInit {
-  @Input() id!: number;
+  @Input() _id!: string;
   datosActual!: any;
   cargado: boolean = false;
 
@@ -20,16 +19,16 @@ export class DetalleProyectoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.miProyecto.detalle(this.id).subscribe((data) => {
+    this.miProyecto.detalle(this._id).subscribe((data) => {
       this.datosActual = data;
       this.cargado = true;
     });
   }
 
-  visitarSourceUrl(id: number) {
+  visitarSourceUrl(id: string) {
     if (
-      this.datosActual.sourceCodeUrl === null ||
-      this.datosActual.sourceCodeUrl === ''
+      this.datosActual.sourcecode_url === null ||
+      this.datosActual.sourcecode_url === ''
     ) {
       return Swal.fire({
         title: 'Ups!',
@@ -42,14 +41,14 @@ export class DetalleProyectoComponent implements OnInit {
         },
       });
     } else {
-      return window.open(this.datosActual.sourceCodeUrl);
+      return window.open(this.datosActual.sourcecode_url);
     }
   }
 
-  visitarUrl(id: number) {
+  visitarUrl(id: string) {
     if (
-      this.datosActual.proyectoUrl === null ||
-      this.datosActual.proyectoUrl === ''
+      this.datosActual.proyecto_url === null ||
+      this.datosActual.proyecto_url === ''
     ) {
       return Swal.fire({
         title: 'Ups!',
@@ -62,7 +61,7 @@ export class DetalleProyectoComponent implements OnInit {
         },
       });
     } else {
-      return window.open(this.datosActual.proyectoUrl);
+      return window.open(this.datosActual.proyecto_url);
     }
   }
 }

@@ -4,50 +4,50 @@ import { Observable } from 'rxjs';
 import { Proyectos } from '../models/proyectos';
 
 const cabecera = {
-  headers: new HttpHeaders({ 'Content-TYpe': 'application/json' }),
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProyectosService {
-  baseURL = 'https://mi-portfolio-ap.rj.r.appspot.com/';
-
+  
+  //baseURL = 'https://mi-portfolio-ap.rj.r.appspot.com/';
+baseURL='http://127.0.0.1:3000/api/'
   constructor(private httpClient: HttpClient) {}
 
   public lista(): Observable<Proyectos[]> {
     return this.httpClient.get<Proyectos[]>(
-      this.baseURL + 'api/proyectos/',
-      cabecera
+      this.baseURL + 'proyectos/'
     );
   }
 
-  public detalle(id: number): Observable<Proyectos> {
+  public detalle(id: string): Observable<Proyectos> {
     return this.httpClient.get<Proyectos>(
-      this.baseURL + `api/proyectos/${id}`,
+      this.baseURL + `proyectos/${id}`,
       cabecera
     );
   }
 
   public crear(proyectos: Proyectos): Observable<any> {
     return this.httpClient.post<any>(
-      this.baseURL + 'editor/proyectos',
+      this.baseURL + 'proyectos',
       proyectos,
       cabecera
     );
   }
 
-  public editar(proyectos: Proyectos, id: number): Observable<any> {
+  public editar(proyectos: Proyectos, id: string): Observable<any> {
     return this.httpClient.put<any>(
-      this.baseURL + `editor/proyectos/${id}`,
+      this.baseURL + `proyectos/${id}`,
       proyectos,
       cabecera
     );
   }
 
-  public borrar(id: number): Observable<any> {
+  public borrar(id: string): Observable<any> {
     return this.httpClient.delete<any>(
-      this.baseURL + `editor/proyectos/${id}`,
+      this.baseURL + `proyectos/${id}`,
       cabecera
     );
   }

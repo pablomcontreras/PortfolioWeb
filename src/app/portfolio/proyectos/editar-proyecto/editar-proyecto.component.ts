@@ -15,7 +15,7 @@ import { ProyectosService } from 'src/app/services/proyectos.service';
   styleUrls: ['./editar-proyecto.component.css'],
 })
 export class EditarProyectoComponent implements OnInit {
-  @Input() id!: number;
+  @Input() id!: string;
   @Input() cargarLista!: any;
   editarProyectoForm!: FormGroup;
   datosActual!: any;
@@ -24,11 +24,11 @@ export class EditarProyectoComponent implements OnInit {
   private createForm() {
     this.editarProyectoForm = this.formBuilder.group({
       titulo: '',
-      imgUrl: '',
+      img_url: '',
       descripcion: '',
       tecnologias: '',
       proyectoUrl: '',
-      sourceCodeUrl: '',
+      sourcecode_url: '',
     });
   }
   constructor(
@@ -51,7 +51,7 @@ export class EditarProyectoComponent implements OnInit {
     });
 
     this.editarProyectoForm.valueChanges.subscribe((selectedValue) => {
-      this.imgPreview = selectedValue.imgUrl;
+      this.imgPreview = selectedValue.img_url;
     });
   }
 
@@ -66,11 +66,11 @@ export class EditarProyectoComponent implements OnInit {
   actualizarForm() {
     this.editarProyectoForm.setValue({
       titulo: this.datosActual.titulo,
-      imgUrl: this.datosActual.imgUrl,
+      img_url: this.datosActual.img_url,
       descripcion: this.datosActual.descripcion,
       tecnologias: this.datosActual.tecnologias,
       proyectoUrl: this.datosActual.proyectoUrl,
-      sourceCodeUrl: this.datosActual.sourceCodeUrl,
+      sourcecode_url: this.datosActual.sourcecode_url,
     });
   }
 

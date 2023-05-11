@@ -1,9 +1,9 @@
 export class Experiencia {
-  id?: number;
+  _id?: string;
   cargo!: string;
   empresa!: string;
-  imgUrl!: string;
-  fechaDesde!: string;
-  fechaHasta!: string;
+  img_url!: string;
+  fecha_desde!: string;
+  fecha_hasta!: string;
   descripcion!: string;
 }

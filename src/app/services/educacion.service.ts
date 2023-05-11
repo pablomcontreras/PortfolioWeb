@@ -11,27 +11,28 @@ const cabecera = {
   providedIn: 'root',
 })
 export class EducacionService {
-  baseURL = 'https://mi-portfolio-ap.rj.r.appspot.com';
+  //baseURL = 'https://mi-portfolio-ap.rj.r.appspot.com';
+  baseURL = 'http://127.0.0.1:3000/api/';
 
   constructor(private httpClient: HttpClient) {}
 
   public lista(): Observable<Educacion[]> {
     return this.httpClient.get<Educacion[]>(
-      this.baseURL + 'api/educacion/',
+      this.baseURL + 'educacion/',
       cabecera
     );
   }
 
   public detalle(id: number): Observable<Educacion> {
     return this.httpClient.get<Educacion>(
-      this.baseURL + `api/educacion/${id}`,
+      this.baseURL + `educacion/${id}`,
       cabecera
     );
   }
 
   public crear(educacion: Educacion): Observable<any> {
     return this.httpClient.post<any>(
-      this.baseURL + 'editor/educacion',
+      this.baseURL + 'educacion',
       educacion,
       cabecera
     );
@@ -39,7 +40,7 @@ export class EducacionService {
 
   public editar(educacion: Educacion, id: number): Observable<any> {
     return this.httpClient.put<any>(
-      this.baseURL + `editor/educacion/${id}`,
+      this.baseURL + `educacion/${id}`,
       educacion,
       cabecera
     );
@@ -47,7 +48,7 @@ export class EducacionService {
 
   public borrar(id: number): Observable<any> {
     return this.httpClient.delete<any>(
-      this.baseURL + `editor/educacion/${id}`,
+      this.baseURL + `educacion/${id}`,
       cabecera
     );
   }

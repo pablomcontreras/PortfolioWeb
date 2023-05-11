@@ -1,9 +1,9 @@
 export class Proyectos {
-  id?: number;
+  _id?: string;
   titulo!: string;
-  imgUrl!: string;
+  img_url!: string;
   decripcion!: string;
   tecnologias!: string;
-  proyectoUrl!: string;
-  sourceCodeUrl!: string;
+  proyecto_url!: string;
+  sourcecode_url!: string;
 }

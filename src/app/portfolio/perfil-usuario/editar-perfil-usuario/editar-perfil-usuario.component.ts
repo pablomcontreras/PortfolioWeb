@@ -26,8 +26,8 @@ export class EditarPerfilUsuarioComponent implements OnInit {
       nombre: '',
       cargo: '',
       intro: '',
-      imgUrl: '',
-      portadaUrl: '',
+      img_url: '',
+      portada_url: '',
     });
   }
   constructor(
@@ -50,13 +50,13 @@ export class EditarPerfilUsuarioComponent implements OnInit {
     });
 
     this.editarPerfilUsuarioForm.valueChanges.subscribe((selectedValue) => {
-      this.imgPreview = selectedValue.imgUrl;
+      this.imgPreview = selectedValue.img_url;
     });
   }
 
   submitEditForm() {
     this.activeModal.close(this.editarPerfilUsuarioForm.value);
-    //     this.miEducacion.editar(this.editarEducacionForm.value, this.id).subscribe(data => {
+    //     this.miEducacion.editar(this.editarEducacionForm.value, this._id).subscribe(data => {
     // //aca hay que recargar la lista
     //   });
   }
@@ -70,8 +70,8 @@ export class EditarPerfilUsuarioComponent implements OnInit {
       nombre: this.datosActual.nombre,
       cargo: this.datosActual.cargo,
       intro: this.datosActual.intro,
-      imgUrl: this.datosActual.imgUrl,
-      portadaUrl: this.datosActual.portadaUrl,
+      img_url: this.datosActual.img_url,
+      portada_url: this.datosActual.portada_url,
     });
   }
 

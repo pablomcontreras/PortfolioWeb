@@ -1,10 +1,10 @@
 export class Educacion {
-  id?: number;
+  _id?: string;
   curso!: string;
   institucion!: string;
-  imgUrl!: string;
-  fechaDesde!: string;
-  fechaHasta!: string;
+  img_url!: string;
+  fecha_desde!: string;
+  fecha_hasta!: string;
   descripcion!: string;
   orden!: number;
 }

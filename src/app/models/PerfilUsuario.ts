@@ -1,8 +1,8 @@
 export class PerfilUsuario {
-  id?: number;
+  _id?: string;
   nombre!: string;
   cargo!: string;
   intro!: string;
-  imgUrl!: string;
-  portadaUrl!: string;
+  img_url!: string;
+  portada_url!: string;
 }

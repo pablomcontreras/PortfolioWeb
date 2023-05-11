@@ -10,7 +10,7 @@
         <ul>
           <li class=" tarjeta row py-3 my-4" *ngFor="let elemento of miExperiencia">
             <div class="col-md-2">
-              <img class="logolateral" [alt]="elemento.empresa" [src]="elemento.imgUrl" />
+              <img class="logolateral" [alt]="elemento.empresa" [src]="elemento.img_url" />
             </div>
             <div class="col-md-10">
               <div class="row" id="tituloTarjeta">
@@ -20,7 +20,7 @@
 
                 <div *ngIf="!authority" class="col-md-6 float-right">
                   <p class="float-right" id="fechas">
-                    {{ elemento.fechaDesde }} - {{ elemento.fechaHasta }}
+                    {{ elemento.fecha_desde }} - {{ elemento.fecha_hasta }}
                   </p>
                 </div>
               </div>
@@ -54,7 +54,7 @@
             <i class="fa-2 fa-solid fa-bars"></i>
           </div>
           <div class="col-md-2">
-            <img class="logolateral" [alt]="elemento.empresa" [src]="elemento.imgUrl" />
+            <img class="logolateral" [alt]="elemento.empresa" [src]="elemento.img_url" />
           </div>
           <div class="col-md-10">
             <div class="row" id="tituloTarjeta">
@@ -63,15 +63,15 @@
               </div>
 
               <div class="col-md-3 float-right">
-                  <p id="fechas">{{ elemento.fechaDesde }} - {{ elemento.fechaHasta }}</p>
+                <p id="fechas">{{ elemento.fecha_desde }} - {{ elemento.fecha_hasta }}</p>
               </div>
 
               <div class="col-md-3">
                 <div *ngIf="authority === 'admin'" class="float-right">
-                  <a (click)="openEditFormModal(elemento.id)">
+                  <a (click)="openEditFormModal(elemento._id)">
                     <i class="btn btn-success mx-2 fa-solid fa-pen-to-square"></i>
                   </a>
-                  <a (click)="borrar(elemento.id)">
+                  <a (click)="borrar(elemento._id)">
                     <i class="btn btn-danger fa-solid fa-trash-can"></i>
                   </a>
                 </div>

@@ -10,27 +10,27 @@ const cabecera = {
   providedIn: 'root',
 })
 export class PerfilUsuarioService {
-  baseURL = 'https://mi-portfolio-ap.rj.r.appspot.com';
-
+  //baseURL = 'https://mi-portfolio-ap.rj.r.appspot.com';
+  baseURL = 'http://127.0.0.1:3000/api/';
   constructor(private httpClient: HttpClient) {}
 
   public lista(): Observable<PerfilUsuario[]> {
     return this.httpClient.get<PerfilUsuario[]>(
-      this.baseURL + 'api/perfilusuario/',
+      this.baseURL + 'perfilusuario/',
       cabecera
     );
   }
 
   public detalle(id: number): Observable<PerfilUsuario> {
     return this.httpClient.get<PerfilUsuario>(
-      this.baseURL + `api/perfilusuario/${id}`,
+      this.baseURL + `perfilusuario/${id}`,
       cabecera
     );
   }
 
   public crear(perfilUsuario: PerfilUsuario): Observable<any> {
     return this.httpClient.post<any>(
-      this.baseURL + 'editor/perfilusuario',
+      this.baseURL + 'perfilusuario/',
       perfilUsuario,
       cabecera
     );
@@ -38,7 +38,7 @@ export class PerfilUsuarioService {
 
   public editar(perfilUsuario: PerfilUsuario, id: number): Observable<any> {
     return this.httpClient.put<any>(
-      this.baseURL + `editor/perfilusuario/${id}`,
+      this.baseURL + `perfilusuario/${id}`,
       perfilUsuario,
       cabecera
     );
@@ -46,7 +46,7 @@ export class PerfilUsuarioService {
 
   public borrar(id: number): Observable<any> {
     return this.httpClient.delete<any>(
-      this.baseURL + `editor/perfilUsuario/${id}`,
+      this.baseURL + `perfilUsuario/${id}`,
       cabecera
     );
   }

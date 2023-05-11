@@ -26,7 +26,7 @@ export class AgregarEducacionComponent implements OnInit {
 
   ngOnInit(): void {
     this.crearEducacionForm.valueChanges.subscribe((selectedValue) => {
-      this.imgPreview = selectedValue.imgUrl;
+      this.imgPreview = selectedValue.img_url;
     });
   }
 
@@ -34,13 +34,13 @@ export class AgregarEducacionComponent implements OnInit {
     this.crearEducacionForm = this.formBuilder.group({
       curso: '',
       institucion: '',
-      imgUrl: '',
-      fechaDesde: '',
-      fechaHasta: '',
+      img_url: '',
+      fecha_desde: '',
+      fecha_hasta: '',
       descripcion: '',
     });
   }
-  
+
   submitForm() {
     this.activeModal.close(this.crearEducacionForm.value);
   }

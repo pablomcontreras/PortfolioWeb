@@ -49,7 +49,7 @@ export class HabilidadesComponent implements OnInit {
     //Abro el componente modal de editar elemento, pasandole el ID.
 
     const modalRef = this.modalService.open(EditarHabilidadesComponent);
-    modalRef.componentInstance.id = id;
+    modalRef.componentInstance._id = id;
 
     // una vez que se cierra el modal con los datos nuevos, se pasan aca para ejecutar la llamada a la API
 

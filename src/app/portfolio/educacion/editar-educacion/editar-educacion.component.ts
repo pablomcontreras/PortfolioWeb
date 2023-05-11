@@ -14,10 +14,7 @@ import { EducacionService } from 'src/app/services/educacion.service';
   templateUrl: './editar-educacion.component.html',
   styleUrls: ['./editar-educacion.component.css'],
 })
-
-
 export class EditarEducacionComponent implements OnInit {
-
   @Input() id!: number;
   @Input() cargarLista!: any;
   @Input() fromParent!: any;
@@ -29,9 +26,9 @@ export class EditarEducacionComponent implements OnInit {
     this.editarEducacionForm = this.formBuilder.group({
       curso: '',
       institucion: '',
-      imgUrl: '',
-      fechaDesde: '',
-      fechaHasta: '',
+      img_url: '',
+      fecha_desde: '',
+      fecha_hasta: '',
       descripcion: '',
     });
   }
@@ -56,7 +53,7 @@ export class EditarEducacionComponent implements OnInit {
     });
 
     this.editarEducacionForm.valueChanges.subscribe((selectedValue) => {
-      this.imgPreview = selectedValue.imgUrl;
+      this.imgPreview = selectedValue.img_url;
     });
   }
 
@@ -72,9 +69,9 @@ export class EditarEducacionComponent implements OnInit {
     this.editarEducacionForm.setValue({
       curso: this.datosActual.curso,
       institucion: this.datosActual.institucion,
-      imgUrl: this.datosActual.imgUrl,
-      fechaDesde: this.datosActual.fechaDesde,
-      fechaHasta: this.datosActual.fechaHasta,
+      img_url: this.datosActual.img_url,
+      fecha_desde: this.datosActual.fecha_desde,
+      fecha_hasta: this.datosActual.fecha_hasta,
       descripcion: this.datosActual.descripcion,
     });
   }

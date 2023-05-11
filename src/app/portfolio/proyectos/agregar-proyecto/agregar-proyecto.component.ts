@@ -22,11 +22,11 @@ export class AgregarProyectoComponent implements OnInit {
   private createForm() {
     this.crearProyectoForm = this.formBuilder.group({
       titulo: '',
-      imgUrl: '',
+      img_url: '',
       descripcion: '',
       tecnologias: '',
       proyectoUrl: '',
-      sourceCodeUrl: '',
+      sourcecode_url: '',
     });
   }
 
@@ -39,10 +39,10 @@ export class AgregarProyectoComponent implements OnInit {
 
   ngOnInit(): void {
     this.crearProyectoForm.valueChanges.subscribe((selectedValue) => {
-      this.imgPreview = selectedValue.imgUrl;
+      this.imgPreview = selectedValue.img_url;
     });
   }
-  
+
   submitForm() {
     this.activeModal.close(this.crearProyectoForm.value);
   }

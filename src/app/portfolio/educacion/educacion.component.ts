@@ -14,21 +14,18 @@ import Swal from 'sweetalert2';
   selector: 'app-educacion',
   templateUrl: './educacion.component.html',
   styleUrls: ['./educacion.component.css'],
-
 })
 export class EducacionComponent implements OnInit {
-
   public miEducacion: any;
   @Input() authority!: string;
 
   constructor(
     private datosEducacion: EducacionService,
-    private modalService: NgbModal,
+    private modalService: NgbModal
   ) {}
 
   ngOnInit(): void {
     this.cargarLista();
-
   }
 
   openAddFormModal() {
@@ -61,7 +58,7 @@ export class EducacionComponent implements OnInit {
       size: 'lg',
       scrollable: true,
     });
-    modalRef.componentInstance.id = id;
+    modalRef.componentInstance._id = id;
 
     // una vez que se cierra el modal con los datos nuevos, se pasan aca para ejecutar la llamada a la API
 
@@ -83,23 +80,21 @@ export class EducacionComponent implements OnInit {
   }
 
   drop(event: CdkDragDrop<string[]>) {
-
     moveItemInArray(this.miEducacion, event.previousIndex, event.currentIndex);
 
     //console.log('Mi educacion ahora tiene: ', this.miEducacion);
 
     for (let i = 0; i <= this.miEducacion.length - 1; i++) {
       this.miEducacion[i].orden = i;
-     }
-    
-  //console.log( 'Actualizando orden', this.miEducacion);
+    }
 
+    //console.log( 'Actualizando orden', this.miEducacion);
   }
 
   guardarOrden() {
     for (let i = 0; i <= this.miEducacion.length - 1; i++) {
       this.datosEducacion
-        .editar(this.miEducacion[i], this.miEducacion[i].id)
+        .editar(this.miEducacion[i], this.miEducacion[i]._id)
         .subscribe();
     }
     Swal.fire({
@@ -144,8 +139,7 @@ export class EducacionComponent implements OnInit {
   cargarLista() {
     this.datosEducacion.lista().subscribe((data) => {
       this.miEducacion = data;
-
-      this.miEducacion.sort(function (a:any, b: any) {
+      this.miEducacion.sort(function (a: any, b: any) {
         if (a.orden > b.orden) {
           return 1;
         }

@@ -6,7 +6,7 @@
     (click)="activeModal.dismiss('Cross click')"></button>
 </div>
 <div class="modal-body" *ngIf="cargado">
-  <img class="logoproyectos" [src]="datosActual.imgUrl" alt="" />
+  <img class="logoproyectos" [src]="datosActual.img_url" alt="" />
   <hr />
 
   <h2 class="mat-h2">Descripción del proyecto</h2>
@@ -17,12 +17,12 @@
 <div class="modal-footer">
 
 
-  <a class="btn btn-dark" (click)="visitarSourceUrl(datosActual.id)">
+  <a class="btn btn-dark" (click)="visitarSourceUrl(datosActual._id)">
     <i class="mx-1 fa-brands fa-github" style="color: white"> </i>
     <span style="color: white">Código Fuente</span>
   </a>
 
-  <a class="btn btn-success" (click)="visitarUrl(datosActual.id)">
+  <a class="btn btn-success" (click)="visitarUrl(datosActual._id)">
     <i class="mx-1 fa-solid fa-arrow-up-right-from-square" style="color: white"> </i>
     <span style="color: white">Visitar</span>
   </a>

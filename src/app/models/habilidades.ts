@@ -1,5 +1,5 @@
 export class Habilidades {
-  id?: number;
+  _id?: string;
   titulo!: string;
   avance!: number;
 }

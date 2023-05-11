@@ -28,12 +28,12 @@ export class ProyectosComponent implements OnInit {
       this.cargado = true;
     });
   }
-  openDetalleModal(id: number): any {
+  openDetalleModal(id: string): any {
     const modalRef = this.modalService.open(DetalleProyectoComponent, {
       size: 'lg',
       scrollable: true,
     });
-    modalRef.componentInstance.id = id;
+    modalRef.componentInstance._id = id;
   }
 
   openAddFormModal() {
@@ -59,11 +59,11 @@ export class ProyectosComponent implements OnInit {
     });
   }
 
-  visitarUrl(id: number) {
+  visitarUrl(id: string) {
     //recorre el array miProyectos traido del servidor y busca el ID...
 
     for (let i = 0; i < this.miProyectos.length; i++) {
-      if (this.miProyectos[i].id == id) {
+      if (this.miProyectos[i]._id == id) {
         this.indice = i;
       }
     }
@@ -87,14 +87,14 @@ export class ProyectosComponent implements OnInit {
     }
   }
 
-  openEditFormModal(id: number): any {
+  openEditFormModal(id: string): any {
     //Abro el componente modal de editar elemento, pasandole el ID.
 
     const modalRef = this.modalService.open(EditarProyectoComponent, {
       size: 'lg',
       scrollable: true,
     });
-    modalRef.componentInstance.id = id;
+    modalRef.componentInstance._id = id;
 
     // una vez que se cierra el modal con los datos nuevos, se pasan aca para ejecutar la llamada a la API
 
@@ -115,7 +115,7 @@ export class ProyectosComponent implements OnInit {
     });
   }
 
-  borrar(id: number): void {
+  borrar(id: string): void {
     Swal.fire({
       title: '¿Estás seguro?',
       text: 'Esta acción no puede deshacerse',
