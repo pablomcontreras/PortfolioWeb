@@ -11,15 +11,14 @@ const cabecera = {
   providedIn: 'root',
 })
 export class ProyectosService {
-  
   //baseURL = 'https://mi-portfolio-ap.rj.r.appspot.com/';
-baseURL='http://127.0.0.1:3000/api/'
+  //baseURL='http://127.0.0.1:3000/api/'
+  baseURL = 'https://portfolio-backend-3qb9.onrender.com'; //backend en internet
+
   constructor(private httpClient: HttpClient) {}
 
   public lista(): Observable<Proyectos[]> {
-    return this.httpClient.get<Proyectos[]>(
-      this.baseURL + 'proyectos/'
-    );
+    return this.httpClient.get<Proyectos[]>(this.baseURL + 'proyectos/');
   }
 
   public detalle(id: string): Observable<Proyectos> {

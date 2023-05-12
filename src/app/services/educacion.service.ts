@@ -12,7 +12,8 @@ const cabecera = {
 })
 export class EducacionService {
   //baseURL = 'https://mi-portfolio-ap.rj.r.appspot.com';
-  baseURL = 'http://127.0.0.1:3000/api/';
+  //baseURL = 'http://127.0.0.1:3000/api/';
+  baseURL = 'https://portfolio-backend-3qb9.onrender.com'; //backend en internet
 
   constructor(private httpClient: HttpClient) {}
 
