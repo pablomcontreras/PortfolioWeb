@@ -47,6 +47,7 @@ export class LoginComponent implements OnInit {
         this.isLoginFail = false;
         this.roles = this.tokenService.getAuthorities();
         window.location.replace('/portfolio');
+        console.log("El usuario se logueo correctamente: ", data.user);
       },
       (err: any) => {
         this.isLogged = false;
