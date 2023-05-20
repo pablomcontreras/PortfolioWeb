@@ -51,14 +51,14 @@ export class EducacionComponent implements OnInit {
     });
   }
 
-  openEditFormModal(id: number): any {
+  openEditFormModal(id: string): any {
     //Abro el componente modal de editar elemento, pasandole el ID.
 
     const modalRef = this.modalService.open(EditarEducacionComponent, {
       size: 'lg',
       scrollable: true,
     });
-    modalRef.componentInstance._id = id;
+    modalRef.componentInstance.id = id;
 
     // una vez que se cierra el modal con los datos nuevos, se pasan aca para ejecutar la llamada a la API
 
@@ -110,7 +110,7 @@ export class EducacionComponent implements OnInit {
     this.cargarLista();
   }
 
-  borrar(id: number): void {
+  borrar(id: string): void {
     Swal.fire({
       title: '¿Estás seguro?',
       text: 'Esta acción no puede deshacerse',

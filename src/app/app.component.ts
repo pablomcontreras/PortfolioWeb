@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class AppComponent implements OnInit {
   isLogin = false;
-  roles!: string[];
+  roles!: any;
   authority!: string;
 
   constructor(
@@ -23,16 +23,16 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     if (this.tokenService.getToken()) {
       this.isLogin = true;
-      this.roles = [];
-      this.roles = this.tokenService.getAuthorities();
-      this.roles.every((rol) => {
-        if (rol === 'ROLE_ADMIN') {
+      this.roles = async () => {
+      let levantar =  this.tokenService.getAuthorities();
+if (levantar === 'ROLE_ADMIN') {
           this.authority = 'admin';
           return false;
         }
         this.authority = 'user';
         return true;
-      });
+
+      };
     }
     
   }

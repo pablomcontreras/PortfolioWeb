@@ -13,7 +13,7 @@ import {
   styleUrls: ['./agregar-proyecto.component.css'],
 })
 export class AgregarProyectoComponent implements OnInit {
-  @Input() id!: number;
+  @Input() id!: string;
   @Input() cargarLista!: any;
   crearProyectoForm!: FormGroup;
   datosActual!: any;
@@ -25,7 +25,7 @@ export class AgregarProyectoComponent implements OnInit {
       img_url: '',
       descripcion: '',
       tecnologias: '',
-      proyectoUrl: '',
+      proyecto_url: '',
       sourcecode_url: '',
     });
   }

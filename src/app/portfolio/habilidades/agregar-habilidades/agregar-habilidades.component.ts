@@ -13,7 +13,7 @@ import {
   styleUrls: ['./agregar-habilidades.component.css'],
 })
 export class AgregarHabilidadesComponent implements OnInit {
-  @Input() id!: number;
+  @Input() id: string;
   crearHabilidadesForm!: FormGroup;
   avanceTag!: string;
   estiloAvance!: String;

@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   usuario: LoginUsuario | undefined;
   isLogged = false;
   isLoginFail = false;
-  roles: string[] = [];
+  roles: any;
   errorMsg = '';
 
   constructor(
@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
       (data) => {
         this.tokenService.setToken(data.token);
         this.tokenService.setUserName(data.user.nombre_usuario);
-        this.tokenService.setAuthorities([data.user.rol]);
+        this.tokenService.setAuthorities(data.user.rol);
 
         this.isLogged = true;
         this.isLoginFail = false;

@@ -13,7 +13,7 @@ import {
   styleUrls: ['./agregar-educacion.component.css'],
 })
 export class AgregarEducacionComponent implements OnInit {
-  @Input() id!: number;
+  @Input() id: string;
   crearEducacionForm!: FormGroup;
   imgPreview!: any;
 

@@ -27,7 +27,7 @@ export class EditarProyectoComponent implements OnInit {
       img_url: '',
       descripcion: '',
       tecnologias: '',
-      proyectoUrl: '',
+      proyecto_url: '',
       sourcecode_url: '',
     });
   }
@@ -69,7 +69,7 @@ export class EditarProyectoComponent implements OnInit {
       img_url: this.datosActual.img_url,
       descripcion: this.datosActual.descripcion,
       tecnologias: this.datosActual.tecnologias,
-      proyectoUrl: this.datosActual.proyectoUrl,
+      proyecto_url: this.datosActual.proyecto_url,
       sourcecode_url: this.datosActual.sourcecode_url,
     });
   }

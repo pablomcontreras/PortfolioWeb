@@ -14,7 +14,7 @@ import { HabilidadesService } from 'src/app/services/habilidades.service';
   styleUrls: ['./editar-habilidades.component.css'],
 })
 export class EditarHabilidadesComponent implements OnInit {
-  @Input() id!: number;
+  @Input() id!: string;
   editarHabilidadesForm!: FormGroup;
   avanceTag!: string;
   estiloAvance!: String;

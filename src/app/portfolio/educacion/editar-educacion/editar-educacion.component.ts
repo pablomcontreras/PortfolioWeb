@@ -15,7 +15,7 @@ import { EducacionService } from 'src/app/services/educacion.service';
   styleUrls: ['./editar-educacion.component.css'],
 })
 export class EditarEducacionComponent implements OnInit {
-  @Input() id!: number;
+  @Input() id!: string;
   @Input() cargarLista!: any;
   @Input() fromParent!: any;
   editarEducacionForm!: FormGroup;

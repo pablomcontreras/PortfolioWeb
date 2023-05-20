@@ -13,7 +13,7 @@ import {
   styleUrls: ['./agregar-experiencia.component.css'],
 })
 export class AgregarExperienciaComponent implements OnInit {
-  @Input() id!: number;
+  @Input() id: string;
   crearExperienciaForm!: FormGroup;
   imgPreview!: any;
 

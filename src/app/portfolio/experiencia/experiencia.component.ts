@@ -51,14 +51,14 @@ export class ExperienciaComponent implements OnInit {
     });
   }
 
-  openEditFormModal(id: number): any {
+  openEditFormModal(id: string): any {
     //Abro el componente modal de editar elemento, pasandole el ID.
-
+console.log("se llama el open edit form con el id: ", id)
     const modalRef = this.modalService.open(EditarExperienciaComponent, {
       size: 'lg',
       scrollable: true,
     });
-    modalRef.componentInstance._id = id;
+    modalRef.componentInstance.id = id;
 
     // una vez que se cierra el modal con los datos nuevos, se pasan aca para ejecutar la llamada a la API
 
@@ -79,7 +79,7 @@ export class ExperienciaComponent implements OnInit {
     });
   }
 
-  borrar(id: number): void {
+  borrar(id: string): void {
     Swal.fire({
       title: '¿Estás seguro?',
       text: 'Esta acción no puede deshacerse',
@@ -145,6 +145,7 @@ export class ExperienciaComponent implements OnInit {
   cargarLista() {
     this.datosExperiencia.lista().subscribe((data) => {
       this.miExperiencia = data;
+      console.log("data de mi experiencia:", this.miExperiencia)
 
       this.miExperiencia.sort(function (a: any, b: any) {
         if (a.orden > b.orden) {

@@ -24,7 +24,7 @@ export class HabilidadesService {
     );
   }
 
-  public detalle(id: number): Observable<Habilidades> {
+  public detalle(id: string): Observable<Habilidades> {
     return this.httpClient.get<Habilidades>(
       this.baseURL + `habilidades/${id}`,
       cabecera
@@ -39,7 +39,7 @@ export class HabilidadesService {
     );
   }
 
-  public editar(habilidades: Habilidades, id: number): Observable<any> {
+  public editar(habilidades: Habilidades, id: string): Observable<any> {
     return this.httpClient.put<any>(
       this.baseURL + `habilidades/${id}`,
       habilidades,
@@ -47,7 +47,7 @@ export class HabilidadesService {
     );
   }
 
-  public borrar(id: number): Observable<any> {
+  public borrar(id: string): Observable<any> {
     return this.httpClient.delete<any>(
       this.baseURL + `habilidades/${id}`,
       cabecera

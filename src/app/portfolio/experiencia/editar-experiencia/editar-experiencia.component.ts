@@ -14,7 +14,7 @@ import { ExperienciaService } from 'src/app/services/experiencia.service';
   styleUrls: ['./editar-experiencia.component.css'],
 })
 export class EditarExperienciaComponent implements OnInit {
-  @Input() id!: number;
+  @Input() id!: string;
   editarExperienciaForm!: FormGroup;
   datosActual!: any;
   imgPreview!: any;
@@ -29,7 +29,6 @@ export class EditarExperienciaComponent implements OnInit {
 
   ngOnInit(): void {
     //  Levanto los datos del form clickeado:
-
     this.miExperiencia.detalle(this.id).subscribe((data) => {
       this.datosActual = data;
 

@@ -69,8 +69,8 @@ export class ProyectosComponent implements OnInit {
     }
 
     if (
-      this.miProyectos[this.indice].proyectoUrl === null ||
-      this.miProyectos[this.indice].proyectoUrl === ''
+      this.miProyectos[this.indice].proyecto_url === null ||
+      this.miProyectos[this.indice].proyecto_url === ''
     ) {
       return Swal.fire({
         title: 'Ups!',
@@ -83,7 +83,7 @@ export class ProyectosComponent implements OnInit {
         },
       });
     } else {
-      return window.open(this.miProyectos[this.indice].proyectoUrl);
+      return window.open(this.miProyectos[this.indice].proyecto_url);
     }
   }
 
@@ -94,7 +94,7 @@ export class ProyectosComponent implements OnInit {
       size: 'lg',
       scrollable: true,
     });
-    modalRef.componentInstance._id = id;
+    modalRef.componentInstance.id = id;
 
     // una vez que se cierra el modal con los datos nuevos, se pasan aca para ejecutar la llamada a la API
 

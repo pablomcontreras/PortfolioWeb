@@ -24,7 +24,7 @@ export class PerfilUsuarioComponent implements OnInit {
     this.cargarLista();
   }
 
-  openEditFormModal(id: any): any {
+  openEditFormModal(id: string): any {
     //Abro el componente modal de editar elemento, pasandole el ID.
 
     const modalRef = this.modalService.open(EditarPerfilUsuarioComponent, {

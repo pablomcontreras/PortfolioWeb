@@ -8,7 +8,7 @@ const AUTHORITIES_KEY = 'AutAuthorities';
   providedIn: 'root',
 })
 export class TokenService {
-  roles: Array<string> = [];
+  roles: any = "";
 
   constructor() {}
 
@@ -30,20 +30,14 @@ export class TokenService {
     return sessionStorage.getItem(USERNAME_KEY)!;
   }
 
-  public setAuthorities(authorities: string[]): void {
+  public setAuthorities(authorities: string): void {
     window.sessionStorage.removeItem(AUTHORITIES_KEY);
     window.sessionStorage.setItem(AUTHORITIES_KEY, JSON.stringify(authorities));
   }
 
-  public getAuthorities(): string[] {
-    this.roles = [];
-    if (sessionStorage.getItem(AUTHORITIES_KEY)) {
-      JSON.parse(sessionStorage.getItem(AUTHORITIES_KEY)!).forEach(
-        (authority: { authority: string }) => {
-          this.roles.push(authority.authority);
-        }
-      );
-    }
+  public  getAuthorities(): string{
+    this.roles = sessionStorage.getItem(AUTHORITIES_KEY);
+    
     return this.roles;
   }
 

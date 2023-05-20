@@ -23,7 +23,7 @@ export class PerfilUsuarioService {
     );
   }
 
-  public detalle(id: number): Observable<PerfilUsuario> {
+  public detalle(id: string): Observable<PerfilUsuario> {
     return this.httpClient.get<PerfilUsuario>(
       this.baseURL + `perfilusuario/${id}`,
       cabecera
@@ -38,7 +38,7 @@ export class PerfilUsuarioService {
     );
   }
 
-  public editar(perfilUsuario: PerfilUsuario, id: number): Observable<any> {
+  public editar(perfilUsuario: PerfilUsuario, id: string): Observable<any> {
     return this.httpClient.put<any>(
       this.baseURL + `perfilusuario/${id}`,
       perfilUsuario,
@@ -46,7 +46,7 @@ export class PerfilUsuarioService {
     );
   }
 
-  public borrar(id: number): Observable<any> {
+  public borrar(id: string): Observable<any> {
     return this.httpClient.delete<any>(
       this.baseURL + `perfilUsuario/${id}`,
       cabecera

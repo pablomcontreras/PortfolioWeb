@@ -15,7 +15,7 @@ import { PerfilUsuarioService } from 'src/app/services/perfi-usuario.service';
   styleUrls: ['./editar-perfil-usuario.component.css'],
 })
 export class EditarPerfilUsuarioComponent implements OnInit {
-  @Input() id!: number;
+  @Input() id!: string;
   @Input() cargarLista!: any;
   editarPerfilUsuarioForm!: FormGroup;
   datosActual!: any;

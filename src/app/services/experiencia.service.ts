@@ -24,7 +24,7 @@ export class ExperienciaService {
     );
   }
 
-  public detalle(id: number): Observable<Experiencia> {
+  public detalle(id: string): Observable<Experiencia> {
     return this.httpClient.get<Experiencia>(
       this.baseURL + `experiencia/${id}`,
       cabecera
@@ -39,7 +39,7 @@ export class ExperienciaService {
     );
   }
 
-  public editar(experiencia: Experiencia, id: number): Observable<any> {
+  public editar(experiencia: Experiencia, id: string): Observable<any> {
     return this.httpClient.put<any>(
       this.baseURL + `experiencia/${id}`,
       experiencia,
@@ -47,7 +47,7 @@ export class ExperienciaService {
     );
   }
 
-  public borrar(id: number): Observable<any> {
+  public borrar(id: string): Observable<any> {
     // console.log("se llamo a borrar en el experiencia service con los siguientes parametros ", this.baseURL + `editor/experiencia/${id}`, cabecera);
 
     return this.httpClient.delete<any>(

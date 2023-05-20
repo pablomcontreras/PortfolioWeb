@@ -1,5 +1,5 @@
 export class PerfilUsuario {
-  _id?: string;
+  _id!: string;
   nombre!: string;
   cargo!: string;
   intro!: string;
