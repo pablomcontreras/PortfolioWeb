@@ -1,6 +1,12 @@
 export class JwtModel {
+
   token!: string;
-  type!: string;
-  nombreUsuario!: string;
-  authorities!: string[];
+  user!: {
+    _id: string,
+    email: string,
+    nombre: string,
+    nombre_usuario: string,
+    password: string,
+    rol:string,
+  }
 }

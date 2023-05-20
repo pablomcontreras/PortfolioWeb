@@ -12,13 +12,13 @@ const cabecera = {
   providedIn: 'root',
 })
 export class AuthService {
-  private authURL = 'https://mi-portfolio-ap.rj.r.appspot.comapi/auth/';
+  private authURL = 'https://portfolio-backend-3qb9.onrender.com/api/login/';
 
   constructor(private httpClient: HttpClient) {}
 
   public login(usuario: LoginUsuario): Observable<JwtModel> {
     return this.httpClient.post<JwtModel>(
-      this.authURL + 'login',
+      this.authURL,
       usuario,
       cabecera
     );
