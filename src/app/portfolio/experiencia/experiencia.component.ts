@@ -145,7 +145,6 @@ console.log("se llama el open edit form con el id: ", id)
   cargarLista() {
     this.datosExperiencia.lista().subscribe((data) => {
       this.miExperiencia = data;
-      console.log("data de mi experiencia:", this.miExperiencia)
 
       this.miExperiencia.sort(function (a: any, b: any) {
         if (a.orden > b.orden) {
